@@ -1283,7 +1283,7 @@ function resetAllVisualEdits() {
   }
 }
 
-function exportVisualEdits() {
+function generateCleanHTML() {
   const clone = document.documentElement.cloneNode(true);
 
   clone.classList.remove('editor-active', 'hide-highlights');
@@ -1306,8 +1306,46 @@ function exportVisualEdits() {
     swapModal.classList.remove('active');
   }
 
-  const cleanHTML = '<!DOCTYPE html>\n<html lang="en">\n' + clone.innerHTML + '\n</html>';
+  return '<!DOCTYPE html>\n<html lang="en">\n' + clone.innerHTML + '\n</html>';
+}
 
+function copyVisualEditsToClipboard() {
+  const cleanHTML = generateCleanHTML();
+  navigator.clipboard.writeText(cleanHTML).then(() => {
+    showToast('📋 Updated HTML code copied to clipboard! You can paste directly into index.html');
+  }).catch(err => {
+    console.error('Clipboard copy failed:', err);
+    showToast('Failed to copy to clipboard automatically.');
+  });
+}
+
+async function exportVisualEdits() {
+  const cleanHTML = generateCleanHTML();
+
+  // 1. Try Native File System Access API (Direct Save File Dialog in Chrome/Edge)
+  if ('showSaveFilePicker' in window) {
+    try {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: 'index.html',
+        types: [{
+          description: 'HTML File',
+          accept: { 'text/html': ['.html', '.htm'] },
+        }],
+      });
+      const writable = await handle.createWritable();
+      await writable.write(cleanHTML);
+      await writable.close();
+      showToast('🎉 index.html successfully saved directly to your folder!');
+      return;
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        return; // User canceled the save dialog
+      }
+      console.warn('File picker error, using standard download fallback:', err);
+    }
+  }
+
+  // 2. Fallback to standard Blob download
   const blob = new Blob([cleanHTML], { type: 'text/html;charset=utf-8' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -1318,5 +1356,5 @@ function exportVisualEdits() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 
-  showToast('🎉 index.html downloaded! Replace index.html in your folder to make changes permanent for GitHub.');
+  showToast('🎉 index.html ready! If Chrome asks, click "Allow Download".');
 }

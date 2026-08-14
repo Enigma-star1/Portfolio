@@ -897,7 +897,7 @@ function runBrainDumpSimulation() {
 // 13. IN-BROWSER VISUAL & LAYOUT EDITOR ENGINE (OPTION 2)
 // ==========================================================================
 
-const ADMIN_PIN = '2026';
+const ADMIN_PIN = '0806';
 let isEditModeActive = false;
 let areHighlightsActive = true;
 let isAdminAuthenticated = false;

@@ -897,20 +897,33 @@ function runBrainDumpSimulation() {
 // 13. IN-BROWSER VISUAL & LAYOUT EDITOR ENGINE (OPTION 2)
 // ==========================================================================
 
+const ADMIN_PIN = '2026';
 let isEditModeActive = false;
 let areHighlightsActive = true;
+let isAdminAuthenticated = false;
 let visualEdits = {};
 let activeTargetImg = null;
 
 const STORAGE_KEY = 'enigma_portfolio_visual_edits';
+const AUTH_KEY = 'enigma_admin_authenticated';
 
 function initVisualEditor() {
   loadSavedEdits();
 
+  // Check if session is already authenticated or URL has edit flag
+  if (sessionStorage.getItem(AUTH_KEY) === 'true') {
+    isAdminAuthenticated = true;
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('edit') === 'true' || urlParams.get('admin') === 'true') {
+    requestEditMode();
+  }
+
   window.addEventListener('keydown', (e) => {
     if (e.altKey && (e.key === 'e' || e.key === 'E')) {
       e.preventDefault();
-      toggleEditMode();
+      requestEditMode();
     }
   });
 
@@ -938,6 +951,65 @@ function initVisualEditor() {
         previewImg.src = e.target.value.trim();
       }
     });
+  }
+}
+
+function requestEditMode() {
+  if (isEditModeActive) {
+    toggleEditMode(false);
+    return;
+  }
+
+  if (isAdminAuthenticated || sessionStorage.getItem(AUTH_KEY) === 'true') {
+    isAdminAuthenticated = true;
+    toggleEditMode(true);
+  } else {
+    openAdminPinModal();
+  }
+}
+
+function openAdminPinModal() {
+  const modal = document.getElementById('adminPinModal');
+  const input = document.getElementById('adminPinInput');
+  const err = document.getElementById('adminPinError');
+
+  if (err) err.style.display = 'none';
+  if (input) input.value = '';
+
+  if (modal) {
+    modal.style.display = 'flex';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { if (input) input.focus(); }, 100);
+  }
+}
+
+function closeAdminPinModal() {
+  const modal = document.getElementById('adminPinModal');
+  if (modal) {
+    modal.style.display = 'none';
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function handlePinSubmit(e) {
+  if (e) e.preventDefault();
+  const input = document.getElementById('adminPinInput');
+  const err = document.getElementById('adminPinError');
+
+  if (input && input.value.trim() === ADMIN_PIN) {
+    isAdminAuthenticated = true;
+    sessionStorage.setItem(AUTH_KEY, 'true');
+    closeAdminPinModal();
+    toggleEditMode(true);
+    showToast('🔓 Admin access granted!');
+  } else {
+    if (err) err.style.display = 'flex';
+    if (input) {
+      input.value = '';
+      input.focus();
+    }
   }
 }
 

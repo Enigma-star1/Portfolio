@@ -1462,16 +1462,35 @@
             <span>Lagos, Nigeria</span>
             <span>•</span>
             <span>Public Administration & Digital Technology</span>
-            <span>•</span>
-            <button class="admin-mode-trigger" id="adminModeBtn" onclick="toggleEditMode()" title="Toggle In-Browser Visual Editor (Alt + E)">
-              <i class="fa-solid fa-pen-to-square"></i> <span>Edit Mode (Alt+E)</span>
-            </button>
           </div>
         </div>
 
       </div>
     </section>
   </main>
+
+  <!-- =========================================================================
+       ADMIN PIN MODAL (FOR SECURE OWNER ACCESS)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="adminPinModal" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;" onclick="closeAdminPinModal(event)">
+    <div class="modal-content admin-pin-dialog" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeAdminPinModal()" aria-label="Close PIN Dialog">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="admin-lock-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <h3 class="admin-pin-title">Enigma Editor Access</h3>
+      <p class="admin-pin-desc">Enter your 4-digit Admin PIN to unlock Visual Edit Mode.</p>
+
+      <form class="admin-pin-form" onsubmit="handlePinSubmit(event)">
+        <input type="password" id="adminPinInput" maxlength="6" class="admin-pin-input" placeholder="••••" autocomplete="off">
+        <p class="admin-pin-error" id="adminPinError" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i> Incorrect PIN. Please try again.</p>
+        <div class="admin-pin-actions">
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-lock-open"></i> Unlock</button>
+          <button type="button" class="btn btn-outline" onclick="closeAdminPinModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- =========================================================================
        RESUME MODAL

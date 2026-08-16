@@ -726,6 +726,7 @@ function initKeyboardEvents() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeLightbox();
+      closeResumeModal();
     }
 
     const activeModal = document.querySelector('.modal-backdrop.active');
@@ -768,6 +769,7 @@ function showToast(message) {
 }
 
 function copyEmail(e) {
+  if (e) e.preventDefault();
   const email = "olamidebalogun3131@gmail.com";
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(email).then(() => {
@@ -779,4 +781,35 @@ function copyEmail(e) {
     showToast(`Email: ${email}`);
   }
 }
+
+// ==========================================================================
+// 12. RESUME & PITCH DECK MODAL ENGINE
+// ==========================================================================
+
+function openResumeModal(e) {
+  if (e) e.preventDefault();
+  const modal = document.getElementById('resumeModal');
+  if (modal) {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeResumeModal(e) {
+  if (e && e.target && e.target.closest('.resume-modal-dialog') && !e.target.closest('.modal-close-btn')) {
+    return;
+  }
+  const modal = document.getElementById('resumeModal');
+  if (modal) {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+}
+
+window.openResumeModal = openResumeModal;
+window.closeResumeModal = closeResumeModal;
+window.showToast = showToast;
+window.copyEmail = copyEmail;
 

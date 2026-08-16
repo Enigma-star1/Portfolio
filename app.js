@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilters();
   initTratunSlider();
   initGrosvenorSlider();
-  initEktosOnboarding();
+  initEktosCarousel();
   initVideoInteractions();
   initKeyboardEvents();
   initInteractiveMedia();
@@ -557,72 +557,70 @@ function initGrosvenorSlider() {
 }
 
 // ==========================================================================
-// 7. EKTOS UI/UX ONBOARDING SHOWCASE
+// 7. EKTOS UI/UX ONBOARDING CAROUSEL
 // ==========================================================================
 
-function initEktosOnboarding() {
-  let currentStep = 0;
-  const screenImg = document.getElementById('ektosScreenImg');
-  const phoneFrame = document.getElementById('ektosPhoneFrame');
-  const textContent = document.getElementById('ektosTextContent');
-  const stageTitle = document.getElementById('ektosStageTitle');
-  const stageDesc = document.getElementById('ektosStageDesc');
-  const stepperPills = document.querySelectorAll('.onboarding-step-pill');
-  const thumbBtns = document.querySelectorAll('.onboarding-thumb-btn');
-  const prevBtn = document.getElementById('ektosPrevBtn');
-  const nextBtn = document.getElementById('ektosNextBtn');
+function initEktosCarousel() {
+  const track = document.getElementById('ektosCarouselTrack');
+  const prevBtn = document.getElementById('ektosPrevSlide');
+  const nextBtn = document.getElementById('ektosNextSlide');
+  const dotsContainer = document.getElementById('ektosCarouselDots');
 
-  if (!screenImg || ektosOnboardingSteps.length === 0) return;
+  if (!track) return;
 
-  function updateStep(index) {
-    currentStep = (index + ektosOnboardingSteps.length) % ektosOnboardingSteps.length;
-    const step = ektosOnboardingSteps[currentStep];
+  const cards = track.querySelectorAll('.ektos-slide-card');
+  const dots = dotsContainer ? dotsContainer.querySelectorAll('.dot-btn') : [];
 
-    screenImg.classList.add('fade-out');
-    if (textContent) textContent.classList.add('fade-out');
-
-    setTimeout(() => {
-      screenImg.src = step.image;
-      screenImg.alt = step.mainTitle;
-
-      if (stageTitle) stageTitle.textContent = step.mainTitle;
-      if (stageDesc) stageDesc.textContent = step.desc;
-
-      stepperPills.forEach((pill, idx) => {
-        pill.classList.toggle('active', idx === currentStep);
-      });
-
-      thumbBtns.forEach((thumb, idx) => {
-        thumb.classList.toggle('active', idx === currentStep);
-      });
-
-      screenImg.classList.remove('fade-out');
-      if (textContent) textContent.classList.remove('fade-out');
-    }, 120);
+  function getCardWidth() {
+    if (cards.length === 0) return 320;
+    const cardRect = cards[0].getBoundingClientRect();
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 28;
+    return cardRect.width + gap;
   }
 
-  stepperPills.forEach((pill, idx) => {
-    pill.addEventListener('click', () => updateStep(idx));
-  });
+  function updateDots() {
+    if (!dots || dots.length === 0) return;
+    const scrollPos = track.scrollLeft;
+    const cardWidth = getCardWidth();
+    const activeIndex = Math.min(
+      Math.max(0, Math.round(scrollPos / cardWidth)),
+      cards.length - 1
+    );
 
-  thumbBtns.forEach((thumb, idx) => {
-    thumb.addEventListener('click', () => updateStep(idx));
-  });
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === activeIndex);
+    });
+  }
 
   if (prevBtn) {
-    prevBtn.addEventListener('click', () => updateStep(currentStep - 1));
+    prevBtn.addEventListener('click', () => {
+      const cardWidth = getCardWidth();
+      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
   }
 
   if (nextBtn) {
-    nextBtn.addEventListener('click', () => updateStep(currentStep + 1));
-  }
-
-  if (phoneFrame) {
-    phoneFrame.addEventListener('click', () => {
-      const step = ektosOnboardingSteps[currentStep];
-      openLightbox(step.image, step.mainTitle, step.desc);
+    nextBtn.addEventListener('click', () => {
+      const cardWidth = getCardWidth();
+      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
     });
   }
+
+  if (dots && dots.length > 0) {
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        const cardWidth = getCardWidth();
+        track.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+      });
+    });
+  }
+
+  let isScrolling;
+  track.addEventListener('scroll', () => {
+    window.clearTimeout(isScrolling);
+    isScrolling = setTimeout(updateDots, 60);
+  }, { passive: true });
 }
 
 // ==========================================================================

@@ -387,7 +387,8 @@ function initFilters() {
 }
 
 // ==========================================================================
-// 5. TRATUN ENERGY SIDE-BY-SIDE SLIDER
+// ==========================================================================
+// 5. TRATUN ENERGY SIDE-BY-SIDE SLIDER (INSTANT RESPONSE & TOUCH SWIPE)
 // ==========================================================================
 
 function initTratunSlider() {
@@ -410,7 +411,7 @@ function initTratunSlider() {
 
   // Render Thumbnail strip
   thumbsContainer.innerHTML = tratunCampaigns.map((item, idx) => `
-    <button class="slider-film-thumb ${idx === 0 ? 'active' : ''}" data-idx="${idx}" aria-label="View Tratun design ${idx + 1}: ${item.title}">
+    <button type="button" class="slider-film-thumb ${idx === 0 ? 'active' : ''}" data-idx="${idx}" aria-label="View Tratun design ${idx + 1}: ${item.title}">
       <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async">
     </button>
   `).join('');
@@ -421,58 +422,95 @@ function initTratunSlider() {
     currentIndex = (index + tratunCampaigns.length) % tratunCampaigns.length;
     const current = tratunCampaigns[currentIndex];
 
-    // Smooth quick transition
-    mainImg.classList.add('fade-out');
-    if (briefContent) briefContent.classList.add('fade-out');
+    // Instant update
+    mainImg.src = current.image;
+    mainImg.alt = current.title;
 
-    setTimeout(() => {
-      mainImg.src = current.image;
-      mainImg.alt = current.title;
+    if (counter) {
+      counter.textContent = `Design ${currentIndex + 1} of ${tratunCampaigns.length}`;
+    }
 
-      if (counter) {
-        counter.textContent = `Design ${currentIndex + 1} of ${tratunCampaigns.length}`;
-      }
+    if (briefTag) briefTag.innerHTML = `<i class="fa-solid fa-tag"></i> ${current.tag}`;
+    if (briefTitle) briefTitle.textContent = current.title;
+    if (briefDesc) briefDesc.textContent = current.objective;
+    if (briefConcept) briefConcept.textContent = current.concept;
+    if (briefImpact) briefImpact.textContent = current.impact;
 
-      if (briefTag) briefTag.innerHTML = `<i class="fa-solid fa-tag"></i> ${current.tag}`;
-      if (briefTitle) briefTitle.textContent = current.title;
-      if (briefDesc) briefDesc.textContent = current.objective;
-      if (briefConcept) briefConcept.textContent = current.concept;
-      if (briefImpact) briefImpact.textContent = current.impact;
-
-      thumbButtons.forEach((btn, i) => {
-        btn.classList.toggle('active', i === currentIndex);
-      });
-
-      mainImg.classList.remove('fade-out');
-      if (briefContent) briefContent.classList.remove('fade-out');
-    }, 120);
+    thumbButtons.forEach((btn, i) => {
+      btn.classList.toggle('active', i === currentIndex);
+    });
   }
 
   if (prevBtn) {
-    prevBtn.addEventListener('click', () => updateSlide(currentIndex - 1));
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateSlide(currentIndex - 1);
+    });
   }
 
   if (nextBtn) {
-    nextBtn.addEventListener('click', () => updateSlide(currentIndex + 1));
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateSlide(currentIndex + 1);
+    });
   }
 
+  // Thumbnails: Click & Touch handlers
   thumbButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    const handleThumb = (e) => {
+      e.preventDefault();
       const idx = parseInt(btn.getAttribute('data-idx'), 10);
       updateSlide(idx);
-    });
+    };
+    btn.addEventListener('click', handleThumb);
   });
 
+  // Main Viewport Tap Navigation & Lightbox Expand
   if (mainViewport) {
-    mainViewport.addEventListener('click', () => {
-      const current = tratunCampaigns[currentIndex];
-      openLightbox(current.image, current.title, current.objective);
+    mainViewport.addEventListener('click', (e) => {
+      const zoomPill = e.target.closest('.slider-zoom-pill');
+      if (zoomPill) {
+        const current = tratunCampaigns[currentIndex];
+        openLightbox(current.image, current.title, current.objective);
+        return;
+      }
+
+      // Tap on left 45% -> Previous slide, right 55% -> Next slide
+      const rect = mainViewport.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      if (clickX < rect.width * 0.45) {
+        updateSlide(currentIndex - 1);
+      } else {
+        updateSlide(currentIndex + 1);
+      }
     });
+
+    // Touch Swipe Gestures
+    let touchStartX = 0;
+    let touchStartY = 0;
+    mainViewport.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    mainViewport.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 35) {
+        if (diffX > 0) {
+          updateSlide(currentIndex - 1); // Swipe Right -> Prev
+        } else {
+          updateSlide(currentIndex + 1); // Swipe Left -> Next
+        }
+      }
+    }, { passive: true });
   }
 }
 
 // ==========================================================================
-// 6. GROSVENOR GLOBAL SERVICES SIDE-BY-SIDE SLIDER
+// 6. GROSVENOR GLOBAL SERVICES SIDE-BY-SIDE SLIDER (INSTANT RESPONSE & TOUCH SWIPE)
 // ==========================================================================
 
 function initGrosvenorSlider() {
@@ -495,7 +533,7 @@ function initGrosvenorSlider() {
 
   // Render Thumbnail strip
   thumbsContainer.innerHTML = grosvenorCampaigns.map((item, idx) => `
-    <button class="slider-film-thumb ${idx === 0 ? 'active' : ''}" data-idx="${idx}" aria-label="View Grosvenor design ${idx + 1}: ${item.title}">
+    <button type="button" class="slider-film-thumb ${idx === 0 ? 'active' : ''}" data-idx="${idx}" aria-label="View Grosvenor design ${idx + 1}: ${item.title}">
       <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async">
     </button>
   `).join('');
@@ -506,53 +544,90 @@ function initGrosvenorSlider() {
     currentIndex = (index + grosvenorCampaigns.length) % grosvenorCampaigns.length;
     const current = grosvenorCampaigns[currentIndex];
 
-    // Smooth quick transition
-    mainImg.classList.add('fade-out');
-    if (briefContent) briefContent.classList.add('fade-out');
+    // Instant update
+    mainImg.src = current.image;
+    mainImg.alt = current.title;
 
-    setTimeout(() => {
-      mainImg.src = current.image;
-      mainImg.alt = current.title;
+    if (counter) {
+      counter.textContent = `Design ${currentIndex + 1} of ${grosvenorCampaigns.length}`;
+    }
 
-      if (counter) {
-        counter.textContent = `Design ${currentIndex + 1} of ${grosvenorCampaigns.length}`;
-      }
+    if (briefTag) briefTag.innerHTML = `<i class="fa-solid fa-tag"></i> ${current.tag}`;
+    if (briefTitle) briefTitle.textContent = current.title;
+    if (briefDesc) briefDesc.textContent = current.objective;
+    if (briefConcept) briefConcept.textContent = current.concept;
+    if (briefImpact) briefImpact.textContent = current.impact;
 
-      if (briefTag) briefTag.innerHTML = `<i class="fa-solid fa-tag"></i> ${current.tag}`;
-      if (briefTitle) briefTitle.textContent = current.title;
-      if (briefDesc) briefDesc.textContent = current.objective;
-      if (briefConcept) briefConcept.textContent = current.concept;
-      if (briefImpact) briefImpact.textContent = current.impact;
-
-      thumbButtons.forEach((btn, i) => {
-        btn.classList.toggle('active', i === currentIndex);
-      });
-
-      mainImg.classList.remove('fade-out');
-      if (briefContent) briefContent.classList.remove('fade-out');
-    }, 120);
+    thumbButtons.forEach((btn, i) => {
+      btn.classList.toggle('active', i === currentIndex);
+    });
   }
 
   if (prevBtn) {
-    prevBtn.addEventListener('click', () => updateSlide(currentIndex - 1));
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateSlide(currentIndex - 1);
+    });
   }
 
   if (nextBtn) {
-    nextBtn.addEventListener('click', () => updateSlide(currentIndex + 1));
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateSlide(currentIndex + 1);
+    });
   }
 
+  // Thumbnails: Click & Touch handlers
   thumbButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    const handleThumb = (e) => {
+      e.preventDefault();
       const idx = parseInt(btn.getAttribute('data-idx'), 10);
       updateSlide(idx);
-    });
+    };
+    btn.addEventListener('click', handleThumb);
   });
 
+  // Main Viewport Tap Navigation & Lightbox Expand
   if (mainViewport) {
-    mainViewport.addEventListener('click', () => {
-      const current = grosvenorCampaigns[currentIndex];
-      openLightbox(current.image, current.title, current.objective);
+    mainViewport.addEventListener('click', (e) => {
+      const zoomPill = e.target.closest('.slider-zoom-pill');
+      if (zoomPill) {
+        const current = grosvenorCampaigns[currentIndex];
+        openLightbox(current.image, current.title, current.objective);
+        return;
+      }
+
+      // Tap on left 45% -> Previous slide, right 55% -> Next slide
+      const rect = mainViewport.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      if (clickX < rect.width * 0.45) {
+        updateSlide(currentIndex - 1);
+      } else {
+        updateSlide(currentIndex + 1);
+      }
     });
+
+    // Touch Swipe Gestures
+    let touchStartX = 0;
+    let touchStartY = 0;
+    mainViewport.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    mainViewport.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 35) {
+        if (diffX > 0) {
+          updateSlide(currentIndex - 1); // Swipe Right -> Prev
+        } else {
+          updateSlide(currentIndex + 1); // Swipe Left -> Next
+        }
+      }
+    }, { passive: true });
   }
 }
 

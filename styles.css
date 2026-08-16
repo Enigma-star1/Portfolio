@@ -535,50 +535,63 @@ img {
   bottom: 1.25rem;
   left: 1.25rem;
   right: 1.25rem;
-  background: rgba(18, 13, 28, 0.9);
-  backdrop-filter: blur(12px);
+  background: rgba(18, 13, 28, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-medium);
-  border-radius: 12px;
-  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  padding: 0.9rem 1.15rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.85rem;
+}
+
+.badge-info {
+  min-width: 0;
 }
 
 .badge-info h4 {
   font-family: var(--font-display);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-heading);
+  white-space: nowrap;
 }
 
 .badge-info p {
   font-size: 0.75rem;
   color: var(--accent-gold);
   font-family: var(--font-mono);
+  white-space: nowrap;
 }
 
 .badge-tag-wrapper {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  background: rgba(217, 148, 59, 0.1);
-  border: 1px solid rgba(217, 148, 59, 0.25);
-  padding: 0.3rem 0.65rem;
-  border-radius: 8px;
+  background: rgba(217, 148, 59, 0.12);
+  border: 1px solid rgba(217, 148, 59, 0.32);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .badge-logo-icon {
   width: 18px;
   height: 18px;
-  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .badge-tag {
   font-size: 0.75rem;
   font-family: var(--font-mono);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--accent-gold);
+  line-height: 1;
 }
 
 /* ==========================================================================

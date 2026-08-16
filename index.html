@@ -72,9 +72,9 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="#contact" class="btn btn-primary btn-sm">
+        <button type="button" class="btn btn-primary btn-sm" onclick="openContactModal(event)">
           <i class="fa-solid fa-paper-plane"></i> Let's Talk
-        </a>
+        </button>
       </div>
 
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation" aria-expanded="false"
@@ -92,7 +92,7 @@
       <a href="#experience" class="nav-link mobile-link">Experience</a>
       <a href="#about" class="nav-link mobile-link">About</a>
       <a href="#contact" class="nav-link mobile-link">Contact</a>
-      <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Let's Talk</a>
+      <button type="button" class="btn btn-primary" style="margin-top: 1rem; width: 100%;" onclick="openContactModal(event)">Let's Talk</button>
     </div>
   </header>
 
@@ -105,8 +105,11 @@
         <div class="hero-grid">
 
           <div class="hero-content">
-            <div class="hero-eyebrow">
-              <span class="eyebrow-text">DESIGN IS A MYSTERY WORTH SOLVING.</span>
+            <div class="hero-eyebrow-container">
+              <div class="eyebrow-badge">
+                <i class="fa-solid fa-fingerprint"></i> DESIGN PHILOSOPHY
+              </div>
+              <p class="hero-quote">"Design is a mystery worth solving."</p>
             </div>
 
             <h1 class="hero-headline">
@@ -122,8 +125,8 @@
               <a href="#work" class="btn btn-primary">
                 <i class="fa-solid fa-arrow-down"></i> View Selected Work
               </a>
-              <button type="button" class="btn btn-outline" onclick="openResumeModal(event)" aria-label="Download Resume">
-                <i class="fa-solid fa-download"></i> Download Resume
+              <button type="button" class="btn btn-outline" onclick="openResumeViewer(event)" aria-label="View Resume">
+                <i class="fa-solid fa-file-lines"></i> View Resume
               </button>
             </div>
 
@@ -1732,23 +1735,145 @@
   </main>
 
   <!-- =========================================================================
-       RESUME & PITCH DECK REQUEST MODAL
+       INSTANT RESUME VIEWER MODAL
        ========================================================================= -->
-  <div class="modal-backdrop resume-modal" id="resumeModal" role="dialog" aria-modal="true" aria-hidden="true" onclick="closeResumeModal(event)">
+  <div class="modal-backdrop resume-viewer-modal" id="resumeViewerModal" role="dialog" aria-modal="true" aria-hidden="true" onclick="closeResumeViewer(event)">
+    <div class="resume-viewer-dialog" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeResumeViewer()" aria-label="Close Resume Viewer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="resume-sheet">
+        <!-- Resume Header -->
+        <div class="resume-sheet-header">
+          <div class="resume-sheet-intro">
+            <h2 class="resume-sheet-name">Balogun Olamide <span class="resume-enigma-tag">(Enigma)</span></h2>
+            <p class="resume-sheet-role">Digital Designer & Visual Strategist</p>
+            <div class="resume-sheet-contact">
+              <span><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria (Available Globally)</span>
+              <span><i class="fa-solid fa-envelope"></i> olamidebalogun3131@gmail.com</span>
+              <span><i class="fa-brands fa-whatsapp"></i> +234 903 708 6975</span>
+            </div>
+          </div>
+          <div class="resume-sheet-actions">
+            <button type="button" class="btn btn-outline btn-sm" onclick="window.print()" aria-label="Print or Save Resume PDF">
+              <i class="fa-solid fa-print"></i> Print / Save PDF
+            </button>
+            <button type="button" class="btn btn-primary btn-sm" onclick="closeResumeViewer(); openContactModal();" aria-label="Hire or Message Olamide">
+              <i class="fa-solid fa-paper-plane"></i> Hire Olamide
+            </button>
+          </div>
+        </div>
+
+        <!-- Resume Body -->
+        <div class="resume-sheet-body">
+          
+          <!-- Section 1: Executive Summary -->
+          <div class="resume-block">
+            <h4 class="resume-block-title"><i class="fa-solid fa-compass"></i> Executive Summary</h4>
+            <p class="resume-block-text">
+              Multidisciplinary Digital Designer with 3+ years of commercial experience merging brand strategy, modular visual design systems, and digital product architecture. Proven track record scaling course ecosystems (1,397+ modules), designing high-converting B2B campaigns for industrial leaders (Tratun Energy, Grosvenor Global), and architecting retention-focused mobile interfaces (Ektos).
+            </p>
+          </div>
+
+          <!-- Section 2: Core Competencies -->
+          <div class="resume-block">
+            <h4 class="resume-block-title"><i class="fa-solid fa-cubes"></i> Core Competencies & Tooling</h4>
+            <div class="resume-skills-grid">
+              <div class="resume-skill-pill">Visual Brand Systems</div>
+              <div class="resume-skill-pill">UI/UX Mobile Architecture</div>
+              <div class="resume-skill-pill">B2B Campaign Strategy</div>
+              <div class="resume-skill-pill">3D Device Compositing</div>
+              <div class="resume-skill-pill">Course Asset Scaling (1,397+)</div>
+              <div class="resume-skill-pill">Figma & Adobe Suite</div>
+              <div class="resume-skill-pill">Design Token Standardization</div>
+              <div class="resume-skill-pill">Motion & Video Direction</div>
+            </div>
+          </div>
+
+          <!-- Section 3: Professional Experience -->
+          <div class="resume-block">
+            <h4 class="resume-block-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h4>
+            
+            <div class="resume-job-item">
+              <div class="resume-job-header">
+                <div>
+                  <h5 class="resume-job-title">Lead Visual Designer & System Architect</h5>
+                  <span class="resume-company">CareerPaddy · Remote / Contract</span>
+                </div>
+                <span class="resume-job-period">2023 — Present</span>
+              </div>
+              <ul class="resume-job-bullets">
+                <li>Architected modular visual course framework spanning <strong>1,397+ learning modules</strong> and 50+ masterclasses with zero asset drift.</li>
+                <li>Engineered 4-tiered design token system that reduced recurring creative production lead time by <strong>65%</strong>.</li>
+                <li>Directed multi-format motion reels and visual branding driving high student acquisition and partner engagement.</li>
+              </ul>
+            </div>
+
+            <div class="resume-job-item">
+              <div class="resume-job-header">
+                <div>
+                  <h5 class="resume-job-title">Senior Brand & Campaign Designer</h5>
+                  <span class="resume-company">Tratun Energy Limited · Contract</span>
+                </div>
+                <span class="resume-job-period">2024</span>
+              </div>
+              <ul class="resume-job-bullets">
+                <li>Produced 10-theme conceptual B2B social campaign suite approved on <strong>1st iteration with zero revision cycles</strong>.</li>
+                <li>Conceptualized industrial metaphors (e.g. Curved Road Smile) humanizing downstream oil & gas logistics for enterprise stakeholders.</li>
+              </ul>
+            </div>
+
+            <div class="resume-job-item">
+              <div class="resume-job-header">
+                <div>
+                  <h5 class="resume-job-title">Visual Brand & Identity Strategist</h5>
+                  <span class="resume-company">Grosvenor Global Services Limited · Contract</span>
+                </div>
+                <span class="resume-job-period">2024</span>
+              </div>
+              <ul class="resume-job-bullets">
+                <li>Designed 10-year anniversary visual identity and high-visibility industrial campaigns celebrating operational authority.</li>
+                <li>Created systems compositing visuals communicating complex multi-modal maritime and road transport pipelines.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section 4: Education & Independent Work -->
+          <div class="resume-block">
+            <h4 class="resume-block-title"><i class="fa-solid fa-graduation-cap"></i> Education & Product Design</h4>
+            <div class="resume-edu-row">
+              <div>
+                <h5 class="resume-edu-title">Product Design & Digital Systems Specialization</h5>
+                <span class="resume-edu-sub">Ektos Banking Onboarding & Hindsight Diagnostic Interface (Self-Initiated & Case Studies)</span>
+              </div>
+              <span class="resume-job-period">2024 — 2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       CONTACT & PROJECT INQUIRY MODAL (LET'S TALK)
+       ========================================================================= -->
+  <div class="modal-backdrop contact-modal" id="contactModal" role="dialog" aria-modal="true" aria-hidden="true" onclick="closeContactModal(event)">
     <div class="resume-modal-dialog" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close Resume Modal">
+      <button class="modal-close-btn" onclick="closeContactModal()" aria-label="Close Contact Modal">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
       <div class="resume-modal-header">
         <div class="resume-modal-icon-badge">
-          <i class="fa-solid fa-file-invoice"></i>
+          <i class="fa-solid fa-paper-plane"></i>
         </div>
         <div class="resume-modal-header-text">
-          <span class="resume-modal-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Direct Request</span>
-          <h3 class="resume-modal-title">Request Resume & Pitch Deck</h3>
+          <span class="resume-modal-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Let's Collaborate</span>
+          <h3 class="resume-modal-title">Start a Project with Olamide</h3>
           <p class="resume-modal-subtitle">
-            Get the full confidential resume, case study metric breakdowns, and comprehensive design portfolio deck delivered directly to your inbox.
+            Reach out via your preferred channel for brand systems, visual campaigns, UI/UX design, or retainer inquiries.
           </p>
         </div>
       </div>
@@ -1756,8 +1881,8 @@
       <div class="resume-modal-body">
         <div class="resume-quick-actions">
           
-          <!-- Option 1: Web Gmail (100% Reliable in all browsers) -->
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=olamidebalogun3131@gmail.com&su=Portfolio%20Inquiry%20-%20Balogun%20Olamide%20Resume%20Request&body=Hi%20Olamide,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20love%20to%20request%20your%20full%20Resume%20and%20Design%20Deck.%0D%0A%0D%0AThank%20you!" target="_blank" rel="noopener noreferrer" class="resume-action-card featured" onclick="showToast('Opening Gmail draft in new tab...')">
+          <!-- Option 1: Web Gmail -->
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=olamidebalogun3131@gmail.com&su=Project%20Inquiry%20-%20Balogun%20Olamide&body=Hi%20Olamide,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20new%20project%20or%20role%20with%20you.%0D%0A%0D%0AThank%20you!" target="_blank" rel="noopener noreferrer" class="resume-action-card featured" onclick="showToast('Opening Gmail draft in new tab...')">
             <div class="action-card-icon gmail-icon">
               <i class="fa-solid fa-envelope"></i>
             </div>
@@ -1771,8 +1896,8 @@
             <i class="fa-solid fa-arrow-up-right-from-square action-card-arrow"></i>
           </a>
 
-          <!-- Option 2: Default Mail App (mailto) -->
-          <a href="mailto:olamidebalogun3131@gmail.com?subject=Portfolio%20Inquiry%20-%20Balogun%20Olamide%20Resume%20Request&body=Hi%20Olamide,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20love%20to%20request%20your%20full%20Resume%20and%20Design%20Deck.%0D%0A%0D%0AThank%20you!" class="resume-action-card" onclick="showToast('Opening your default mail app...')">
+          <!-- Option 2: Default Mail App -->
+          <a href="mailto:olamidebalogun3131@gmail.com?subject=Project%20Inquiry%20-%20Balogun%20Olamide&body=Hi%20Olamide,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20new%20project%20or%20role%20with%20you.%0D%0A%0D%0AThank%20you!" class="resume-action-card" onclick="showToast('Opening your default mail app...')">
             <div class="action-card-icon mail-icon">
               <i class="fa-solid fa-paper-plane"></i>
             </div>
@@ -1787,7 +1912,7 @@
           </a>
 
           <!-- Option 3: WhatsApp Direct -->
-          <a href="https://wa.me/2349037086975?text=Hi%20Olamide,%20I%20reviewed%20your%20portfolio%20and%20would%20love%20to%20request%20your%20Resume%20and%20Deck." target="_blank" rel="noopener noreferrer" class="resume-action-card whatsapp" onclick="showToast('Connecting on WhatsApp...')">
+          <a href="https://wa.me/2349037086975?text=Hi%20Olamide,%20I%20reviewed%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="resume-action-card whatsapp" onclick="showToast('Connecting on WhatsApp...')">
             <div class="action-card-icon whatsapp-icon">
               <i class="fa-brands fa-whatsapp"></i>
             </div>
@@ -1796,7 +1921,7 @@
                 <h4 class="action-card-title">Chat on WhatsApp</h4>
                 <span class="action-card-badge green">Fastest Response</span>
               </div>
-              <p class="action-card-desc">Direct messaging for rapid turnarounds and casual inquiries.</p>
+              <p class="action-card-desc">Direct messaging for rapid turnarounds and project inquiries.</p>
             </div>
             <i class="fa-solid fa-arrow-up-right-from-square action-card-arrow"></i>
           </a>

@@ -799,6 +799,8 @@ function initKeyboardEvents() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeLightbox();
+      closeResumeViewer();
+      closeContactModal();
       closeResumeModal();
     }
 
@@ -856,12 +858,12 @@ function copyEmail(e) {
 }
 
 // ==========================================================================
-// 12. RESUME & PITCH DECK MODAL ENGINE
+// 12. INSTANT RESUME VIEWER & CONTACT MODALS
 // ==========================================================================
 
-function openResumeModal(e) {
+function openResumeViewer(e) {
   if (e) e.preventDefault();
-  const modal = document.getElementById('resumeModal');
+  const modal = document.getElementById('resumeViewerModal');
   if (modal) {
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
@@ -869,11 +871,11 @@ function openResumeModal(e) {
   }
 }
 
-function closeResumeModal(e) {
-  if (e && e.target && e.target.closest('.resume-modal-dialog') && !e.target.closest('.modal-close-btn')) {
+function closeResumeViewer(e) {
+  if (e && e.target && e.target.closest('.resume-viewer-dialog') && !e.target.closest('.modal-close-btn')) {
     return;
   }
-  const modal = document.getElementById('resumeModal');
+  const modal = document.getElementById('resumeViewerModal');
   if (modal) {
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
@@ -881,6 +883,41 @@ function closeResumeModal(e) {
   }
 }
 
+function openContactModal(e) {
+  if (e) e.preventDefault();
+  const modal = document.getElementById('contactModal');
+  if (modal) {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeContactModal(e) {
+  if (e && e.target && e.target.closest('.resume-modal-dialog') && !e.target.closest('.modal-close-btn')) {
+    return;
+  }
+  const modal = document.getElementById('contactModal');
+  if (modal) {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+}
+
+// Backwards compatibility alias
+function openResumeModal(e) {
+  openResumeViewer(e);
+}
+function closeResumeModal(e) {
+  closeResumeViewer(e);
+  closeContactModal(e);
+}
+
+window.openResumeViewer = openResumeViewer;
+window.closeResumeViewer = closeResumeViewer;
+window.openContactModal = openContactModal;
+window.closeContactModal = closeContactModal;
 window.openResumeModal = openResumeModal;
 window.closeResumeModal = closeResumeModal;
 window.showToast = showToast;

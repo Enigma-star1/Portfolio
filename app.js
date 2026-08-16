@@ -14,7 +14,7 @@ let filterTimeoutId = null;
 // Tratun Energy Campaign Suite (All 10 Featured Designs from "Tratun section" folder)
 const tratunCampaigns = [
   {
-    image: 'assets/images/Tratun section/tratun-tanker-campaign.png',
+    image: 'assets/images/Tratun section/tratun-tanker-campaign.webp',
     tag: 'BRAND AWARENESS CAMPAIGN',
     title: 'The Human Fuel (Curved Road Smile Metaphor)',
     objective: 'Create a brand awareness post for Tratun Energy that conveys warmth and human connection while maintaining corporate authority in industrial downstream logistics.',
@@ -22,7 +22,7 @@ const tratunCampaigns = [
     impact: 'Approved on first iteration with zero revisions. Successfully deployed across Tratun\'s LinkedIn and Instagram channels to high audience reception.'
   },
   {
-    image: 'assets/images/Tratun section/13th_July_Tratun_ When Everything Fits..jpg',
+    image: 'assets/images/Tratun section/13th_July_Tratun_ When Everything Fits..webp',
     tag: 'SUPPLY CHAIN & LOGISTICS',
     title: 'When Everything Fits (Precision Supply Logistics)',
     objective: 'Demonstrate operational precision, exact volumetric measurement, and seamless depot-to-site delivery for downstream commercial clients.',
@@ -30,7 +30,7 @@ const tratunCampaigns = [
     impact: 'Established B2B trust among plant managers, highlighting zero operational downtime and dependable fuel delivery cycles.'
   },
   {
-    image: 'assets/images/Tratun section/17th_June_Tratun_ switch to Tratun-.jpg',
+    image: 'assets/images/Tratun section/17th_June_Tratun_ switch to Tratun-.webp',
     tag: 'CONVERSION & CLIENT TRANSITION',
     title: 'Switch to Tratun (Energy Reliability & Quality)',
     objective: 'Drive industrial facility conversion by contrasting frequent supplier shortages with Tratun\'s guaranteed premium diesel and fuel continuity.',
@@ -38,7 +38,7 @@ const tratunCampaigns = [
     impact: 'Generated high inbound engagement from procurement heads seeking reliable bulk diesel supply agreements.'
   },
   {
-    image: 'assets/images/Tratun section/20th_July_Tratun_ Know Your Oil — Engine Oil Education.jpg',
+    image: 'assets/images/Tratun section/20th_July_Tratun_ Know Your Oil — Engine Oil Education.webp',
     tag: 'EDUCATIONAL & PRODUCT INTEGRITY',
     title: 'Know Your Oil — Lubricant Performance Standards',
     objective: 'Educate logistics fleet managers and industrial vehicle operators on motor oil viscosity tiers and engine preservation.',
@@ -46,7 +46,7 @@ const tratunCampaigns = [
     impact: 'Positioned Tratun as a technical advisor in equipment maintenance, driving lubricant product line inquiries.'
   },
   {
-    image: 'assets/images/Tratun section/7th_August_Tratun_Why choose Tratun coal.jpg',
+    image: 'assets/images/Tratun section/7th_August_Tratun_Why choose Tratun coal.webp',
     tag: 'INDUSTRIAL SOLID FUELS',
     title: 'Why Choose Tratun Coal (Thermal Efficiency)',
     objective: 'Promote Tratun\'s solid energy portfolio, positioning high-grade thermal coal as a cost-effective power source for heavy industries.',
@@ -54,7 +54,7 @@ const tratunCampaigns = [
     impact: 'Expanded commercial conversations into cement manufacturing, smelting, and heavy industrial boiler sectors.'
   },
   {
-    image: 'assets/images/Tratun section/12th_August_Tratun_international youth day=.jpg',
+    image: 'assets/images/Tratun section/12th_August_Tratun_international youth day=.webp',
     tag: 'CORPORATE SOCIAL IMPACT',
     title: 'International Youth Day — Fueling Ambition',
     objective: 'Celebrate Nigerian youth innovation and reinforce Tratun\'s commitment to economic empowerment through accessible energy.',
@@ -62,7 +62,7 @@ const tratunCampaigns = [
     impact: 'Broad social reach and strong corporate sentiment across LinkedIn and Instagram community followers.'
   },
   {
-    image: 'assets/images/Tratun section/1st_July_Tratun_Happy new month.jpg',
+    image: 'assets/images/Tratun section/1st_July_Tratun_Happy new month.webp',
     tag: 'EXECUTIVE BRANDING',
     title: 'New Month Drive — Operational Momentum',
     objective: 'Mark Q3 operational commencement while affirming uninterrupted 24/7 delivery commitments to all enterprise partners.',
@@ -70,7 +70,7 @@ const tratunCampaigns = [
     impact: 'Maintained high brand top-of-mind recall among corporate stakeholders and supply chain partners.'
   },
   {
-    image: 'assets/images/Tratun section/21st_June_Tratun_ Happy Father\'s Day.jpg',
+    image: 'assets/images/Tratun section/21st_June_Tratun_ Happy Father\'s Day.webp',
     tag: 'SPECIAL CAMPAIGN',
     title: 'Father\'s Day — The Backbone of Industry',
     objective: 'Humanize industrial logistics by drawing a parallel between the dedication of fathers and the steadfast reliability of energy.',
@@ -78,7 +78,7 @@ const tratunCampaigns = [
     impact: 'Achieved high organic share rates and deep community resonance across social touchpoints.'
   },
   {
-    image: 'assets/images/Tratun section/1.jpg',
+    image: 'assets/images/Tratun section/1.webp',
     tag: 'BRAND VALUE PROPOSITION',
     title: 'Downstream Supply Reliability & Fleet Excellence',
     objective: 'Position Tratun as the primary partner for corporate fleet fuel management and nationwide bulk diesel fulfillment.',
@@ -86,7 +86,7 @@ const tratunCampaigns = [
     impact: 'Highlighted comprehensive logistics network and round-the-clock commercial readiness.'
   },
   {
-    image: 'assets/images/Tratun section/Monday, 17th August, 2026 How downstream Oil and gas matters for your business.jpg',
+    image: 'assets/images/Tratun section/Monday, 17th August, 2026 How downstream Oil and gas matters for your business.webp',
     tag: 'EXECUTIVE ADVISORY & INSIGHTS',
     title: 'Downstream Oil & Gas Strategy (Business Resilience)',
     objective: 'Educate corporate stakeholders on managing energy inflation, securing supply chains, and preventing manufacturing downtime.',
@@ -98,7 +98,7 @@ const tratunCampaigns = [
 // Grosvenor Global Services Campaign Suite (5 Verified Images from Grosvenor Section)
 const grosvenorCampaigns = [
   {
-    image: 'assets/images/Grosvenor Section/grosvenor-hivis-campaign.png',
+    image: 'assets/images/Grosvenor Section/grosvenor-hivis-campaign.webp',
     tag: 'AUTHORITY POSITIONING',
     title: 'A Mission Isn\'t a Statement, It\'s a Standard',
     objective: 'Demonstrate Grosvenor\'s 10-year operational standard across industrial facilities and position the firm as the benchmark in operational reliability.',
@@ -106,7 +106,7 @@ const grosvenorCampaigns = [
     impact: 'Published on LinkedIn to corporate stakeholders, establishing an authoritative benchmark for technical service excellence.'
   },
   {
-    image: 'assets/images/Grosvenor Section/grosvenor-reveal.jpg',
+    image: 'assets/images/Grosvenor Section/grosvenor-reveal.webp',
     tag: 'SYSTEMS COMPOSITING',
     title: 'Reveal the Pieces (Integrated Logistics Architecture)',
     objective: 'Demystify complex multi-modal supply chains by highlighting how marine freight, depot storage, and road fleet connect seamlessly.',
@@ -114,7 +114,7 @@ const grosvenorCampaigns = [
     impact: 'Widely praised by corporate procurement directors for simplifying multi-tier operational logistics into an elegant visual.'
   },
   {
-    image: 'assets/images/Grosvenor Section/Have you filled up....png',
+    image: 'assets/images/Grosvenor Section/Have you filled up....webp',
     tag: 'OPERATIONAL READINESS',
     title: 'Have You Filled Up? (Commercial Energy Continuity)',
     objective: 'Drive proactive commercial fuel ordering to prevent unexpected plant downtime during peak production cycles.',
@@ -122,7 +122,7 @@ const grosvenorCampaigns = [
     impact: 'Generated direct inquiries from plant operations and fleet procurement managers across industrial corridors.'
   },
   {
-    image: 'assets/images/Grosvenor Section/1st_Augustl_GGSL_New Month.jpg',
+    image: 'assets/images/Grosvenor Section/1st_Augustl_GGSL_New Month.webp',
     tag: 'EXECUTIVE BRANDING',
     title: 'August Executive Campaign — Continuous Industrial Velocity',
     objective: 'Deliver an executive mid-Q3 message emphasizing reliability, safety compliance, and uninterrupted industrial fuel flow.',
@@ -130,7 +130,7 @@ const grosvenorCampaigns = [
     impact: 'Reinforced premium brand stature and contract retention among enterprise partners.'
   },
   {
-    image: 'assets/images/Grosvenor Section/1st_Julyl_GGSL_New Month.jpg',
+    image: 'assets/images/Grosvenor Section/1st_Julyl_GGSL_New Month.webp',
     tag: 'CORPORATE ENGAGEMENT',
     title: 'July Corporate Momentum — Powering Client Growth',
     objective: 'Acknowledge enterprise partnerships and reinforce Grosvenor\'s pledge of operational uptime and industrial safety.',
@@ -142,7 +142,7 @@ const grosvenorCampaigns = [
 // Ektos UI/UX Onboarding Flow Data (5 Large High-Definition Screens)
 const ektosOnboardingSteps = [
   {
-    image: 'assets/images/Onboarding page 1.png',
+    image: 'assets/images/Onboarding page 1.webp',
     stageNumber: '01',
     stepTitle: '01. Welcome & Proposition',
     mainTitle: 'Stage 1: Core Value Proposition & Orientation',
@@ -153,7 +153,7 @@ const ektosOnboardingSteps = [
     p2Desc: 'Thumb-zone friendly CTA placement optimizing one-handed navigation on modern mobile displays.'
   },
   {
-    image: 'assets/images/Onboarding page 2.png',
+    image: 'assets/images/Onboarding page 2.webp',
     stageNumber: '02',
     stepTitle: '02. Goal Calibration',
     mainTitle: 'Stage 2: Personalized Goal Setting & Customization',
@@ -164,7 +164,7 @@ const ektosOnboardingSteps = [
     p2Desc: 'Selected parameters trigger subtle haptic states and visual confirmation indicators.'
   },
   {
-    image: 'assets/images/Onboarding page 3.png',
+    image: 'assets/images/Onboarding page 3.webp',
     stageNumber: '03',
     stepTitle: '03. Wealth Systems',
     mainTitle: 'Stage 3: Interactive Exploration & Core Tooling',
@@ -175,7 +175,7 @@ const ektosOnboardingSteps = [
     p2Desc: 'Familiar UI components ensure users never feel lost or confused.'
   },
   {
-    image: 'assets/images/Onboarding page 4.png',
+    image: 'assets/images/Onboarding page 4.webp',
     stageNumber: '04',
     stepTitle: '04. Community Sync',
     mainTitle: 'Stage 4: Real-time Community & Collaboration',
@@ -186,7 +186,7 @@ const ektosOnboardingSteps = [
     p2Desc: 'Frictionless invite mechanisms enable organic peer-to-peer growth.'
   },
   {
-    image: 'assets/images/Onboarding page 5.png',
+    image: 'assets/images/Onboarding page 5.webp',
     stageNumber: '05',
     stepTitle: '05. Instant Launch',
     mainTitle: 'Stage 5: Account Activation & One-Click Launch',

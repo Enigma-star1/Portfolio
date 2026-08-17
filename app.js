@@ -11,131 +11,155 @@ let filterTimeoutId = null;
 // 1. DATA SOURCES
 // ==========================================================================
 
-// Tratun Energy Campaign Suite (All 10 Featured Designs from "Tratun section" folder)
+// Tratun Energy Campaign Suite (All 13 Verified Creative Pieces with exact Brief / Interpretation / Execution)
 const tratunCampaigns = [
-  {
-    image: 'assets/images/Tratun section/tratun-tanker-campaign.webp',
-    tag: 'BRAND AWARENESS CAMPAIGN',
-    title: 'The Human Fuel (Curved Road Smile Metaphor)',
-    objective: 'Create a brand awareness post for Tratun Energy that conveys warmth and human connection while maintaining corporate authority in industrial downstream logistics.',
-    concept: 'Employed a curved highway as an elegant visual metaphor for a smile, with the Tratun fuel tanker naturally completing the expression mid-transit across a clean white canvas.',
-    impact: 'Approved on first iteration with zero revisions. Successfully deployed across Tratun\'s LinkedIn and Instagram channels to high audience reception.'
-  },
-  {
-    image: 'assets/images/Tratun section/13th_July_Tratun_ When Everything Fits..webp',
-    tag: 'SUPPLY CHAIN & LOGISTICS',
-    title: 'When Everything Fits (Precision Supply Logistics)',
-    objective: 'Demonstrate operational precision, exact volumetric measurement, and seamless depot-to-site delivery for downstream commercial clients.',
-    concept: 'Architectural alignment visual concept illustrating how Tratun\'s energy dispatch fits flawlessly into manufacturing schedules and facility operations.',
-    impact: 'Established B2B trust among plant managers, highlighting zero operational downtime and dependable fuel delivery cycles.'
-  },
-  {
-    image: 'assets/images/Tratun section/17th_June_Tratun_ switch to Tratun-.webp',
-    tag: 'CONVERSION & CLIENT TRANSITION',
-    title: 'Switch to Tratun (Energy Reliability & Quality)',
-    objective: 'Drive industrial facility conversion by contrasting frequent supplier shortages with Tratun\'s guaranteed premium diesel and fuel continuity.',
-    concept: 'High-contrast industrial yellow and obsidian aesthetic with bold directive typography emphasizing immediate switch benefits.',
-    impact: 'Generated high inbound engagement from procurement heads seeking reliable bulk diesel supply agreements.'
-  },
   {
     image: 'assets/images/Tratun section/20th_July_Tratun_ Know Your Oil — Engine Oil Education.webp',
     tag: 'EDUCATIONAL & PRODUCT INTEGRITY',
-    title: 'Know Your Oil — Lubricant Performance Standards',
-    objective: 'Educate logistics fleet managers and industrial vehicle operators on motor oil viscosity tiers and engine preservation.',
-    concept: 'Clean visual hierarchy translating complex lubricant specifications, temperature tolerances, and API ratings into clear operational guidelines.',
-    impact: 'Positioned Tratun as a technical advisor in equipment maintenance, driving lubricant product line inquiries.'
-  },
-  {
-    image: 'assets/images/Tratun section/7th_August_Tratun_Why choose Tratun coal.webp',
-    tag: 'INDUSTRIAL SOLID FUELS',
-    title: 'Why Choose Tratun Coal (Thermal Efficiency)',
-    objective: 'Promote Tratun\'s solid energy portfolio, positioning high-grade thermal coal as a cost-effective power source for heavy industries.',
-    concept: 'Raw industrial photography paired with sharp, high-contrast metric callouts highlighting calorific energy value and low residue emissions.',
-    impact: 'Expanded commercial conversations into cement manufacturing, smelting, and heavy industrial boiler sectors.'
-  },
-  {
-    image: 'assets/images/Tratun section/12th_August_Tratun_international youth day=.webp',
-    tag: 'CORPORATE SOCIAL IMPACT',
-    title: 'International Youth Day — Fueling Ambition',
-    objective: 'Celebrate Nigerian youth innovation and reinforce Tratun\'s commitment to economic empowerment through accessible energy.',
-    concept: 'Warm, dynamic human photography integrated with sleek vector brand elements, communicating vitality and future ambition.',
-    impact: 'Broad social reach and strong corporate sentiment across LinkedIn and Instagram community followers.'
-  },
-  {
-    image: 'assets/images/Tratun section/1st_July_Tratun_Happy new month.webp',
-    tag: 'EXECUTIVE BRANDING',
-    title: 'New Month Drive — Operational Momentum',
-    objective: 'Mark Q3 operational commencement while affirming uninterrupted 24/7 delivery commitments to all enterprise partners.',
-    concept: 'Sleek dark-mode aesthetic with ambient gold lighting accents, reinforcing premium corporate stature.',
-    impact: 'Maintained high brand top-of-mind recall among corporate stakeholders and supply chain partners.'
+    title: 'Engine Oil Education',
+    brief: 'Content writer wanted to show that skipping oil changes destroys your engine.',
+    interpretation: 'Show damage from skipping oil and the good outcome from not skipping — in one image, without making it busy.',
+    execution: 'Split the engine down the middle — one side rusted/damaged, one side fresh and oiled. Added a grid pattern in the background instead of a flat backdrop, so the image reads with more depth.'
   },
   {
     image: 'assets/images/Tratun section/21st_June_Tratun_ Happy Father\'s Day.webp',
-    tag: 'SPECIAL CAMPAIGN',
-    title: 'Father\'s Day — The Backbone of Industry',
-    objective: 'Humanize industrial logistics by drawing a parallel between the dedication of fathers and the steadfast reliability of energy.',
-    concept: 'Evocative visual framing honoring fathers across the industrial workforce with warm typography and corporate balance.',
-    impact: 'Achieved high organic share rates and deep community resonance across social touchpoints.'
-  },
-  {
-    image: 'assets/images/Tratun section/1.webp',
-    tag: 'BRAND VALUE PROPOSITION',
-    title: 'Downstream Supply Reliability & Fleet Excellence',
-    objective: 'Position Tratun as the primary partner for corporate fleet fuel management and nationwide bulk diesel fulfillment.',
-    concept: 'Clean brand framing with high-visibility fleet logistics imagery and strong brand typography.',
-    impact: 'Highlighted comprehensive logistics network and round-the-clock commercial readiness.'
+    tag: 'SPECIAL STORYTELLING',
+    title: 'Happy Father\'s Day',
+    brief: 'Show a Tratun tanker moving along a father\'s tie, to say fathers pave the way.',
+    interpretation: 'Have the truck driving toward the edge of the tie, tie colored Tratun blue, with a center strip to make it read clearly as a road.',
+    execution: 'Placed "Happy Father\'s Day" on one side and "Celebrating the ones who paved the way" on the other, so the eye moves through the layout in an F-pattern.'
   },
   {
     image: 'assets/images/Tratun section/Monday, 17th August, 2026 How downstream Oil and gas matters for your business.webp',
-    tag: 'EXECUTIVE ADVISORY & INSIGHTS',
-    title: 'Downstream Oil & Gas Strategy (Business Resilience)',
-    objective: 'Educate corporate stakeholders on managing energy inflation, securing supply chains, and preventing manufacturing downtime.',
-    concept: 'Structured editorial layout with clear data hierarchy, risk management metrics, and corporate typography.',
-    impact: 'Established thought leadership and drove consultative engagements with commercial partners.'
+    tag: 'INDUSTRY INFOGRAPHIC',
+    title: 'Why Downstream Oil & Gas Matters',
+    brief: 'Explain why downstream oil and gas matters for business, point by point.',
+    interpretation: 'Anchor the bottom of the image with a real downstream facility, and lay the reasons out in a fan shape so they build progressively rather than sitting as a flat list.',
+    execution: 'Fan-shaped infographic, one icon per reason, guiding the eye through each point in sequence.'
+  },
+  {
+    image: 'assets/images/Tratun section/tratun-tanker-campaign.webp',
+    tag: 'HUMAN CONNECTION METAPHOR',
+    title: 'Smile, Tratun Is On Their Way',
+    brief: 'Add a Tratun truck into a smile-shaped image.',
+    interpretation: 'Take the reference further than the original inspo — add googly eyes to keep it playful.',
+    execution: 'Truck placed on the curved road-smile, googly eyes added so the corporate brand feels approachable instead of stiff.'
+  },
+  {
+    image: 'assets/images/4th_May_Tratun_Keep chasing those goals with full tank.webp',
+    tag: 'PERFORMANCE METAPHOR',
+    title: 'Every Champion Needs Fuel',
+    brief: 'Tie Tratun into the football/World Cup moment.',
+    interpretation: 'Fuel isn\'t just industrial — it\'s what powers performance. The ball becomes the thing being "fueled."',
+    execution: 'Golden liquid swirl wrapped around the ball mid-strike, visually reading as the ball being fueled by Tratun, paired with "Every champion needs fuel."'
+  },
+  {
+    image: 'assets/images/Tratun section/1st_July_Tratun_Happy new month.webp',
+    tag: 'ASPIRATIONAL BRANDING',
+    title: 'Happy New Month',
+    brief: 'Standard monthly greeting post.',
+    interpretation: 'Use a fuel nozzle as the visual anchor, with the city reflected in it.',
+    execution: 'Lagos skyline reflected in a chrome nozzle, casual/aspirational mood rather than hard-sell.'
+  },
+  {
+    image: 'assets/images/Tratun section/7th_August_Tratun_Why choose Tratun coal.webp',
+    tag: 'TECHNICAL & SOLID FUELS',
+    title: 'Why Choose Tratun Coal',
+    brief: 'Explain why clients should choose Tratun for coal supply.',
+    interpretation: 'Break trust factors into separate, scannable reasons instead of one paragraph.',
+    execution: 'Reasons displayed as hanging tags on a keyring, blurred coal mine in the background for context.'
+  },
+  {
+    image: 'assets/images/Tratun section/13th_July_Tratun_ When Everything Fits..webp',
+    tag: 'SUPPLY CHAIN INTEGRATION',
+    title: 'When Everything Fits',
+    brief: 'Show the range of products Tratun supplies.',
+    interpretation: 'Tratun isn\'t just one product — it\'s the piece that completes the whole operation.',
+    execution: 'Jigsaw piece with the Tratun logo fitting into a machine made of the different product types (gas, PMS, LPG, kerosene, diesel, lube), with the line "When everything fits… Tratun is the supplier."'
+  },
+  {
+    image: 'assets/images/Tratun section/17th_June_Tratun_ switch to Tratun-.webp',
+    tag: 'PROBLEM-SOLVING METAPHOR',
+    title: 'Switch to Tratun (Grey Hair)',
+    brief: 'Show the toll of unreliable fuel supply on a production manager.',
+    interpretation: 'Put the manager\'s problems literally inside his own head — an open skull showing him overwhelmed at his desk.',
+    execution: 'Cutaway head reveals the manager buried in crumpled paper, exhausted. Caption: unreliable fuel supply shouldn\'t be one more problem on his table — switching to Tratun removes it.'
+  },
+  {
+    image: 'assets/images/tratun-power.webp',
+    tag: 'OPERATIONAL READINESS',
+    title: 'Constant Power (Clipboards)',
+    brief: 'Show why consistent power/fuel matters for daily operations.',
+    interpretation: 'Fuel isn\'t separate from the day\'s other tasks — it\'s the first thing that has to happen before the rest can move.',
+    execution: 'Dark, unlit background (no power), factory manager refueling first via a miniature Tratun truck on the table, three clipboards (staff meeting, maintenance, refueling) showing the tasks stacking up behind it.'
+  },
+  {
+    image: 'assets/images/Friday 21st  August, 2026 Supply is within reach (2).webp',
+    tag: 'WORKFLOW PRIORITY',
+    title: 'Finish Your To-Do List',
+    brief: 'Companion piece to #10 — same idea, different angle.',
+    interpretation: 'Without fuel, everything else on the list stalls — fuel has to be handled first.',
+    execution: 'Clipboard to-do list with "Buy fuel" checked off first, ahead of reports and invoices.'
+  },
+  {
+    image: 'assets/images/Tratun section/12th_August_Tratun_international youth day=.webp',
+    tag: 'GENERATIONAL TRUST',
+    title: 'Happy Children\'s Day',
+    brief: 'Seasonal greeting tied to the tanker.',
+    interpretation: 'Show generational trust being passed down — not just a truck on a street, but a father guiding his son toward it.',
+    execution: 'Two hands on the toy tanker — child\'s hand on the truck, father\'s hand over the child\'s, guiding it. Miniature wooden street and buildings set the toy-world scale. Reads as: the son learns to trust Tratun through his father.'
+  },
+  {
+    image: 'assets/images/Tratun section/1.webp',
+    tag: 'CRITICAL CONTINUITY',
+    title: 'Don\'t Let the Light Go Out',
+    brief: 'Show Tratun as the fuel source keeping a business running.',
+    interpretation: 'Without Tratun, there\'s no light — make that literal and immediate.',
+    execution: 'Miniature office interior built into a puzzle piece, lit only because a Tratun tanker is connected and refueling it.'
   }
 ];
 
-// Grosvenor Global Services Campaign Suite (5 Verified Images from Grosvenor Section)
+// Grosvenor Global Services Campaign Suite (5 Verified Creative Pieces with exact User Copy)
 const grosvenorCampaigns = [
   {
-    image: 'assets/images/Grosvenor Section/grosvenor-hivis-campaign.webp',
-    tag: 'AUTHORITY POSITIONING',
-    title: 'A Mission Isn\'t a Statement, It\'s a Standard',
-    objective: 'Demonstrate Grosvenor\'s 10-year operational standard across industrial facilities and position the firm as the benchmark in operational reliability.',
-    concept: 'Placed the brand message directly onto a frontline worker\'s hi-vis jacket with split lighting (dawn to dusk) across an oil refinery background, visualizing 24/7 continuous operations.',
-    impact: 'Published on LinkedIn to corporate stakeholders, establishing an authoritative benchmark for technical service excellence.'
-  },
-  {
     image: 'assets/images/Grosvenor Section/grosvenor-reveal.webp',
-    tag: 'SYSTEMS COMPOSITING',
-    title: 'Reveal the Pieces (Integrated Logistics Architecture)',
-    objective: 'Demystify complex multi-modal supply chains by highlighting how marine freight, depot storage, and road fleet connect seamlessly.',
-    concept: 'Conceptual jigsaw puzzle composite visual where each interlocking piece reveals a critical node of Grosvenor\'s end-to-end logistics.',
-    impact: 'Widely praised by corporate procurement directors for simplifying multi-tier operational logistics into an elegant visual.'
+    tag: '10TH ANNIVERSARY ENGAGEMENT',
+    title: '10th Anniversary Engagement Jigsaw',
+    brief: 'The design is a jigsaw to celebrate the 10th anniversary.',
+    interpretation: 'It is an engagement post designed to invite interaction from corporate stakeholders.',
+    execution: 'Interlocking puzzle piece composition highlighting 10 years of Grosvenor service standard.'
   },
   {
     image: 'assets/images/Grosvenor Section/Have you filled up....webp',
-    tag: 'OPERATIONAL READINESS',
-    title: 'Have You Filled Up? (Commercial Energy Continuity)',
-    objective: 'Drive proactive commercial fuel ordering to prevent unexpected plant downtime during peak production cycles.',
-    concept: 'High-impact corporate graphic with bold inquiry typography, high-visibility tanker dispatch visuals, and immediate CTA fulfillment channels.',
-    impact: 'Generated direct inquiries from plant operations and fleet procurement managers across industrial corridors.'
+    tag: 'COMMUNITY ENGAGEMENT',
+    title: 'Fuel Up Engagement Campaign',
+    brief: 'The caption says, "Have you fueled up your car\'s tank today?"',
+    interpretation: 'It features a gas nozzle being filled in a car as an interactive community engagement piece.',
+    execution: 'Striking composition featuring a vehicle fueling nozzle paired with conversational engagement copy for Grosvenor.'
   },
   {
-    image: 'assets/images/Grosvenor Section/1st_Augustl_GGSL_New Month.webp',
-    tag: 'EXECUTIVE BRANDING',
-    title: 'August Executive Campaign — Continuous Industrial Velocity',
-    objective: 'Deliver an executive mid-Q3 message emphasizing reliability, safety compliance, and uninterrupted industrial fuel flow.',
-    concept: 'Sophisticated typography on deep violet-obsidian gradient with refined metallic highlights and the 10-year anniversary emblem.',
-    impact: 'Reinforced premium brand stature and contract retention among enterprise partners.'
+    image: 'assets/images/Grosvenor Section/grosvenor-hivis-campaign.webp',
+    tag: '10TH ANNIVERSARY & OPERATIONAL ETHOS',
+    title: 'A Mission Isn\'t a Statement, It\'s a Standard',
+    brief: 'Part of the designs for the 10th anniversary.',
+    interpretation: 'It says, "A mission isn\'t a statement. It\'s a standard you show up to every day."',
+    execution: 'Written boldly at the back of a frontline worker\'s Walker Hi-Vis jacket, demonstrating operational authority.'
   },
   {
     image: 'assets/images/Grosvenor Section/1st_Julyl_GGSL_New Month.webp',
-    tag: 'CORPORATE ENGAGEMENT',
-    title: 'July Corporate Momentum — Powering Client Growth',
-    objective: 'Acknowledge enterprise partnerships and reinforce Grosvenor\'s pledge of operational uptime and industrial safety.',
-    concept: 'Clean corporate framing highlighting human and machine synergy in heavy industry with precision typography.',
-    impact: 'Consistent engagement and relationship reinforcement across B2B channels.'
+    tag: 'MONTHLY LOGISTICS COMMENCEMENT',
+    title: 'July Cargo Manifest (Happy New Month)',
+    brief: 'Created to celebrate July as a Happy New Month design.',
+    interpretation: 'It features a cargo manifest that communicates "July is here."',
+    execution: 'Stylized freight manifest layout welcoming the new month while reinforcing Grosvenor\'s logistics readiness.'
+  },
+  {
+    image: 'assets/images/Grosvenor Section/1st_Augustl_GGSL_New Month.webp',
+    tag: 'ECOSYSTEM SHOWCASE & 8TH MONTH',
+    title: 'August Multimodal Service Ecosystem',
+    brief: 'An 8-shape design showing everything Grosvenor does.',
+    interpretation: 'It celebrates the eighth month, which is August, while mapping full multi-modal capabilities.',
+    execution: 'Custom isometric "8" loop illustrating Grosvenor\'s comprehensive maritime freight, energy distribution, and logistics.'
   }
 ];
 
@@ -432,9 +456,9 @@ function initTratunSlider() {
 
     if (briefTag) briefTag.innerHTML = `<i class="fa-solid fa-tag"></i> ${current.tag}`;
     if (briefTitle) briefTitle.textContent = current.title;
-    if (briefDesc) briefDesc.textContent = current.objective;
-    if (briefConcept) briefConcept.textContent = current.concept;
-    if (briefImpact) briefImpact.textContent = current.impact;
+    if (briefDesc) briefDesc.textContent = current.brief;
+    if (briefConcept) briefConcept.textContent = current.interpretation;
+    if (briefImpact) briefImpact.textContent = current.execution;
 
     thumbButtons.forEach((btn, i) => {
       btn.classList.toggle('active', i === currentIndex);
@@ -471,7 +495,7 @@ function initTratunSlider() {
       const zoomPill = e.target.closest('.slider-zoom-pill');
       if (zoomPill) {
         const current = tratunCampaigns[currentIndex];
-        openLightbox(current.image, current.title, current.objective);
+        openLightbox(current.image, current.title, `${current.brief} | ${current.execution}`);
         return;
       }
 
@@ -554,9 +578,9 @@ function initGrosvenorSlider() {
 
     if (briefTag) briefTag.innerHTML = `<i class="fa-solid fa-tag"></i> ${current.tag}`;
     if (briefTitle) briefTitle.textContent = current.title;
-    if (briefDesc) briefDesc.textContent = current.objective;
-    if (briefConcept) briefConcept.textContent = current.concept;
-    if (briefImpact) briefImpact.textContent = current.impact;
+    if (briefDesc) briefDesc.textContent = current.brief;
+    if (briefConcept) briefConcept.textContent = current.interpretation;
+    if (briefImpact) briefImpact.textContent = current.execution;
 
     thumbButtons.forEach((btn, i) => {
       btn.classList.toggle('active', i === currentIndex);

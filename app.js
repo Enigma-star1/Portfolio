@@ -634,12 +634,25 @@ function openLightbox(mediaSrc, title, description, mediaType = null) {
     if (isVideo && modalVideo) {
       modalVideo.src = mediaSrc;
       modalVideo.style.display = 'block';
-      if (modalImg) modalImg.style.display = 'none';
+      if (modalImg) {
+        modalImg.src = '';
+        modalImg.style.opacity = '0';
+        modalImg.style.display = 'none';
+      }
       modalVideo.play().catch(() => {});
     } else if (modalImg) {
+      modalImg.style.opacity = '0';
+      modalImg.style.transition = 'opacity 0.2s ease';
       modalImg.src = mediaSrc;
       modalImg.alt = title || 'Artwork preview';
       modalImg.style.display = 'block';
+      if (modalImg.complete) {
+        modalImg.style.opacity = '1';
+      } else {
+        modalImg.onload = () => {
+          modalImg.style.opacity = '1';
+        };
+      }
       if (modalVideo) {
         modalVideo.pause();
         modalVideo.src = '';
@@ -661,12 +674,18 @@ function openLightbox(mediaSrc, title, description, mediaType = null) {
 
 function closeLightbox(event) {
   const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
   const modalVideo = document.getElementById('lightboxVideo');
   if (modal) {
     if (modalVideo) {
       modalVideo.pause();
       modalVideo.src = '';
       modalVideo.style.display = 'none';
+    }
+    if (modalImg) {
+      modalImg.src = '';
+      modalImg.style.opacity = '0';
+      modalImg.style.display = 'none';
     }
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');

@@ -530,7 +530,7 @@ function initGrosvenorSlider() {
 
 function initEktosCarousel() {
   let currentIndex = 0;
-  const AUTOPLAY_INTERVAL = 4800; // 4.8 seconds
+  const AUTOPLAY_INTERVAL = 3000; // 3 seconds
   let autoplayTimer = null;
   let isPaused = false;
 

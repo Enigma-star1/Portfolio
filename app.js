@@ -10,7 +10,7 @@ let filterTimeoutId = null;
 // ==========================================================================
 // 1. DATA SOURCES
 // ==========================================================================
-// Tratun Energy Campaign Suite (All 13 Verified Creative Pieces with exact Brief / Interpretation / Execution)
+// Tratun Energy Campaign Suite (10 Curated Creative Pieces with exact Brief / Interpretation / Execution)
 const tratunCampaigns = [
   {
     image: 'assets/images/Tratun section/20th_July_Tratun_ Know Your Oil — Engine Oil Education.webp',
@@ -45,25 +45,9 @@ const tratunCampaigns = [
     execution: 'Placed the Tratun truck along the curved road to form a smile, then added googly eyes to make the corporate brand feel more approachable rather than stiff.'
   },
   {
-    image: 'assets/images/4th_May_Tratun_Keep chasing those goals with full tank.webp',
-    tag: 'PERFORMANCE METAPHOR',
-    title: '05 — Every Champion Needs Fuel',
-    brief: 'Connect Tratun with the football/World Cup moment.',
-    interpretation: 'Extend the idea of fuel beyond its industrial context and connect it to performance. The football becomes the thing being “fuelled.”',
-    execution: 'A golden liquid swirl was wrapped around the ball during the strike, creating the visual impression that the ball is being fuelled by Tratun. The concept was paired with the line “Every champion needs fuel.”'
-  },
-  {
-    image: 'assets/images/Tratun section/1st_July_Tratun_Happy new month.webp',
-    tag: 'ASPIRATIONAL BRANDING',
-    title: '06 — Happy New Month',
-    brief: 'Create a standard monthly greeting post for the brand.',
-    interpretation: 'Use a fuel nozzle as the visual anchor while incorporating the city through its reflection.',
-    execution: 'A Lagos skyline was reflected in a chrome fuel nozzle, creating a casual and aspirational mood rather than turning the greeting into a hard-sell message.'
-  },
-  {
     image: 'assets/images/Tratun section/7th_August_Tratun_Why choose Tratun coal.webp',
     tag: 'TECHNICAL & SOLID FUELS',
-    title: '07 — Why Choose Tratun Coal',
+    title: '05 — Why Choose Tratun Coal',
     brief: 'Explain why clients should choose Tratun for coal supply.',
     interpretation: 'Break the key trust factors into separate, scannable points rather than presenting them as one block of information.',
     execution: 'Displayed each reason as a hanging tag on a keyring, with a blurred coal mine in the background providing context without competing with the information.'
@@ -71,7 +55,7 @@ const tratunCampaigns = [
   {
     image: 'assets/images/Tratun section/13th_July_Tratun_ When Everything Fits..webp',
     tag: 'SUPPLY CHAIN INTEGRATION',
-    title: '08 — When Everything Fits',
+    title: '06 — When Everything Fits',
     brief: 'Show the range of products Tratun supplies.',
     interpretation: 'Present Tratun as the piece that completes the wider operation, rather than as a supplier of a single product.',
     execution: 'Created a jigsaw piece carrying the Tratun logo and positioned it within a machine made up of different product types — gas, PMS, LPG, kerosene, diesel and lubricants. The concept was paired with the line “When everything fits… Tratun is the supplier.”'
@@ -79,7 +63,7 @@ const tratunCampaigns = [
   {
     image: 'assets/images/Tratun section/17th_June_Tratun_ switch to Tratun-.webp',
     tag: 'PROBLEM-SOLVING METAPHOR',
-    title: '09 — Switch to Tratun',
+    title: '07 — Switch to Tratun',
     brief: 'Show the toll that unreliable fuel supply can take on a production manager.',
     interpretation: 'Make the manager\'s problems literal by placing them inside his own head, showing how unreliable supply becomes another source of pressure.',
     execution: 'Created a cutaway view of the manager\'s head, revealing him buried under crumpled paperwork at his desk. The message positions unreliable fuel supply as one problem that shouldn\'t have to remain on his table — and switching to Tratun as the solution.'
@@ -87,23 +71,15 @@ const tratunCampaigns = [
   {
     image: 'assets/images/tratun-power.webp',
     tag: 'OPERATIONAL READINESS',
-    title: '10 — Constant Power',
+    title: '08 — Constant Power',
     brief: 'Show why consistent power and fuel supply matter to daily operations.',
     interpretation: 'Fuel isn\'t separate from the day\'s other responsibilities. It is one of the first things that needs to be handled before the rest can move forward.',
     execution: 'Created a dark, unlit environment to represent the absence of power, with a factory manager refuelling first through a miniature Tratun truck on the table. Three clipboards — staff meeting, maintenance and refuelling — show the tasks waiting behind it.'
   },
   {
-    image: 'assets/images/Friday 21st  August, 2026 Supply is within reach (2).webp',
-    tag: 'WORKFLOW PRIORITY',
-    title: '11 — Finish Your To-Do List',
-    brief: 'Create a companion piece to Constant Power, communicating the same idea from a different angle.',
-    interpretation: 'Without fuel, everything else on the list can stall. Fuel therefore has to be handled before the other tasks can move forward.',
-    execution: 'Created a clipboard-style to-do list with “Buy fuel” checked off first, followed by reports, invoices and other responsibilities.'
-  },
-  {
     image: 'assets/images/Tratun section/12th_August_Tratun_international youth day=.webp',
     tag: 'GENERATIONAL TRUST',
-    title: '12 — Happy Children\'s Day',
+    title: '09 — Happy Children\'s Day',
     brief: 'Create a Children\'s Day greeting connected to the Tratun tanker.',
     interpretation: 'Use the idea of generational trust to show that confidence in a brand can be passed down, rather than simply placing a tanker on a street.',
     execution: 'Two hands hold a toy Tratun tanker, with a child\'s hand on the truck and a father\'s hand guiding it from above. A miniature wooden street and buildings establish the toy-world scale, reinforcing the idea of a son learning to trust Tratun through his father.'
@@ -111,7 +87,7 @@ const tratunCampaigns = [
   {
     image: 'assets/images/Tratun section/1.webp',
     tag: 'CRITICAL CONTINUITY',
-    title: '13 — Don\'t Let the Light Go Out',
+    title: '10 — Don\'t Let the Light Go Out',
     brief: 'Show Tratun as the fuel source keeping a business running.',
     interpretation: 'Make the relationship between fuel and business continuity literal: without the fuel, the light goes out.',
     execution: 'Built a miniature office interior inside a puzzle piece and illuminated it through a Tratun tanker positioned as the fuel source. The result makes the message immediate without relying heavily on text.'

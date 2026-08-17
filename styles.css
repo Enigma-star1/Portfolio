@@ -1206,7 +1206,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: zoom-in;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
@@ -1243,11 +1243,13 @@ img {
   padding: 0.35rem 0.75rem;
   border-radius: 6px;
   border: 1px solid rgba(217, 148, 59, 0.3);
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.4rem;
   transition: all var(--transition-fast);
+  z-index: 5;
 }
 
 .side-slider-viewport:hover .slider-zoom-pill {

@@ -383,23 +383,13 @@ function initTratunSlider() {
     btn.addEventListener('click', handleThumb);
   });
 
-  // Main Viewport Tap Navigation & Lightbox Expand
+  // Main Viewport Lightbox Trigger
   if (mainViewport) {
     mainViewport.addEventListener('click', (e) => {
-      const zoomPill = e.target.closest('.slider-zoom-pill');
-      if (zoomPill) {
-        const current = tratunCampaigns[currentIndex];
-        openLightbox(current.image, current.title, `${current.brief} | ${current.execution}`);
-        return;
-      }
-
-      // Tap on left 45% -> Previous slide, right 55% -> Next slide
-      const rect = mainViewport.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      if (clickX < rect.width * 0.45) {
-        updateSlide(currentIndex - 1);
-      } else {
-        updateSlide(currentIndex + 1);
+      e.preventDefault();
+      const current = tratunCampaigns[currentIndex];
+      if (current) {
+        openLightbox(current.image, current.title, `${current.brief} — ${current.execution}`);
       }
     });
 
@@ -505,23 +495,13 @@ function initGrosvenorSlider() {
     btn.addEventListener('click', handleThumb);
   });
 
-  // Main Viewport Tap Navigation & Lightbox Expand
+  // Main Viewport Lightbox Trigger
   if (mainViewport) {
     mainViewport.addEventListener('click', (e) => {
-      const zoomPill = e.target.closest('.slider-zoom-pill');
-      if (zoomPill) {
-        const current = grosvenorCampaigns[currentIndex];
-        openLightbox(current.image, current.title, current.objective);
-        return;
-      }
-
-      // Tap on left 45% -> Previous slide, right 55% -> Next slide
-      const rect = mainViewport.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      if (clickX < rect.width * 0.45) {
-        updateSlide(currentIndex - 1);
-      } else {
-        updateSlide(currentIndex + 1);
+      e.preventDefault();
+      const current = grosvenorCampaigns[currentIndex];
+      if (current) {
+        openLightbox(current.image, current.title, `${current.brief} — ${current.execution}`);
       }
     });
 

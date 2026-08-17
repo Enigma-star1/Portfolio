@@ -138,62 +138,37 @@ const grosvenorCampaigns = [
   }
 ];
 
-// Ektos UI/UX Onboarding Flow Data (5 Large High-Definition Screens)
+// Ektos UI/UX Onboarding Flow Data (5 Curated Interactive Screens)
 const ektosOnboardingSteps = [
   {
-    image: 'assets/images/Onboarding page 1.webp',
     stageNumber: '01',
-    stepTitle: '01. Welcome & Proposition',
-    mainTitle: 'Stage 1: Core Value Proposition & Orientation',
-    desc: 'Establishes immediate emotional resonance and clarity. Clean typography and generous whitespace focus user attention directly on the central benefit without overwhelming them with dense setup forms.',
-    p1Title: 'Progressive Disclosure',
-    p1Desc: 'Reveals information step-by-step to prevent cognitive overload during first-time app launch.',
-    p2Title: 'Friction Reduction',
-    p2Desc: 'Thumb-zone friendly CTA placement optimizing one-handed navigation on modern mobile displays.'
+    title: '01 — Take Control of Your Finances',
+    desc: 'Introduces the core value proposition: understanding and managing everyday finances.',
+    image: 'assets/images/Onboarding page 1.webp'
   },
   {
-    image: 'assets/images/Onboarding page 2.webp',
     stageNumber: '02',
-    stepTitle: '02. Goal Calibration',
-    mainTitle: 'Stage 2: Personalized Goal Setting & Customization',
-    desc: 'Empowers users to customize their journey right away. Interactive selection chips record user preferences in real time to tailor their dashboard experience before they reach the home view.',
-    p1Title: 'User Agency',
-    p1Desc: 'Giving users choice increases retention by establishing early psychological investment in the app.',
-    p2Title: 'Instant Feedback',
-    p2Desc: 'Selected parameters trigger subtle haptic states and visual confirmation indicators.'
+    title: '02 — Save Towards Your Goal',
+    desc: 'Turns financial intentions into visible, trackable savings goals.',
+    image: 'assets/images/Onboarding page 2.webp'
   },
   {
-    image: 'assets/images/Onboarding page 3.webp',
     stageNumber: '03',
-    stepTitle: '03. Wealth Systems',
-    mainTitle: 'Stage 3: Interactive Exploration & Core Tooling',
-    desc: 'Demonstrates key budgeting and investment functionality through interactive visual previews rather than passive text walls, accelerating user time-to-value (TTV) and feature adoption.',
-    p1Title: 'Contextual Tooltips',
-    p1Desc: 'Actionable micro-copy guides users toward high-impact features naturally.',
-    p2Title: 'Visual Scaffolding',
-    p2Desc: 'Familiar UI components ensure users never feel lost or confused.'
+    title: '03 — Budget With Confidence',
+    desc: 'Introduces budgeting as a practical system for staying on top of spending.',
+    image: 'assets/images/Onboarding page 3.webp'
   },
   {
-    image: 'assets/images/Onboarding page 4.webp',
     stageNumber: '04',
-    stepTitle: '04. Community Sync',
-    mainTitle: 'Stage 4: Real-time Community & Collaboration',
-    desc: 'Highlights social proof, live activity streams, and peer collaboration features, fostering a strong sense of belonging and ongoing community engagement.',
-    p1Title: 'Social Proof Integration',
-    p1Desc: 'Live activity avatars build immediate credibility and user confidence.',
-    p2Title: 'Network Effects',
-    p2Desc: 'Frictionless invite mechanisms enable organic peer-to-peer growth.'
+    title: '04 — Sign In',
+    desc: 'A familiar, focused authentication flow that brings users back into the product.',
+    image: 'assets/images/Onboarding page 4.webp'
   },
   {
-    image: 'assets/images/Onboarding page 5.webp',
     stageNumber: '05',
-    stepTitle: '05. Instant Launch',
-    mainTitle: 'Stage 5: Account Activation & One-Click Launch',
-    desc: 'Streamlined authentication screen with biometric and one-tap social login, transitioning the user seamlessly from onboarding into their fully personalized active workspace.',
-    p1Title: 'Zero-Password Friction',
-    p1Desc: 'Supports biometric and OAuth 2.0 logins to prevent onboarding drop-off.',
-    p2Title: 'Celebratory Handoff',
-    p2Desc: 'Smooth transition animation signals completion and launches the primary user dashboard.'
+    title: '05 — Create Account',
+    desc: 'A simple entry point into the Ektos experience.',
+    image: 'assets/images/Onboarding page 5.webp'
   }
 ];
 
@@ -550,70 +525,176 @@ function initGrosvenorSlider() {
 }
 
 // ==========================================================================
-// 7. EKTOS UI/UX ONBOARDING CAROUSEL
+// 7. EKTOS UI/UX ONBOARDING SHOWCASE (AUTO-ADVANCING SINGLE DEVICE)
 // ==========================================================================
 
 function initEktosCarousel() {
-  const track = document.getElementById('ektosCarouselTrack');
-  const prevBtn = document.getElementById('ektosPrevSlide');
-  const nextBtn = document.getElementById('ektosNextSlide');
-  const dotsContainer = document.getElementById('ektosCarouselDots');
+  let currentIndex = 0;
+  const AUTOPLAY_INTERVAL = 4800; // 4.8 seconds
+  let autoplayTimer = null;
+  let isPaused = false;
 
-  if (!track) return;
+  const container = document.getElementById('ektosFlowContainer');
+  const counterEl = document.getElementById('ektosFlowCounter');
+  const prevBtn = document.getElementById('ektosFlowPrev');
+  const nextBtn = document.getElementById('ektosFlowNext');
+  const pills = document.querySelectorAll('.ektos-pill-btn');
+  const deviceFrame = document.getElementById('ektosDeviceFrame');
+  const deviceImg = document.getElementById('ektosDeviceImg');
+  const captionPane = document.getElementById('ektosCaptionPane');
+  const captionStep = document.getElementById('ektosCaptionStep');
+  const captionTitle = document.getElementById('ektosCaptionTitle');
+  const captionDesc = document.getElementById('ektosCaptionDesc');
 
-  const cards = track.querySelectorAll('.ektos-slide-card');
-  const dots = dotsContainer ? dotsContainer.querySelectorAll('.dot-btn') : [];
+  if (!container || !deviceImg) return;
 
-  function getCardWidth() {
-    if (cards.length === 0) return 320;
-    const cardRect = cards[0].getBoundingClientRect();
-    const style = window.getComputedStyle(track);
-    const gap = parseFloat(style.gap) || 28;
-    return cardRect.width + gap;
-  }
+  function updateStage(index, immediate = false) {
+    currentIndex = (index + ektosOnboardingSteps.length) % ektosOnboardingSteps.length;
+    const current = ektosOnboardingSteps[currentIndex];
 
-  function updateDots() {
-    if (!dots || dots.length === 0) return;
-    const scrollPos = track.scrollLeft;
-    const cardWidth = getCardWidth();
-    const activeIndex = Math.min(
-      Math.max(0, Math.round(scrollPos / cardWidth)),
-      cards.length - 1
-    );
+    // Update Counter (01 / 05)
+    if (counterEl) {
+      counterEl.textContent = `${current.stageNumber} / 05`;
+    }
 
-    dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === activeIndex);
+    // Update Progress Step Pills
+    pills.forEach((pill, idx) => {
+      const isActive = idx === currentIndex;
+      pill.classList.toggle('active', isActive);
+      pill.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      
+      const bar = pill.querySelector('.pill-bar');
+      if (bar) {
+        bar.style.animation = 'none';
+        if (isActive && !isPaused) {
+          void bar.offsetWidth; // Trigger reflow for smooth re-animation
+          bar.style.animation = `pillProgress ${AUTOPLAY_INTERVAL}ms linear forwards`;
+        }
+      }
     });
+
+    // Smooth subtle crossfade for image & text
+    if (!immediate) {
+      if (deviceImg) deviceImg.classList.add('fade-out');
+      if (captionPane) captionPane.classList.add('fade-out');
+
+      setTimeout(() => {
+        if (deviceImg) {
+          deviceImg.src = current.image;
+          deviceImg.alt = current.title;
+          deviceImg.classList.remove('fade-out');
+        }
+        if (captionStep) captionStep.textContent = `${current.stageNumber} / 05 • ONBOARDING FLOW`;
+        if (captionTitle) captionTitle.textContent = current.title;
+        if (captionDesc) captionDesc.textContent = current.desc;
+        if (captionPane) captionPane.classList.remove('fade-out');
+      }, 220);
+    } else {
+      if (deviceImg) {
+        deviceImg.src = current.image;
+        deviceImg.alt = current.title;
+      }
+      if (captionStep) captionStep.textContent = `${current.stageNumber} / 05 • ONBOARDING FLOW`;
+      if (captionTitle) captionTitle.textContent = current.title;
+      if (captionDesc) captionDesc.textContent = current.desc;
+    }
   }
 
+  function startAutoplay() {
+    stopAutoplay();
+    isPaused = false;
+    const activeBar = document.querySelector('.ektos-pill-btn.active .pill-bar');
+    if (activeBar) {
+      activeBar.style.animationPlayState = 'running';
+    }
+    autoplayTimer = setInterval(() => {
+      updateStage(currentIndex + 1);
+    }, AUTOPLAY_INTERVAL);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  function pauseAutoplay() {
+    stopAutoplay();
+    isPaused = true;
+    const activeBar = document.querySelector('.ektos-pill-btn.active .pill-bar');
+    if (activeBar) {
+      activeBar.style.animationPlayState = 'paused';
+    }
+  }
+
+  // Navigation Arrows
   if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      const cardWidth = getCardWidth();
-      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateStage(currentIndex - 1);
+      startAutoplay();
     });
   }
 
   if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      const cardWidth = getCardWidth();
-      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateStage(currentIndex + 1);
+      startAutoplay();
     });
   }
 
-  if (dots && dots.length > 0) {
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => {
-        const cardWidth = getCardWidth();
-        track.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
-      });
+  // Direct Pill Clicks
+  pills.forEach((pill, idx) => {
+    pill.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateStage(idx);
+      startAutoplay();
     });
+  });
+
+  // Lightbox & Touch Gestures on Device Frame
+  if (deviceFrame) {
+    deviceFrame.addEventListener('click', () => {
+      const current = ektosOnboardingSteps[currentIndex];
+      if (current) {
+        openLightbox(current.image, current.title, current.desc);
+      }
+    });
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    deviceFrame.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    deviceFrame.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 35) {
+        if (diffX > 0) {
+          updateStage(currentIndex - 1); // Swipe Right -> Prev
+        } else {
+          updateStage(currentIndex + 1); // Swipe Left -> Next
+        }
+        startAutoplay();
+      }
+    }, { passive: true });
   }
 
-  let isScrolling;
-  track.addEventListener('scroll', () => {
-    window.clearTimeout(isScrolling);
-    isScrolling = setTimeout(updateDots, 60);
-  }, { passive: true });
+  // Hover to pause, leave to resume
+  container.addEventListener('mouseenter', pauseAutoplay);
+  container.addEventListener('mouseleave', startAutoplay);
+  container.addEventListener('focusin', pauseAutoplay);
+  container.addEventListener('focusout', startAutoplay);
+
+  // Initial setup & start
+  updateStage(0, true);
+  startAutoplay();
 }
 
 // ==========================================================================

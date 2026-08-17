@@ -890,131 +890,76 @@
           </div>
         </div>
 
-        <!-- 2. Ektos 5-Stage Mobile Onboarding Journey (Interactive Slide Showcase) -->
-        <div class="ektos-carousel-wrapper">
-          <div class="ektos-carousel-header">
-            <div class="ektos-header-left">
-              <span class="sub-section-tag"><i class="fa-solid fa-layer-group"></i> Mobile Onboarding Architecture</span>
-              <h3 class="sub-section-title">Ektos 5-Stage Onboarding Flow</h3>
-              <p class="sub-section-desc">
-                A high-conversion activation journey designed to educate users, calibrate personal wealth goals, and reduce day-one drop-off through progressive disclosure.
+        <!-- 2. Ektos Interactive 5-Stage Mobile Onboarding Showcase -->
+        <div class="ektos-flow-container" id="ektosFlowContainer">
+          
+          <!-- Flow Header with Counter & Progress Track -->
+          <div class="ektos-flow-header">
+            <div class="ektos-flow-intro">
+              <span class="sub-section-tag"><i class="fa-solid fa-layer-group"></i> Mobile Onboarding Flow</span>
+              <h3 class="ektos-flow-main-title">From first impression to first action.</h3>
+              <p class="ektos-flow-main-desc">
+                A guided onboarding experience that introduces Ektos, communicates its core value, and gets users into the product with minimal friction.
               </p>
             </div>
-            <div class="ektos-carousel-nav">
-              <button class="carousel-arrow-btn" id="ektosPrevSlide" aria-label="Previous Slide">
-                <i class="fa-solid fa-arrow-left"></i>
-              </button>
-              <div class="ektos-carousel-dots" id="ektosCarouselDots">
-                <button class="dot-btn active" data-index="0" aria-label="Go to screen 1"></button>
-                <button class="dot-btn" data-index="1" aria-label="Go to screen 2"></button>
-                <button class="dot-btn" data-index="2" aria-label="Go to screen 3"></button>
-                <button class="dot-btn" data-index="3" aria-label="Go to screen 4"></button>
-                <button class="dot-btn" data-index="4" aria-label="Go to screen 5"></button>
+
+            <div class="ektos-flow-controls">
+              <div class="ektos-flow-counter-wrap">
+                <span class="ektos-flow-counter" id="ektosFlowCounter">01 / 05</span>
               </div>
-              <button class="carousel-arrow-btn" id="ektosNextSlide" aria-label="Next Slide">
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
+              
+              <!-- Progress Step Indicator Pills (01 ━━━ ○ ○ ○ ○) -->
+              <div class="ektos-progress-pills" id="ektosProgressPills" role="tablist" aria-label="Onboarding Stage Navigation">
+                <button type="button" class="ektos-pill-btn active" data-index="0" aria-label="Go to Stage 1: Take Control of Your Finances">
+                  <span class="pill-bar"></span>
+                </button>
+                <button type="button" class="ektos-pill-btn" data-index="1" aria-label="Go to Stage 2: Save Towards Your Goal">
+                  <span class="pill-bar"></span>
+                </button>
+                <button type="button" class="ektos-pill-btn" data-index="2" aria-label="Go to Stage 3: Budget With Confidence">
+                  <span class="pill-bar"></span>
+                </button>
+                <button type="button" class="ektos-pill-btn" data-index="3" aria-label="Go to Stage 4: Sign In">
+                  <span class="pill-bar"></span>
+                </button>
+                <button type="button" class="ektos-pill-btn" data-index="4" aria-label="Go to Stage 5: Create Account">
+                  <span class="pill-bar"></span>
+                </button>
+              </div>
+
+              <!-- Navigation Arrows -->
+              <div class="ektos-nav-arrows">
+                <button type="button" class="ektos-arrow-btn" id="ektosFlowPrev" aria-label="Previous Onboarding Screen">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button type="button" class="ektos-arrow-btn" id="ektosFlowNext" aria-label="Next Onboarding Screen">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="ektos-carousel-track" id="ektosCarouselTrack">
+          <!-- Main Interactive Stage Display (Phone Showcase + Dynamic Caption) -->
+          <div class="ektos-stage-display">
             
-            <!-- Slide 1 -->
-            <div class="ektos-slide-card" tabindex="0" role="button" aria-label="Expand Screen 01: Welcome & Value Proposition"
-              onclick="openLightbox('assets/images/Onboarding page 1.webp', 'Ektos — Screen 01: Core Value Proposition & Orientation', 'Establishes immediate emotional resonance and clarity. Clean typography and generous whitespace focus user attention directly on the central benefit without overwhelming them with dense setup forms.')">
-              <div class="slide-card-header">
-                <span class="slide-step-badge">STAGE 01</span>
-                <h4 class="slide-screen-title">Welcome & Proposition</h4>
-              </div>
-              <div class="slide-phone-mockup">
-                <div class="phone-screen-wrap">
-                  <img src="assets/images/Onboarding page 1.webp" alt="Ektos Screen 1: Welcome & Value Proposition" loading="lazy" decoding="async">
-                  <div class="phone-zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Screen</div>
-                </div>
-              </div>
-              <div class="slide-card-footer">
-                <div class="slide-ux-tag"><i class="fa-solid fa-bolt"></i> Progressive Disclosure</div>
-                <p class="slide-ux-note">Clean typography & whitespace eliminate first-time friction.</p>
+            <!-- Centered Phone Device Mockup Frame -->
+            <div class="ektos-device-frame" id="ektosDeviceFrame" tabindex="0" role="button" aria-label="Open current onboarding screen in Lightbox">
+              <div class="device-speaker-notch"></div>
+              <div class="device-screen-viewport">
+                <img id="ektosDeviceImg" src="assets/images/Onboarding page 1.webp" alt="01 — Take Control of Your Finances" class="device-screen-img">
+                <div class="device-zoom-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Screen</div>
               </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="ektos-slide-card" tabindex="0" role="button" aria-label="Expand Screen 02: Goal Calibration & Wealth Setup"
-              onclick="openLightbox('assets/images/Onboarding page 2.webp', 'Ektos — Screen 02: Goal Calibration & Wealth Setup', 'Guides users to define saving targets and spending limits through tactile, high-contrast inputs that build early product commitment.')">
-              <div class="slide-card-header">
-                <span class="slide-step-badge">STAGE 02</span>
-                <h4 class="slide-screen-title">Goal Calibration</h4>
-              </div>
-              <div class="slide-phone-mockup">
-                <div class="phone-screen-wrap">
-                  <img src="assets/images/Onboarding page 2.webp" alt="Ektos Screen 2: Goal Calibration" loading="lazy" decoding="async">
-                  <div class="phone-zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Screen</div>
-                </div>
-              </div>
-              <div class="slide-card-footer">
-                <div class="slide-ux-tag"><i class="fa-solid fa-sliders"></i> Contextual Feedback</div>
-                <p class="slide-ux-note">Tactile input modules guide financial target calibration.</p>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="ektos-slide-card" tabindex="0" role="button" aria-label="Expand Screen 03: Automated Wealth Systems"
-              onclick="openLightbox('assets/images/Onboarding page 3.webp', 'Ektos — Screen 03: Automated Wealth Systems', 'Visualizes automated micro-investing and smart recurring deposits with clear visual milestones to demonstrate long-term value.')">
-              <div class="slide-card-header">
-                <span class="slide-step-badge">STAGE 03</span>
-                <h4 class="slide-screen-title">Wealth Systems</h4>
-              </div>
-              <div class="slide-phone-mockup">
-                <div class="phone-screen-wrap">
-                  <img src="assets/images/Onboarding page 3.webp" alt="Ektos Screen 3: Automated Wealth Systems" loading="lazy" decoding="async">
-                  <div class="phone-zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Screen</div>
-                </div>
-              </div>
-              <div class="slide-card-footer">
-                <div class="slide-ux-tag"><i class="fa-solid fa-chart-line"></i> Value Visualization</div>
-                <p class="slide-ux-note">Real-time asset projection cards prove automated benefits.</p>
-              </div>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="ektos-slide-card" tabindex="0" role="button" aria-label="Expand Screen 04: Predictive Smart Analytics"
-              onclick="openLightbox('assets/images/Onboarding page 4.webp', 'Ektos — Screen 04: Predictive Smart Analytics', 'Presents personalized spending insights and monthly forecast charts to reinforce transparency and proactive financial health.')">
-              <div class="slide-card-header">
-                <span class="slide-step-badge">STAGE 04</span>
-                <h4 class="slide-screen-title">Smart Analytics</h4>
-              </div>
-              <div class="slide-phone-mockup">
-                <div class="phone-screen-wrap">
-                  <img src="assets/images/Onboarding page 4.webp" alt="Ektos Screen 4: Predictive Smart Analytics" loading="lazy" decoding="async">
-                  <div class="phone-zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Screen</div>
-                </div>
-              </div>
-              <div class="slide-card-footer">
-                <div class="slide-ux-tag"><i class="fa-solid fa-brain"></i> Cognitive Chunking</div>
-                <p class="slide-ux-note">Spending metrics grouped into high-contrast visual bites.</p>
-              </div>
-            </div>
-
-            <!-- Slide 5 -->
-            <div class="ektos-slide-card" tabindex="0" role="button" aria-label="Expand Screen 05: Frictionless Instant Launch"
-              onclick="openLightbox('assets/images/Onboarding page 5.webp', 'Ektos — Screen 05: Frictionless Instant Launch', 'Final confirmation and biometric authentication step designed to deliver a seamless transition directly into the main banking dashboard.')">
-              <div class="slide-card-header">
-                <span class="slide-step-badge">STAGE 05</span>
-                <h4 class="slide-screen-title">Instant Launch</h4>
-              </div>
-              <div class="slide-phone-mockup">
-                <div class="phone-screen-wrap">
-                  <img src="assets/images/Onboarding page 5.webp" alt="Ektos Screen 5: Frictionless Instant Launch" loading="lazy" decoding="async">
-                  <div class="phone-zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Screen</div>
-                </div>
-              </div>
-              <div class="slide-card-footer">
-                <div class="slide-ux-tag"><i class="fa-solid fa-shield-halved"></i> Biometric Trust</div>
-                <p class="slide-ux-note">One-tap authentication completes user onboarding instantly.</p>
-              </div>
+            <!-- Dynamic Active Screen Caption Below Phone -->
+            <div class="ektos-caption-pane" id="ektosCaptionPane">
+              <span class="ektos-caption-step" id="ektosCaptionStep">01 / 05 • ONBOARDING FLOW</span>
+              <h4 class="ektos-caption-title" id="ektosCaptionTitle">01 — Take Control of Your Finances</h4>
+              <p class="ektos-caption-desc" id="ektosCaptionDesc">Introduces the core value proposition: understanding and managing everyday finances.</p>
             </div>
 
           </div>
+
         </div>
 
         <!-- 3. Hindsight 2026 UI/UX Mobile Product Suite -->

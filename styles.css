@@ -2829,23 +2829,35 @@ img {
 
 .device-screen-viewport {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 36px;
   overflow: hidden;
   position: relative;
+  background: #09070D;
 }
 
-.device-screen-img {
+.ektos-flow-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: contain;
   border-radius: 36px;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.985) translateZ(0);
+  transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1), transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.35s;
+  will-change: opacity, transform;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.device-screen-img.fade-out {
-  opacity: 0.15;
-  transform: scale(0.98);
+.ektos-flow-img.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateZ(0);
+  pointer-events: auto;
 }
 
 .device-zoom-pill {

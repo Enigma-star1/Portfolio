@@ -540,17 +540,29 @@ function initEktosCarousel() {
   const nextBtn = document.getElementById('ektosFlowNext');
   const pills = document.querySelectorAll('.ektos-pill-btn');
   const deviceFrame = document.getElementById('ektosDeviceFrame');
-  const deviceImg = document.getElementById('ektosDeviceImg');
+  const images = document.querySelectorAll('.ektos-flow-img');
   const captionPane = document.getElementById('ektosCaptionPane');
   const captionStep = document.getElementById('ektosCaptionStep');
   const captionTitle = document.getElementById('ektosCaptionTitle');
   const captionDesc = document.getElementById('ektosCaptionDesc');
 
-  if (!container || !deviceImg) return;
+  if (!container || images.length === 0) return;
+
+  // Pre-decode all images for zero-lag instant rendering
+  images.forEach(img => {
+    if (img.decode) {
+      img.decode().catch(() => {});
+    }
+  });
 
   function updateStage(index, immediate = false) {
     currentIndex = (index + ektosOnboardingSteps.length) % ektosOnboardingSteps.length;
     const current = ektosOnboardingSteps[currentIndex];
+
+    // Hardware-accelerated image switch (0ms DOM thrashing)
+    images.forEach((img, idx) => {
+      img.classList.toggle('active', idx === currentIndex);
+    });
 
     // Update Counter (01 / 05)
     if (counterEl) {
@@ -567,33 +579,23 @@ function initEktosCarousel() {
       if (bar) {
         bar.style.animation = 'none';
         if (isActive && !isPaused) {
-          void bar.offsetWidth; // Trigger reflow for smooth re-animation
-          bar.style.animation = `pillProgress ${AUTOPLAY_INTERVAL}ms linear forwards`;
+          requestAnimationFrame(() => {
+            bar.style.animation = `pillProgress ${AUTOPLAY_INTERVAL}ms linear forwards`;
+          });
         }
       }
     });
 
-    // Smooth subtle crossfade for image & text
+    // Clean text sync
     if (!immediate) {
-      if (deviceImg) deviceImg.classList.add('fade-out');
       if (captionPane) captionPane.classList.add('fade-out');
-
       setTimeout(() => {
-        if (deviceImg) {
-          deviceImg.src = current.image;
-          deviceImg.alt = current.title;
-          deviceImg.classList.remove('fade-out');
-        }
         if (captionStep) captionStep.textContent = `${current.stageNumber} / 05 • ONBOARDING FLOW`;
         if (captionTitle) captionTitle.textContent = current.title;
         if (captionDesc) captionDesc.textContent = current.desc;
         if (captionPane) captionPane.classList.remove('fade-out');
-      }, 220);
+      }, 140);
     } else {
-      if (deviceImg) {
-        deviceImg.src = current.image;
-        deviceImg.alt = current.title;
-      }
       if (captionStep) captionStep.textContent = `${current.stageNumber} / 05 • ONBOARDING FLOW`;
       if (captionTitle) captionTitle.textContent = current.title;
       if (captionDesc) captionDesc.textContent = current.desc;

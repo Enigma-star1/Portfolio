@@ -78,19 +78,19 @@ const tratunCampaigns = [
   },
   {
     image: 'assets/images/Tratun section/12th_August_Tratun_international youth day=.webp',
-    tag: 'GENERATIONAL TRUST',
-    title: '09 — Happy Children\'s Day',
-    brief: 'Create a Children\'s Day greeting connected to the Tratun tanker.',
-    interpretation: 'Use the idea of generational trust to show that confidence in a brand can be passed down, rather than simply placing a tanker on a street.',
-    execution: 'Two hands hold a toy Tratun tanker, with a child\'s hand on the truck and a father\'s hand guiding it from above. A miniature wooden street and buildings establish the toy-world scale, reinforcing the idea of a son learning to trust Tratun through his father.'
+    tag: 'YOUTH EMPOWERMENT & WORKFORCE',
+    title: '09 — International Youth Day',
+    brief: 'Create a visual for International Youth Day highlighting young talent in the energy sector.',
+    interpretation: 'Show that the future of the energy industry is driven by young professionals on the ground today, moving away from abstract concepts to real operational workforce representation.',
+    execution: 'Positioned young energy professionals in field gear on site at an active facility, paired with the headline “Happy International Youth Day — The future of energy is already working.”'
   },
   {
     image: 'assets/images/Tratun section/1.webp',
-    tag: 'CRITICAL CONTINUITY',
-    title: '10 — Don\'t Let the Light Go Out',
-    brief: 'Show Tratun as the fuel source keeping a business running.',
-    interpretation: 'Make the relationship between fuel and business continuity literal: without the fuel, the light goes out.',
-    execution: 'Built a miniature office interior inside a puzzle piece and illuminated it through a Tratun tanker positioned as the fuel source. The result makes the message immediate without relying heavily on text.'
+    tag: 'PERFORMANCE METAPHOR',
+    title: '10 — Every Champion Needs Fuel',
+    brief: 'Connect Tratun with the football/World Cup moment.',
+    interpretation: 'Extend the idea of fuel beyond its industrial context and connect it to performance. The football becomes the thing being “fuelled.”',
+    execution: 'A golden liquid swirl was wrapped around the ball during the strike, creating the visual impression that the ball is being fuelled by Tratun. The concept was paired with the line “Every champion needs fuel.”'
   }
 ];
 

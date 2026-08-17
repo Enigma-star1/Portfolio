@@ -3327,44 +3327,133 @@ img {
   opacity: 0.6;
 }
 
-/* Case Study At-a-Glance Metadata Strip */
+/* ==========================================================================
+   METADATA STRIPS & FOOTER BLOCKS
+   ========================================================================== */
+
 .case-study-meta-strip {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.65rem;
-  margin: 1.25rem 0;
-  padding: 0.85rem 1rem;
-  background: rgba(14, 10, 24, 0.6);
+  background: rgba(14, 10, 24, 0.65);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-@media (min-width: 640px) {
-  .case-study-meta-strip {
+.meta-strip-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.meta-strip-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.meta-strip-label i {
+  font-size: 0.68rem;
+  opacity: 0.85;
+}
+
+.meta-strip-val {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.meta-strip-val.highlight-emerald {
+  color: #34d399;
+  font-weight: 600;
+}
+
+.meta-strip-val.highlight-gold {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.meta-strip-val.highlight-purple {
+  color: #c084fc;
+  font-weight: 600;
+}
+
+/* 1. CareerPaddy Top Metrics Bar */
+.cp-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.25rem 0 1.5rem 0;
+  padding: 1.1rem 1.35rem;
+  border-color: rgba(217, 148, 59, 0.2);
+}
+
+@media (min-width: 768px) {
+  .cp-metrics-strip {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.meta-pill {
+/* 2. CareerPaddy Full Footer Strip */
+.cp-footer-meta {
+  display: grid;
+  grid-template-columns: minmax(180px, auto) 1fr minmax(180px, auto);
+  gap: 1.75rem;
+  align-items: flex-start;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  border: 1px solid var(--border-medium);
+  background: rgba(18, 12, 30, 0.75);
+}
+
+.cp-footer-meta .meta-strip-item {
+  position: relative;
+}
+
+.cp-footer-meta .meta-strip-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -0.875rem;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: var(--border-subtle);
+}
+
+@media (max-width: 960px) {
+  .cp-footer-meta {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .cp-footer-meta .meta-strip-item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* 3. Tratun & Grosvenor Showcase Sidebar Meta Blocks */
+.tratun-meta-block,
+.grosvenor-meta-block {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.85rem;
+  padding: 1.15rem 1.25rem;
+  margin-top: 1.25rem;
+  background: rgba(14, 10, 24, 0.65);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
 }
 
-.meta-label {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--accent-gold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.meta-val {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  line-height: 1.35;
+.tratun-meta-block .meta-strip-item:not(:last-child),
+.grosvenor-meta-block .meta-strip-item:not(:last-child) {
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* ==========================================================================

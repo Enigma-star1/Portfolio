@@ -302,51 +302,12 @@ function initNavigation() {
 }
 
 // ==========================================================================
-// 4. PROJECT CATEGORY FILTERS & EXPANDABLE PRODUCT SYSTEMS
+// 4. PROJECT CATEGORY FILTERS
 // ==========================================================================
-
-let isProductsExpanded = false;
-
-function toggleProductSystems(forceState) {
-  const productCards = document.querySelectorAll('.project-card.product-system-card');
-  const btn = document.getElementById('toggleProductsBtn');
-  const btnText = document.getElementById('toggleProductsBtnText');
-
-  if (typeof forceState === 'boolean') {
-    isProductsExpanded = forceState;
-  } else {
-    isProductsExpanded = !isProductsExpanded;
-  }
-
-  productCards.forEach(card => {
-    if (isProductsExpanded) {
-      card.classList.remove('is-extended-hidden', 'is-hidden', 'is-filtering-out');
-    } else {
-      card.classList.add('is-extended-hidden');
-    }
-  });
-
-  if (btn) {
-    btn.classList.toggle('expanded', isProductsExpanded);
-    btn.setAttribute('aria-expanded', isProductsExpanded ? 'true' : 'false');
-  }
-
-  if (btnText) {
-    btnText.textContent = isProductsExpanded ? 'Hide Product Systems (3)' : 'See More Case Studies (Product & Systems)';
-  }
-
-  if (isProductsExpanded && typeof forceState !== 'boolean') {
-    const firstProduct = document.querySelector('.project-card.product-system-card');
-    if (firstProduct) {
-      firstProduct.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-}
 
 function initFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
-  const expandBox = document.getElementById('expandProductBox');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -355,56 +316,14 @@ function initFilters() {
 
       const filter = btn.getAttribute('data-filter');
 
-      if (filterTimeoutId) {
-        clearTimeout(filterTimeoutId);
-        filterTimeoutId = null;
-      }
-
-      if (filter === 'featured') {
-        projectCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (category === 'campaign' || category === 'ops') {
-            card.classList.remove('is-hidden', 'is-filtering-out');
-          } else {
-            card.classList.add('is-filtering-out');
-          }
-        });
-        toggleProductSystems(false);
-        if (expandBox) expandBox.classList.remove('is-hidden');
-      } else if (filter === 'all') {
-        projectCards.forEach(card => {
-          card.classList.remove('is-extended-hidden', 'is-hidden', 'is-filtering-out');
-        });
-        if (expandBox) expandBox.classList.add('is-hidden');
-      } else if (filter === 'product') {
-        projectCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (category === 'product') {
-            card.classList.remove('is-extended-hidden', 'is-hidden', 'is-filtering-out');
-          } else {
-            card.classList.add('is-filtering-out');
-          }
-        });
-        if (expandBox) expandBox.classList.add('is-hidden');
-      } else {
-        projectCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (category === filter) {
-            card.classList.remove('is-hidden', 'is-filtering-out');
-          } else {
-            card.classList.add('is-filtering-out');
-          }
-        });
-        if (expandBox) expandBox.classList.add('is-hidden');
-      }
-
-      filterTimeoutId = setTimeout(() => {
-        projectCards.forEach(card => {
-          if (card.classList.contains('is-filtering-out')) {
-            card.classList.add('is-hidden');
-          }
-        });
-      }, 250);
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.classList.remove('is-hidden', 'is-filtering-out');
+        } else {
+          card.classList.add('is-hidden', 'is-filtering-out');
+        }
+      });
     });
   });
 }

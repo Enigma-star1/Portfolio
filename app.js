@@ -250,31 +250,51 @@ function initNavigation() {
     });
   }
 
-  // IntersectionObserver for active link state
-  if ('IntersectionObserver' in window) {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -65% 0px',
-      threshold: 0
-    };
+  // Scroll Spy for active navigation link state
+  const allNavLinks = document.querySelectorAll('.nav-link');
+  const sectionsList = Array.from(sections);
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
-        }
-      });
-    }, observerOptions);
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 160;
+    let currentId = '';
 
-    sections.forEach(section => observer.observe(section));
+    for (let i = sectionsList.length - 1; i >= 0; i--) {
+      const sec = sectionsList[i];
+      if (sec.offsetTop <= scrollPos) {
+        currentId = sec.getAttribute('id');
+        break;
+      }
+    }
+
+    if (!currentId && sectionsList.length > 0) {
+      currentId = sectionsList[0].getAttribute('id');
+    }
+
+    allNavLinks.forEach(link => {
+      if (link.getAttribute('href') === `#${currentId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
   }
+
+  let isTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        updateActiveNav();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', updateActiveNav, { passive: true });
+  window.addEventListener('hashchange', () => {
+    setTimeout(updateActiveNav, 100);
+  });
+  updateActiveNav();
 }
 
 // ==========================================================================

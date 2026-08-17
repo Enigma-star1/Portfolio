@@ -258,7 +258,16 @@ img {
   padding: 0.25rem 0;
 }
 
-.nav-link:hover, .nav-link.active {
+@media (hover: hover) {
+  .nav-link:hover {
+    color: var(--text-heading);
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+.nav-link.active {
   color: var(--text-heading);
 }
 
@@ -273,7 +282,7 @@ img {
   transition: width var(--transition-fast);
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link.active::after {
   width: 100%;
 }
 

@@ -4415,9 +4415,640 @@ img {
   line-height: 1.5;
 }
 
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE BREAKPOINTS (DESKTOP, TABLET, MOBILE)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLET VIEW (768px - 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  /* Navigation */
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding-top: 6.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  }
+
+  /* Selected Work Case Studies */
+  .project-card {
+    padding: 2.75rem 2rem;
+  }
+
+  .showcase-slider-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .dynamic-brief-content {
+    width: 100%;
+  }
+
+  .cp-system-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Product Design Architecture */
+  .uiux-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .ektos-flow-container {
+    padding: 2.75rem 2rem;
+  }
+
+  /* Gallery Grid */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  /* Video Reels */
+  .reels-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Experience Section */
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Contact Section */
+  .contact-card {
+    padding: 3rem 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. MOBILE VIEW (< 768px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .resume-viewer-dialog {
+  /* Global Spacing & Layout */
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .section-spacing {
+    padding: 4rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
+    line-height: 1.25;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Navigation Bar */
+  .nav-container {
+    height: 4rem;
+    padding: 0 1.25rem;
+  }
+
+  .brand-avatar {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .brand-role {
+    font-size: 0.65rem;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-menu {
+    top: 4rem;
+    padding: 1.5rem 1.25rem;
+    gap: 0.5rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+  }
+
+  .mobile-link {
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding-top: 5.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-eyebrow-container {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-quote {
+    font-size: 1.25rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.85rem, 7vw, 2.6rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-br {
+    display: none;
+  }
+
+  .hero-bio {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-stats-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .hero-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .hero-metric-item {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .metric-number {
+    font-size: 1.55rem;
+  }
+
+  .metric-label {
+    font-size: 0.72rem;
+  }
+
+  /* Selected Work Case Studies */
+  .project-card {
     padding: 1.75rem 1.25rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+  }
+
+  .project-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .project-num-badge {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+  }
+
+  .project-title {
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+
+  .project-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .cp-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    margin: 1.75rem 0;
+  }
+
+  .cp-metric-box {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .cp-metric-val {
+    font-size: 1.45rem;
+  }
+
+  .cp-metric-lbl {
+    font-size: 0.72rem;
+  }
+
+  .cp-blueprint-grid,
+  .cp-system-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .blueprint-card {
+    border-radius: 16px;
+  }
+
+  .blueprint-card-body {
+    padding: 1.25rem;
+  }
+
+  /* Slider & Filmstrip (Tratun & Grosvenor) */
+  .slider-main-display {
+    aspect-ratio: 4 / 3;
+    min-height: 220px;
+    border-radius: 16px;
+  }
+
+  .slider-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+
+  .side-slider-filmstrip {
+    gap: 0.35rem;
+  }
+
+  .slider-film-thumb {
+    width: calc(20% - 0.28rem);
+    min-width: 44px;
+    border-radius: 6px;
+  }
+
+  .dynamic-brief-content {
+    padding: 1.25rem;
+    border-radius: 14px;
+  }
+
+  .brief-main-title {
+    font-size: 1.15rem;
+  }
+
+  /* Product Design Architecture */
+  .uiux-hero-card {
+    border-radius: 20px;
+  }
+
+  .uiux-hero-body {
+    padding: 1.35rem;
+  }
+
+  .uiux-hero-title {
+    font-size: 1.2rem;
+  }
+
+  .uiux-hero-desc {
+    font-size: 0.92rem;
+  }
+
+  /* Ektos Flow Onboarding Showcase */
+  .ektos-flow-container {
+    padding: 1.75rem 1.15rem;
+    border-radius: 20px;
+    margin: 3rem 0;
+  }
+
+  .ektos-flow-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .ektos-flow-main-title {
+    font-size: 1.45rem;
+  }
+
+  .ektos-flow-main-desc {
+    font-size: 0.95rem;
+  }
+
+  .ektos-flow-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .ektos-flow-counter {
+    font-size: 1.05rem;
+  }
+
+  .ektos-progress-pills {
+    gap: 0.35rem;
+  }
+
+  .ektos-pill-btn {
+    height: 6px;
+    width: 10px;
+  }
+
+  .ektos-pill-btn.active {
+    width: 30px;
+  }
+
+  .ektos-arrow-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+
+  .ektos-stage-display {
+    margin-top: 2rem;
+  }
+
+  .ektos-device-frame {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 24px;
+  }
+
+  .device-screen-viewport {
+    border-radius: 24px;
+  }
+
+  .ektos-flow-img {
+    border-radius: 24px;
+  }
+
+  .ektos-caption-pane {
+    margin-top: 1.5rem;
+  }
+
+  .ektos-caption-step {
+    font-size: 0.72rem;
+  }
+
+  .ektos-caption-title {
+    font-size: 1.25rem;
+  }
+
+  .ektos-caption-desc {
+    font-size: 0.92rem;
+  }
+
+  /* Gallery Grid */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .gallery-item {
+    border-radius: 14px;
+  }
+
+  .gallery-overlay {
+    padding: 0.85rem;
+  }
+
+  .gallery-overlay-tag {
+    font-size: 0.65rem;
+  }
+
+  .gallery-overlay-title {
+    font-size: 0.92rem;
+  }
+
+  /* Motion & Video Reels */
+  .reels-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .reel-card {
+    border-radius: 20px;
+  }
+
+  .reel-body {
+    padding: 1.35rem;
+  }
+
+  .reel-title {
+    font-size: 1.2rem;
+  }
+
+  .reel-desc {
+    font-size: 0.92rem;
+  }
+
+  /* Experience & Credentials */
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-marker {
+    left: -1.5rem;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-role {
+    font-size: 1.15rem;
+  }
+
+  .timeline-company {
+    font-size: 0.92rem;
+  }
+
+  .timeline-bullets li {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .credential-box {
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .credential-box h3 {
+    font-size: 1.05rem;
+  }
+
+  .skills-grid {
+    gap: 0.45rem;
+  }
+
+  .skill-chip {
+    font-size: 0.8rem;
+    padding: 0.38rem 0.75rem;
+  }
+
+  /* Contact & CTA Section */
+  .contact-section {
+    padding-top: 4.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .contact-card {
+    padding: 2.5rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .contact-quote {
+    font-size: clamp(1.35rem, 5vw, 1.85rem);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .contact-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-options {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-btn-item {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.88rem;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .contact-actions-center {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .contact-actions-center .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    margin-top: 3rem;
+    font-size: 0.8rem;
+  }
+
+  /* Modals */
+  .lightbox-modal {
+    padding: 0.75rem;
+  }
+
+  .lightbox-container {
+    max-height: 88vh;
+    border-radius: 16px;
+  }
+
+  .lightbox-media-container,
+  .lightbox-media-wrapper {
+    max-height: 58vh;
+  }
+
+  .lightbox-caption-bar,
+  .lightbox-details {
+    padding: 0.95rem 1.15rem;
+  }
+
+  .lightbox-title {
+    font-size: 1.05rem;
+  }
+
+  .lightbox-desc {
+    font-size: 0.82rem;
+  }
+
+  .resume-viewer-dialog {
+    padding: 1.5rem 1.15rem;
+    border-radius: 16px;
+  }
+
+  .resume-modal-dialog {
+    padding: 1.5rem 1.15rem;
+    border-radius: 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMALL MOBILE VIEW (< 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cp-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .slider-film-thumb {
+    min-width: 38px;
+    width: calc(20% - 0.22rem);
+  }
+
+  .ektos-device-frame {
+    max-width: 320px;
   }
 }
 

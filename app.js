@@ -185,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideoInteractions();
   initKeyboardEvents();
   initInteractiveMedia();
+  initDesktopSitePrompt();
 });
 
 // ==========================================================================
@@ -990,6 +991,78 @@ function closeResumeModal(e) {
   closeContactModal(e);
 }
 
+// ==========================================================================
+// 10. DESKTOP SITE MODE TOGGLE & MOBILE PROMPT
+// ==========================================================================
+
+function initDesktopSitePrompt() {
+  const isMobileOrTablet = window.innerWidth <= 1024;
+  const isDismissed = sessionStorage.getItem('desktop_prompt_dismissed');
+  const savedMode = localStorage.getItem('user_view_mode');
+
+  if (savedMode === 'desktop') {
+    enableDesktopSiteMode(false);
+    return;
+  }
+
+  if (isMobileOrTablet && !isDismissed) {
+    const banner = document.getElementById('desktopPromptBanner');
+    if (banner) {
+      setTimeout(() => {
+        banner.style.display = 'block';
+      }, 700);
+    }
+  }
+}
+
+function enableDesktopSiteMode(persist = true) {
+  const viewportMeta = document.getElementById('viewportMeta');
+  if (viewportMeta) {
+    viewportMeta.setAttribute('content', 'width=1280, initial-scale=0.35, user-scalable=yes');
+  }
+  const banner = document.getElementById('desktopPromptBanner');
+  if (banner) banner.style.display = 'none';
+
+  const revertPill = document.getElementById('desktopModeRevertPill');
+  if (revertPill) revertPill.style.display = 'inline-flex';
+
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (mobileMenu) mobileMenu.classList.remove('open');
+
+  if (persist) {
+    localStorage.setItem('user_view_mode', 'desktop');
+    sessionStorage.setItem('desktop_prompt_dismissed', 'true');
+    if (typeof showToast === 'function') {
+      showToast('Switched to full Desktop layout!');
+    }
+  }
+}
+
+function enableMobileSiteMode() {
+  const viewportMeta = document.getElementById('viewportMeta');
+  if (viewportMeta) {
+    viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+  }
+  const revertPill = document.getElementById('desktopModeRevertPill');
+  if (revertPill) revertPill.style.display = 'none';
+
+  localStorage.removeItem('user_view_mode');
+  if (typeof showToast === 'function') {
+    showToast('Switched back to responsive Mobile view.');
+  }
+}
+
+function dismissDesktopPrompt() {
+  const banner = document.getElementById('desktopPromptBanner');
+  if (banner) {
+    banner.style.animation = 'bannerSlideDown 0.25s ease reverse forwards';
+    setTimeout(() => {
+      banner.style.display = 'none';
+    }, 250);
+  }
+  sessionStorage.setItem('desktop_prompt_dismissed', 'true');
+}
+
 window.openResumeViewer = openResumeViewer;
 window.closeResumeViewer = closeResumeViewer;
 window.openContactModal = openContactModal;
@@ -998,4 +1071,7 @@ window.openResumeModal = openResumeModal;
 window.closeResumeModal = closeResumeModal;
 window.showToast = showToast;
 window.copyEmail = copyEmail;
+window.enableDesktopSiteMode = enableDesktopSiteMode;
+window.enableMobileSiteMode = enableMobileSiteMode;
+window.dismissDesktopPrompt = dismissDesktopPrompt;
 

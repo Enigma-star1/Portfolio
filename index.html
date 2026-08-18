@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" id="viewportMeta" content="width=device-width, initial-scale=1.0">
   <title>Balogun Olamide (Enigma) — Digital Designer & Visual Strategist</title>
   <meta name="description"
     content="Portfolio of Balogun Olamide (Enigma) — Digital Designer & Visual Strategist based in Lagos. Building visual systems, brand campaigns, and digital interfaces for ambitious businesses.">
@@ -45,6 +45,39 @@
 </head>
 
 <body>
+
+  <!-- =========================================================================
+       MOBILE VIEW PREFERENCE PROMPT BANNER (SWITCH TO DESKTOP SITE)
+       ========================================================================= -->
+  <aside class="desktop-prompt-banner" id="desktopPromptBanner" role="region" aria-label="View mode selection" style="display: none;">
+    <div class="prompt-banner-content">
+      <div class="prompt-banner-header-row">
+        <div class="prompt-banner-icon">
+          <i class="fa-solid fa-desktop"></i>
+        </div>
+        <div class="prompt-banner-text">
+          <strong class="prompt-banner-title">Experience Full Desktop View?</strong>
+          <p class="prompt-banner-desc">Switch to the rich widescreen layout with interactive case study systems, or continue on mobile.</p>
+        </div>
+        <button type="button" class="prompt-close-btn" onclick="dismissDesktopPrompt()" aria-label="Close prompt">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="prompt-banner-actions">
+        <button type="button" class="btn btn-primary btn-sm prompt-switch-btn" onclick="enableDesktopSiteMode()">
+          <i class="fa-solid fa-expand"></i> Switch to Desktop Site
+        </button>
+        <button type="button" class="btn btn-outline btn-sm prompt-dismiss-btn" onclick="dismissDesktopPrompt()">
+          Stay on Mobile
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Floating Switch Back to Mobile Pill (Only visible when Desktop Site mode is active on phone) -->
+  <div class="desktop-mode-revert-pill" id="desktopModeRevertPill" style="display: none;" onclick="enableMobileSiteMode()">
+    <i class="fa-solid fa-mobile-screen"></i> Switch back to Mobile View
+  </div>
 
   <!-- =========================================================================
        NAVIGATION BAR
@@ -91,6 +124,9 @@
       <a href="#experience" class="nav-link mobile-link">Experience</a>
       <a href="#contact" class="nav-link mobile-link">Contact</a>
       <button type="button" class="btn btn-primary" style="margin-top: 1rem; width: 100%;" onclick="openContactModal(event)">Let's Talk</button>
+      <button type="button" class="btn btn-outline" style="margin-top: 0.5rem; width: 100%; font-size: 0.85rem;" onclick="enableDesktopSiteMode()">
+        <i class="fa-solid fa-desktop"></i> Switch to Desktop Site View
+      </button>
     </div>
   </header>
 

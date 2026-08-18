@@ -732,14 +732,43 @@ function initVideoInteractions() {
   reelCards.forEach(wrapper => {
     const video = wrapper.querySelector('video');
     if (video) {
+      let playPromise = null;
       wrapper.addEventListener('mouseenter', () => {
-        video.play().catch(() => {});
+        playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
       });
       wrapper.addEventListener('mouseleave', () => {
-        video.pause();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            video.pause();
+          }).catch(() => {
+            video.pause();
+          });
+        } else {
+          video.pause();
+        }
       });
     }
   });
+
+  // Intelligent pre-buffering when user approaches the reels section
+  const reelsSection = document.getElementById('reels');
+  if (reelsSection && 'IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const vids = reelsSection.querySelectorAll('video');
+          vids.forEach(v => {
+            v.preload = 'auto';
+          });
+          videoObserver.unobserve(reelsSection);
+        }
+      });
+    }, { rootMargin: '400px 0px' });
+    videoObserver.observe(reelsSection);
+  }
 }
 
 // ==========================================================================
@@ -759,8 +788,11 @@ function openLightbox(mediaSrc, title, description, mediaType = null) {
 
   if (modal) {
     if (isVideo && modalVideo) {
+      modalVideo.preload = 'auto';
       modalVideo.src = mediaSrc;
       modalVideo.style.display = 'block';
+      modalVideo.controls = true;
+      modalVideo.playsInline = true;
       if (modalImg) {
         modalImg.src = '';
         modalImg.style.opacity = '0';

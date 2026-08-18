@@ -3518,6 +3518,7 @@ img {
   bottom: 2rem;
   right: 2rem;
   z-index: 100000;
+  pointer-events: none;
 }
 
 .toast {
@@ -3533,6 +3534,7 @@ img {
   font-size: 0.875rem;
   transform: translateY(100px);
   opacity: 0;
+  pointer-events: auto;
   transition: all var(--transition-fast);
 }
 

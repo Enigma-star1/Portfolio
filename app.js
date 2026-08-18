@@ -21,7 +21,7 @@ const tratunCampaigns = [
     execution: 'Split the engine down the middle, with one side rusted and damaged and the other fresh and properly oiled. A grid pattern was added to the background to create depth instead of relying on a flat backdrop.'
   },
   {
-    image: 'assets/images/Tratun section/21st_June_Tratun_ Happy Father\'s Day.webp',
+    image: "assets/images/Tratun section/21st_June_Tratun_ Happy Father's Day.webp",
     tag: 'SPECIAL STORYTELLING',
     title: '02 — Happy Father\'s Day',
     brief: 'Show a Tratun tanker moving along a father\'s tie to communicate the idea that fathers pave the way.',

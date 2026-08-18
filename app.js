@@ -1063,6 +1063,44 @@ function dismissDesktopPrompt() {
   sessionStorage.setItem('desktop_prompt_dismissed', 'true');
 }
 
+// ==========================================================================
+// 11. MOBILE GALLERY PAGINATION & BACK TO TOP
+// ==========================================================================
+
+function toggleGalleryMore() {
+  const hiddenItems = document.querySelectorAll('.gallery-item.mobile-hidden');
+  const btn = document.getElementById('galleryToggleBtn');
+  const isExpanded = hiddenItems[0] && hiddenItems[0].classList.contains('expanded');
+
+  hiddenItems.forEach(item => {
+    item.classList.toggle('expanded', !isExpanded);
+  });
+
+  if (btn) {
+    if (!isExpanded) {
+      btn.innerHTML = '<i class="fa-solid fa-chevron-up"></i> <span>Show Less Works</span>';
+    } else {
+      btn.innerHTML = '<i class="fa-solid fa-grid-2-plus"></i> <span>View All 16 Works (+10)</span>';
+      const gallerySection = document.getElementById('gallery');
+      if (gallerySection) {
+        gallerySection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+}
+
+// Mobile Floating Back to Top Scroll Listener
+window.addEventListener('scroll', () => {
+  const backToTop = document.getElementById('mobileBackToTop');
+  if (backToTop) {
+    if (window.scrollY > 400 && window.innerWidth <= 768) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  }
+}, { passive: true });
+
 window.openResumeViewer = openResumeViewer;
 window.closeResumeViewer = closeResumeViewer;
 window.openContactModal = openContactModal;
@@ -1074,4 +1112,5 @@ window.copyEmail = copyEmail;
 window.enableDesktopSiteMode = enableDesktopSiteMode;
 window.enableMobileSiteMode = enableMobileSiteMode;
 window.dismissDesktopPrompt = dismissDesktopPrompt;
+window.toggleGalleryMore = toggleGalleryMore;
 

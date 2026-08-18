@@ -2833,7 +2833,7 @@ img {
   border-radius: 36px;
   overflow: hidden;
   position: relative;
-  background: #09070D;
+  background: transparent;
 }
 
 .ektos-flow-img {
@@ -2844,19 +2844,26 @@ img {
   object-fit: contain;
   border-radius: 36px;
   opacity: 0;
-  visibility: hidden;
-  transform: scale(0.985) translateZ(0);
-  transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1), transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.35s;
-  will-change: opacity, transform;
+  z-index: 0;
+  transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
   pointer-events: none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
+/* Outgoing slide stays solidly visible underneath */
+.ektos-flow-img.prev-active {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+  transition: none;
+}
+
+/* Incoming slide dissolves directly over it with zero dark dip */
 .ektos-flow-img.active {
   opacity: 1;
-  visibility: visible;
-  transform: scale(1) translateZ(0);
+  z-index: 2;
   pointer-events: auto;
 }
 
@@ -2888,12 +2895,11 @@ img {
 .ektos-caption-pane {
   max-width: 620px;
   margin-top: 2.25rem;
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transition: opacity 0.32s ease;
 }
 
 .ektos-caption-pane.fade-out {
-  opacity: 0.15;
-  transform: translateY(6px);
+  opacity: 0.35;
 }
 
 .ektos-caption-step {

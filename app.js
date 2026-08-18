@@ -555,14 +555,38 @@ function initEktosCarousel() {
     }
   });
 
+  let prevIndex = -1;
+
   function updateStage(index, immediate = false) {
-    currentIndex = (index + ektosOnboardingSteps.length) % ektosOnboardingSteps.length;
+    const nextIndex = (index + ektosOnboardingSteps.length) % ektosOnboardingSteps.length;
+    if (nextIndex === currentIndex && !immediate) return;
+
+    prevIndex = currentIndex;
+    currentIndex = nextIndex;
     const current = ektosOnboardingSteps[currentIndex];
 
-    // Hardware-accelerated image switch (0ms DOM thrashing)
+    // Luxurious 2-layer cross-dissolve (outgoing stays visible underneath, incoming fades in over it)
     images.forEach((img, idx) => {
-      img.classList.toggle('active', idx === currentIndex);
+      img.classList.remove('prev-active');
+      if (idx === prevIndex && prevIndex !== -1 && !immediate) {
+        img.classList.add('prev-active');
+      }
+      if (idx === currentIndex) {
+        img.classList.add('active');
+      } else if (idx !== prevIndex) {
+        img.classList.remove('active');
+      }
     });
+
+    // Cleanup previous image after dissolve completes smoothly
+    if (!immediate && prevIndex !== -1) {
+      const oldIdx = prevIndex;
+      setTimeout(() => {
+        if (images[oldIdx] && oldIdx !== currentIndex) {
+          images[oldIdx].classList.remove('active', 'prev-active');
+        }
+      }, 760);
+    }
 
     // Update Counter (01 / 05)
     if (counterEl) {
@@ -586,7 +610,7 @@ function initEktosCarousel() {
       }
     });
 
-    // Clean text sync
+    // Gentle text sync
     if (!immediate) {
       if (captionPane) captionPane.classList.add('fade-out');
       setTimeout(() => {
@@ -594,7 +618,7 @@ function initEktosCarousel() {
         if (captionTitle) captionTitle.textContent = current.title;
         if (captionDesc) captionDesc.textContent = current.desc;
         if (captionPane) captionPane.classList.remove('fade-out');
-      }, 140);
+      }, 160);
     } else {
       if (captionStep) captionStep.textContent = `${current.stageNumber} / 05 • ONBOARDING FLOW`;
       if (captionTitle) captionTitle.textContent = current.title;

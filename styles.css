@@ -4657,13 +4657,37 @@ img {
 
   /* Selected Work Case Studies */
   .project-card {
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1.25rem;
     border-radius: 20px;
     margin-bottom: 3rem;
   }
 
+  /* Strip double-padding from inner layouts because project-card handles it */
+  .project-inner,
+  .project-inner.showcase-layout,
+  .project-inner.vertical-flow {
+    padding: 0;
+    gap: 1.5rem;
+  }
+
+  /* Move image above text for vertical-flow on mobile */
+  .project-inner.vertical-flow {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-inner.vertical-flow .project-header-intro {
+    order: 2;
+  }
+  .project-inner.vertical-flow .project-media-top {
+    order: 1;
+    margin-bottom: 0.5rem;
+  }
+  .project-inner.vertical-flow .cp-system-grid {
+    order: 3;
+  }
+
   .project-header {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .project-num-badge {
@@ -4672,12 +4696,25 @@ img {
   }
 
   .project-title {
-    font-size: 1.55rem;
+    font-size: 1.35rem;
     line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 
   .project-subtitle {
     font-size: 0.95rem;
+  }
+
+  .cp-metrics-strip {
+    padding: 0.85rem 1rem;
+    margin: 1rem 0;
+    gap: 0.85rem;
   }
 
   .cp-metrics-grid {
@@ -4687,12 +4724,12 @@ img {
   }
 
   .cp-metric-box {
-    padding: 1rem;
+    padding: 0.85rem;
     border-radius: 12px;
   }
 
   .cp-metric-val {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
   }
 
   .cp-metric-lbl {
@@ -4715,7 +4752,6 @@ img {
 
   /* Case Study Showcase Layout & Side-by-Side Mobile Stacking */
   .showcase-layout {
-    padding: 1.25rem;
     gap: 1.5rem;
   }
   

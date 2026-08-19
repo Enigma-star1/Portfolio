@@ -4675,15 +4675,18 @@ img {
     display: flex;
     flex-direction: column;
   }
-  .project-inner.vertical-flow .project-header-intro {
-    order: 2;
-  }
   .project-inner.vertical-flow .project-media-top {
     order: 1;
     margin-bottom: 0.5rem;
   }
+  .project-inner.vertical-flow .project-header-intro {
+    order: 2;
+  }
   .project-inner.vertical-flow .cp-system-grid {
     order: 3;
+  }
+  .project-inner.vertical-flow .cp-footer-meta {
+    order: 4;
   }
 
   .project-header {

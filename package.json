@@ -1,0 +1,6 @@
+{
+  "name": "enigma-studio-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"build": "node scripts/build.cjs", "check": "node --check assets/js/app.js && node --check scripts/build.cjs"}
+}

@@ -1,1551 +1,759 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" id="viewportMeta" content="width=device-width, initial-scale=1.0">
-  <title>Balogun Olamide (Enigma) — Digital Designer & Visual Strategist</title>
-  <meta name="description"
-    content="Portfolio of Balogun Olamide (Enigma) — Digital Designer & Visual Strategist based in Lagos. Building visual systems, brand campaigns, and digital interfaces for ambitious businesses.">
-  <meta name="theme-color" content="#09070D">
-
-  <!-- Favicon (3D ENIGMA Question Mark Logo) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="assets/images/favicon.png">
-  <link rel="shortcut icon" href="assets/images/favicon.png">
-  <link rel="apple-touch-icon" sizes="128x128" href="assets/images/enigma-logo-3d.png">
-
-  <!-- Open Graph / Facebook / LinkedIn -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Balogun Olamide (Enigma) — Digital Designer & Visual Strategist">
-  <meta property="og:description"
-    content="Digital Designer & Visual Strategist. Building visual systems, brand campaigns, and digital interfaces for ambitious businesses.">
-  <meta property="og:image" content="https://workwitholamide.vercel.app/assets/images/enigma-logo-hd.webp">
-  <meta property="og:url" content="https://workwitholamide.vercel.app">
-  <meta property="og:site_name" content="Balogun Olamide Portfolio">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Balogun Olamide (Enigma) — Digital Designer & Visual Strategist">
-  <meta name="twitter:description"
-    content="Building visual systems, brand campaigns, and digital interfaces for ambitious businesses.">
-  <meta name="twitter:image" content="https://workwitholamide.vercel.app/assets/images/enigma-logo-hd.webp">
-
-  <!-- Fonts: Plus Jakarta Sans & Satoshi (Headings), Switzer (Body), JetBrains Mono (Accents) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@700,800,900&f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-  <!-- =========================================================================
-       NAVIGATION BAR
-       ========================================================================= -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="brand-wrapper" aria-label="Balogun Olamide - Return to Top">
-        <img src="assets/images/enigma-logo-3d.png" alt="ENIGMA Logo" width="36" height="36" class="brand-avatar">
-        <div class="brand-text">
-          <span class="brand-name">Balogun Olamide</span>
-          <span class="brand-role">ENIGMA • VISUAL STRATEGIST</span>
-        </div>
-      </a>
-
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="#work" class="nav-link">Selected Work</a></li>
-          <li><a href="#gallery" class="nav-link">Graphic Design</a></li>
-          <li><a href="#uiux" class="nav-link">UI/UX & Apps</a></li>
-          <li><a href="#reels" class="nav-link">Video & Motion</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <button type="button" class="btn btn-primary btn-sm" onclick="openContactModal(event)">
-          <i class="fa-solid fa-paper-plane"></i> Let's Talk
-        </button>
-      </div>
-
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation" aria-expanded="false"
-        aria-controls="mobileMenu">
-        <i class="fa-solid fa-bars-staggered"></i>
-      </button>
-    </div>
-
-    <!-- Mobile Drawer Menu -->
-    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <a href="#work" class="nav-link mobile-link">Selected Work</a>
-      <a href="#gallery" class="nav-link mobile-link">Graphic Design</a>
-      <a href="#uiux" class="nav-link mobile-link">UI/UX & Apps</a>
-      <a href="#reels" class="nav-link mobile-link">Video & Motion</a>
-      <a href="#experience" class="nav-link mobile-link">Experience</a>
-      <a href="#contact" class="nav-link mobile-link">Contact</a>
-      <button type="button" class="btn btn-primary" style="margin-top: 1rem; width: 100%;" onclick="openContactModal(event)">Let's Talk</button>
-    </div>
+<html id="top" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Design by Olamide · Enigma Studio
+  </title>
+  <meta content="Conceptual graphic design, brand identities, UI/UX and motion by Olamide Balogun. A good visual starts with a good question." name="description"/>
+  <meta content="#F4F2ED" name="theme-color"/>
+  <link href="https://workwitholamide.vercel.app/" rel="canonical"/>
+  <link href="/assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Design by Olamide · Enigma Studio" property="og:title"/>
+  <meta content="Conceptual graphic design, brand identities, UI/UX and motion by Olamide Balogun. A good visual starts with a good question." property="og:description"/>
+  <meta content="https://workwitholamide.vercel.app/" property="og:url"/>
+  <meta content="https://workwitholamide.vercel.app/assets/brand/social-preview.jpg" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <link as="font" crossorigin="" href="/assets/fonts/Manrope.woff2" rel="preload" type="font/woff2"/>
+  <link href="/assets/css/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <a class="skip" href="#main">
+   Skip to content
+  </a>
+  <header class="site-header wrap">
+   <a aria-label="Enigma Studio home" class="brand" href="/">
+    <img alt="Enigma Studio" height="55" src="/assets/brand/logo-ink.svg" width="225"/>
+   </a>
+   <nav aria-label="Main navigation">
+    <a href="/#work">
+     Work
+    </a>
+    <a href="/#about">
+     About
+    </a>
+    <a href="/#contact">
+     Contact
+     <span aria-hidden="true">
+      ↗
+     </span>
+    </a>
+   </nav>
   </header>
-
-  <main>
-    <!-- =========================================================================
-         HERO SECTION
-         ========================================================================= -->
-    <section class="hero-section" id="hero">
-      <div class="container">
-        <div class="hero-grid">
-
-          <div class="hero-content">
-            <div class="hero-eyebrow-container">
-              <div class="eyebrow-badge">
-                <i class="fa-solid fa-fingerprint"></i> DESIGN PHILOSOPHY
-              </div>
-              <p class="hero-quote">"Design is a mystery worth solving."</p>
-            </div>
-
-            <h1 class="hero-headline">
-              I don’t just make brands look good. <br class="hero-br">
-              <span class="gradient-accent">I build the systems</span> that help them communicate better.
-            </h1>
-
-            <p class="hero-bio">
-              I’m Olamide Balogun, a designer working across visual communication, brand campaigns, visual systems, and digital experiences.
-            </p>
-
-            <div class="hero-cta-group">
-              <a href="#work" class="btn btn-primary">
-                <i class="fa-solid fa-arrow-down"></i> View Selected Work
-              </a>
-              <button type="button" class="btn btn-outline" onclick="openResumeViewer(event)" aria-label="View Resume">
-                <i class="fa-solid fa-file-lines"></i> View Resume
-              </button>
-            </div>
-
-            <div class="hero-stats-row">
-              <div class="stat-item">
-                <div class="stat-number">4<span>+</span> Brands</div>
-                <div class="stat-label">Professional & Independent Work</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">50<span>+</span> Courses</div>
-                <div class="stat-label">Designed & Produced for CareerPaddy</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">1,397<span>+</span> Courses</div>
-                <div class="stat-label">Organized Through a Visual System</div>
-              </div>
-            </div>
-
-            <!-- Quiet Client Credibility Strip -->
-            <div class="client-credibility-strip" aria-label="Commercial Client Partners">
-              <span>CAREERPADDY</span>
-              <span class="strip-dot">•</span>
-              <span>TRATUN ENERGY</span>
-              <span class="strip-dot">•</span>
-              <span>GROSVENOR GLOBAL</span>
-              <span class="strip-dot">•</span>
-              <span>PRAYING SCRIPTUREZ</span>
-            </div>
-          </div>
-
-          <!-- Hero Visual Portrait Card -->
-          <div class="hero-visual">
-            <div class="portrait-card">
-              <div class="portrait-img-wrapper">
-                <img src="assets/images/hero-portrait.webp" alt="Balogun Olamide - Digital Designer & Visual Strategist"
-                  width="480" height="480" class="portrait-img">
-
-                <div class="portrait-floating-badge">
-                  <div class="badge-main-content">
-                    <div class="badge-header-row">
-                      <h4 class="badge-name">Balogun Olamide</h4>
-                      <div class="badge-tag-wrapper">
-                        <img src="assets/images/enigma-logo-3d.png" alt="ENIGMA Logo" width="16" height="16"
-                          class="badge-logo-icon">
-                        <span class="badge-tag">ENIGMA</span>
-                      </div>
-                    </div>
-                    <p class="badge-role">Digital Designer & Visual Strategist</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION DIVIDER -->
-    <div class="section-divider" aria-hidden="true">
-      <div class="divider-line"></div>
+  <main id="main">
+   <section aria-labelledby="hero-title" class="hero wrap">
+    <div class="hero-copy">
+     <p class="eyebrow">
+      Enigma Studio / Design by Olamide
+     </p>
+     <h1 id="hero-title">
+      A good visual
+      <br/>
+      starts with a
+      <br/>
+      good question
+      <span class="indigo">
+       .
+      </span>
+     </h1>
+     <p class="hero-description">
+      Conceptual graphic design for social media and digital spaces. UI/UX and motion, too.
+     </p>
+     <a class="button" href="#work">
+      View my work
+      <span aria-hidden="true">
+       ↘
+      </span>
+     </a>
     </div>
-
-    <!-- =========================================================================
-         SELECTED WORK / CASE STUDIES
-         ========================================================================= -->
-    <section class="section-spacing" id="work">
-      <div class="container">
-
-        <div class="section-header">
-          <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Flagship Case Studies</span>
-          <h2 class="section-title">Visual Systems, Brand Campaigns & Design Ops</h2>
-          <p class="section-subtitle">
-            Strategic visual frameworks, repeatable creative operations, and corporate brand communications built for
-            scale, authority, and measurable business outcomes.
-          </p>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="filter-wrapper" role="tablist" aria-label="Project Category Filter">
-          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Works (3)</button>
-          <button class="filter-btn" data-filter="ops" role="tab" aria-selected="false">Design Systems (1)</button>
-          <button class="filter-btn" data-filter="campaign" role="tab" aria-selected="false">Brand Storytelling (2)</button>
-        </div>
-
-        <div class="projects-grid">
-
-          <!-- CASE STUDY 1: CAREERPADDY (SYSTEM STORY & EDTECH LIBRARY) -->
-          <article class="project-card" data-category="ops">
-            <div class="project-inner vertical-flow">
-
-              <!-- 1. Header Intro: Meta + Title + Pitch Description -->
-              <div class="project-header-intro">
-                <div class="project-meta">
-                  <span class="project-badge">01 / CAREERPADDY</span>
-                  <span class="project-timeline">Visual Learning System</span>
-                </div>
-
-                <h3 class="project-title">Building a visual system for bite-sized learning.</h3>
-                <p class="project-description">
-                  CareerPaddy delivers short, practical courses designed to be learned on the go. I turned that course library into a consistent visual learning experience — from the course videos and category system to the catalogue that keeps everything organised.
-                </p>
-
-                <!-- Metrics Bar -->
-                <div class="case-study-meta-strip cp-metrics-strip">
-                  <div class="meta-strip-item">
-                    <span class="meta-strip-label">TAXONOMY</span>
-                    <span class="meta-strip-val highlight-gold">20 Categories</span>
-                  </div>
-                  <div class="meta-strip-item">
-                    <span class="meta-strip-label">TOTAL LIBRARY</span>
-                    <span class="meta-strip-val">1,397+ Courses</span>
-                  </div>
-                  <div class="meta-strip-item">
-                    <span class="meta-strip-label">DIRECT OUTPUT</span>
-                    <span class="meta-strip-val highlight-emerald">50+ Courses Produced</span>
-                  </div>
-                  <div class="meta-strip-item">
-                    <span class="meta-strip-label">IMPACT</span>
-                    <span class="meta-strip-val highlight-purple">30% Faster Turnaround</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 2. Hero Visual: High-Resolution Catalogue & Architecture Overview -->
-              <div class="project-media-top media-interactive-card" tabindex="0" role="button"
-                aria-label="Expand CareerPaddy Course Catalogue Overview"
-                onclick="openLightbox('assets/images/careerpaddy-catalogue-full.webp', 'CareerPaddy — Course System Architecture & Catalogue', 'Full visual overview of the 1,397+ course library organization and design ops hierarchy.')">
-                <img src="assets/images/careerpaddy-catalogue-full.webp"
-                  alt="CareerPaddy Course Catalogue & Visual System Architecture" class="media-hero-img" loading="lazy"
-                  decoding="async">
-                <div class="media-caption-bar">
-                  <span class="media-caption-text">Course Catalogue & Visual System Architecture</span>
-                  <span class="media-caption-tag"><i class="fa-solid fa-layer-group"></i> 1,397+ Structured Courses</span>
-                </div>
-              </div>
-
-              <!-- 3. 2-Column System Breakdown -->
-              <div class="cp-system-grid">
-                <!-- System 1 -->
-                <div class="cp-system-card media-interactive-card" tabindex="0" role="button"
-                  aria-label="Expand Course System Architecture & Uniform Topic Styling"
-                  onclick="openLightbox('assets/images/careerpaddy-video-assets-1.webp', '01 — Course System Architecture & Uniform Topic Styling', 'Created a consistent visual format across the courses, using colour, typography and recurring layouts.')">
-                  <img src="assets/images/careerpaddy-video-assets-1.webp" alt="Course System Architecture & Uniform Topic Styling" class="cp-system-img" loading="lazy" decoding="async">
-                  <div class="cp-system-body">
-                    <span class="annotation-tag">THE COURSE SLIDE SYSTEM</span>
-                    <h4 class="cp-system-title">01 — Course System Architecture & Uniform Topic Styling</h4>
-                    <div class="brief-detail-section" style="margin-top: 0.5rem;">
-                      <div class="brief-card-block">
-                        <h5><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Brief</h5>
-                        <p>Create a consistent visual structure for CareerPaddy's growing course library.</p>
-                      </div>
-                      <div class="brief-card-block strategy">
-                        <h5><i class="fa-solid fa-compass" style="color: var(--accent-purple-bright);"></i> Interpretation</h5>
-                        <p>The course system needed to maintain consistency across different topics while still allowing individual lessons to be visually distinct. I developed a shared colour and formatting structure that keeps related topics cohesive and makes the overall catalogue recognisable as CareerPaddy.</p>
-                      </div>
-                      <div class="brief-card-block impact">
-                        <h5><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-emerald);"></i> Execution</h5>
-                        <p>Created a consistent visual format across the courses, using colour, typography and recurring layouts to maintain cohesion across different topics within the same system.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- System 2 -->
-                <div class="cp-system-card media-interactive-card" tabindex="0" role="button"
-                  aria-label="Expand 20-Category Multi-Format Core System"
-                  onclick="openLightbox('assets/images/careerpaddy-video-assets-2.webp', '02 — 20-Category Multi-Format Core System', 'Built the core system across 20 categories with specialised colour palettes and customised visual formats.')">
-                  <img src="assets/images/careerpaddy-video-assets-2.webp" alt="20-Category Multi-Format Core System" class="cp-system-img" loading="lazy" decoding="async">
-                  <div class="cp-system-body">
-                    <span class="annotation-tag">THE CATEGORY COLOUR SYSTEM</span>
-                    <h4 class="cp-system-title">02 — 20-Category Multi-Format Core System</h4>
-                    <div class="brief-detail-section" style="margin-top: 0.5rem;">
-                      <div class="brief-card-block">
-                        <h5><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Brief</h5>
-                        <p>Create a visual system that could accommodate CareerPaddy's different course categories.</p>
-                      </div>
-                      <div class="brief-card-block strategy">
-                        <h5><i class="fa-solid fa-compass" style="color: var(--accent-purple-bright);"></i> Interpretation</h5>
-                        <p>Each category needed to feel distinct without breaking away from the wider CareerPaddy identity. I developed specialised colour palettes and visual formats that reflect the character of each category while maintaining a consistent system.</p>
-                      </div>
-                      <div class="brief-card-block impact">
-                        <h5><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-emerald);"></i> Execution</h5>
-                        <p>Built the core system across 20 categories, assigning each category its own colour treatment and customised visual format while maintaining a common design language across the full course library.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 4. Project Metadata Footer -->
-              <div class="case-study-meta-strip cp-footer-meta">
-                <div class="meta-strip-item">
-                  <span class="meta-strip-label"><i class="fa-solid fa-user-gear"></i> ROLE</span>
-                  <span class="meta-strip-val">Digital Designer · Content & Creative</span>
-                </div>
-                <div class="meta-strip-item">
-                  <span class="meta-strip-label"><i class="fa-solid fa-layer-group"></i> WORK</span>
-                  <span class="meta-strip-val">Course Design · Motion · Visual Systems · Voice Direction · Video Editing · Catalogue Management · Social Content</span>
-                </div>
-                <div class="meta-strip-item">
-                  <span class="meta-strip-label"><i class="fa-solid fa-bolt-lightning"></i> IMPACT</span>
-                  <span class="meta-strip-val highlight-emerald">30% Faster Course Turnaround</span>
-                </div>
-              </div>
-
-            </div>
-          </article>
-
-          <!-- CASE STUDY 2: TRATUN ENERGY (BRAND STORYTELLING & B2B CONTENT ENGINE) -->
-          <article class="project-card" data-category="campaign">
-            <div class="project-inner showcase-layout">
-
-              <!-- 1. Header Intro at the TOP -->
-              <div class="project-header-intro">
-                <div class="project-meta">
-                  <span class="project-badge">02 / TRATUN ENERGY</span>
-                  <span class="project-timeline">Brand Storytelling & B2B Engine</span>
-                </div>
-
-                <h3 class="project-title">Making a new energy brand feel established without making it feel distant.</h3>
-                <p class="project-description">
-                  Tratun is a B2B energy company operating within the Grosvenor group. I create its visual communication for LinkedIn and Instagram, translating technical and corporate subjects into content that feels clear, credible and human.
-                </p>
-
-                <!-- Approach Highlight Quote -->
-                <div class="tratun-quote-banner">
-                  <div class="quote-pill"><i class="fa-solid fa-quote-left"></i> APPROACH</div>
-                  <p class="quote-text">“Corporate enough for B2B. Human enough to engage.”</p>
-                  <p class="quote-sub">I use the visual to establish the message before the viewer reads the copy. That means choosing imagery and concepts that explain the subject quickly, while keeping the Tratun identity consistent.</p>
-                </div>
-              </div>
-
-              <!-- 2. Side-by-Side Interactive 13-Piece Showcase -->
-              <div class="campaign-showcase-split">
-
-                <!-- Left Side: Interactive Viewport, Controls & 13-Thumbnail Filmstrip -->
-                <div class="showcase-side-pane">
-                  <div class="side-slider-viewport" tabindex="0" role="button"
-                    aria-label="Click to expand Tratun artwork in high-resolution lightbox" id="tratunMainViewport">
-                    <img src="assets/images/Tratun section/20th_July_Tratun_ Know Your Oil — Engine Oil Education.webp" alt="Tratun Campaign Artwork"
-                      class="side-slider-main-img" id="tratunMainImg" loading="lazy" decoding="async">
-                    <div class="slider-zoom-pill">
-                      <i class="fa-solid fa-expand"></i> Expand Lightbox
-                    </div>
-                  </div>
-
-                  <div class="side-slider-controls">
-                    <div class="slider-nav-group">
-                      <button class="slider-btn" id="tratunPrevBtn" aria-label="Previous Tratun Design">
-                        <i class="fa-solid fa-chevron-left"></i>
-                      </button>
-                      <button class="slider-btn" id="tratunNextBtn" aria-label="Next Tratun Design">
-                        <i class="fa-solid fa-chevron-right"></i>
-                      </button>
-                    </div>
-                    <span class="slider-counter-display" id="tratunCounter">Design 1 of 10</span>
-                  </div>
-
-                  <!-- 10-Item Thumbnail Filmstrip -->
-                  <div class="side-slider-filmstrip" id="tratunThumbs">
-                    <!-- Populated dynamically in app.js -->
-                  </div>
-                </div>
-
-                <!-- Right Side: Synchronized Strategic Brief / Interpretation / Execution -->
-                <div class="showcase-brief-pane">
-                  <div class="dynamic-brief-content" id="tratunBriefContent">
-                    <span class="brief-type-tag" id="tratunBriefTag"><i class="fa-solid fa-tag"></i> EDUCATIONAL & PRODUCT INTEGRITY</span>
-                    <h4 class="brief-main-title" id="tratunBriefTitle">01 — Engine Oil Education</h4>
-
-                    <div class="brief-detail-section">
-                      <div class="brief-card-block">
-                        <h5><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Brief</h5>
-                        <p id="tratunBriefDesc">Show how skipping regular oil changes can damage an engine.</p>
-                      </div>
-
-                      <div class="brief-card-block strategy">
-                        <h5><i class="fa-solid fa-compass" style="color: var(--accent-purple-bright);"></i> Interpretation</h5>
-                        <p id="tratunBriefConcept">Show the negative outcome of neglected oil changes alongside the positive outcome of proper maintenance, using a single image without making the composition feel crowded.</p>
-                      </div>
-
-                      <div class="brief-card-block impact">
-                        <h5><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-emerald);"></i> Execution</h5>
-                        <p id="tratunBriefImpact">Split the engine down the middle, with one side rusted and damaged and the other fresh and properly oiled. A grid pattern was added to the background to create depth instead of relying on a flat backdrop.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Metadata Footer for Tratun -->
-                  <div class="case-study-meta-strip tratun-meta-block">
-                    <div class="meta-strip-item">
-                      <span class="meta-strip-label"><i class="fa-solid fa-user-gear"></i> ROLE</span>
-                      <span class="meta-strip-val">Design Intern · Visual Communication</span>
-                    </div>
-                    <div class="meta-strip-item">
-                      <span class="meta-strip-label"><i class="fa-solid fa-layer-group"></i> WORK</span>
-                      <span class="meta-strip-val">LinkedIn · Instagram · Thought Leadership · Educational Content · Announcements · Industry Awareness · Engagement Content</span>
-                    </div>
-                    <div class="meta-strip-item">
-                      <span class="meta-strip-label"><i class="fa-solid fa-arrows-spin"></i> ONGOING</span>
-                      <span class="meta-strip-val highlight-gold">Ongoing visual communication for a growing B2B energy brand.</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </article>
-
-          <!-- CASE STUDY 3: GROSVENOR GLOBAL SERVICES (CORPORATE SUITE) -->
-          <article class="project-card" data-category="campaign">
-            <div class="project-inner showcase-layout">
-
-              <!-- 1. Header Intro at the TOP -->
-              <div class="project-header-intro">
-                <div class="project-meta">
-                  <span class="project-badge">03 / GROSVENOR GLOBAL SERVICES</span>
-                  <span class="project-timeline">Corporate Suite</span>
-                </div>
-
-                <h3 class="project-title">Corporate communication, kept clear and considered.</h3>
-                <p class="project-description">
-                  I developed a small set of corporate communication pieces within the Grosvenor environment, exploring how different messages could stay professional while still having a distinct visual idea.
-                </p>
-              </div>
-
-              <!-- 2. Side-by-Side Interactive 5-Piece Showcase -->
-              <div class="campaign-showcase-split reversed">
-
-                <!-- Left Side: Synchronized Strategic Brief / Interpretation / Execution -->
-                <div class="showcase-brief-pane">
-                  <div class="dynamic-brief-content" id="grosvenorBriefContent">
-                    <span class="brief-type-tag" id="grosvenorBriefTag"><i class="fa-solid fa-tag"></i> 10TH ANNIVERSARY ENGAGEMENT</span>
-                    <h4 class="brief-main-title" id="grosvenorBriefTitle">01 — 10th Anniversary Jigsaw</h4>
-
-                    <div class="brief-detail-section">
-                      <div class="brief-card-block">
-                        <h5><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Brief</h5>
-                        <p id="grosvenorBriefDesc">Create an engaging visual to celebrate Grosvenor's 10th anniversary.</p>
-                      </div>
-
-                      <div class="brief-card-block strategy">
-                        <h5><i class="fa-solid fa-compass" style="color: var(--accent-purple-bright);"></i> Interpretation</h5>
-                        <p id="grosvenorBriefConcept">Use a jigsaw as a simple metaphor for the different pieces that make up the organisation and its journey.</p>
-                      </div>
-
-                      <div class="brief-card-block impact">
-                        <h5><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-emerald);"></i> Execution</h5>
-                        <p id="grosvenorBriefImpact">Created a jigsaw-based anniversary visual designed primarily as an engagement post.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Metadata Footer for Grosvenor -->
-                  <div class="case-study-meta-strip grosvenor-meta-block">
-                    <div class="meta-strip-item">
-                      <span class="meta-strip-label"><i class="fa-solid fa-user-gear"></i> ROLE</span>
-                      <span class="meta-strip-val">Design Intern</span>
-                    </div>
-                    <div class="meta-strip-item">
-                      <span class="meta-strip-label"><i class="fa-solid fa-layer-group"></i> WORK</span>
-                      <span class="meta-strip-val">Corporate Communication · Campaign Concepts · Social Visuals</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Right Side: Interactive Viewport, Controls & 5-Thumbnail Filmstrip -->
-                <div class="showcase-side-pane">
-                  <div class="side-slider-viewport" tabindex="0" role="button"
-                    aria-label="Click to expand Grosvenor artwork in high-resolution lightbox"
-                    id="grosvenorMainViewport">
-                    <img src="assets/images/Grosvenor Section/grosvenor-reveal.webp"
-                      alt="Grosvenor Campaign Artwork" class="side-slider-main-img" id="grosvenorMainImg" loading="lazy"
-                      decoding="async">
-                    <div class="slider-zoom-pill">
-                      <i class="fa-solid fa-expand"></i> Expand Lightbox
-                    </div>
-                  </div>
-
-                  <div class="side-slider-controls">
-                    <div class="slider-nav-group">
-                      <button class="slider-btn" id="grosvenorPrevBtn" aria-label="Previous Grosvenor Design">
-                        <i class="fa-solid fa-chevron-left"></i>
-                      </button>
-                      <button class="slider-btn" id="grosvenorNextBtn" aria-label="Next Grosvenor Design">
-                        <i class="fa-solid fa-chevron-right"></i>
-                      </button>
-                    </div>
-                    <span class="slider-counter-display" id="grosvenorCounter">Design 1 of 5</span>
-                  </div>
-
-                  <!-- 5-Item Thumbnail Filmstrip -->
-                  <div class="side-slider-filmstrip" id="grosvenorThumbs">
-                    <!-- Populated dynamically in app.js -->
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </article>
-
-        </div>
+    <figure class="hero-art">
+     <img alt="A sculptural opening in paper reveals a deep indigo interior" class="" decoding="async" fetchpriority="high" height="800" src="/assets/brand/question-to-clarity.webp" width="1200"/>
+     <figcaption>
+      <span>
+       FROM QUESTION TO CLARITY
+      </span>
+      <span>
+       01 — ENIGMA
+      </span>
+     </figcaption>
+    </figure>
+   </section>
+   <div class="intro wrap">
+    <p>
+     I don’t just make brands look good.
+     <br/>
+     <span>
+      I build the systems that help them communicate better.
+     </span>
+    </p>
+    <nav aria-label="Explore work by discipline" class="work-jumps">
+     <a href="#work">
+      Graphic design ↘
+     </a>
+     <a href="#identity">
+      Brand identity ↘
+     </a>
+     <a href="#uiux">
+      UI/UX ↘
+     </a>
+     <a href="#motion">
+      Motion ↘
+     </a>
+    </nav>
+   </div>
+   <section class="section wrap" id="work">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       01 / SELECTED WORK
+      </p>
+      <h2>
+       Ideas, made visible.
+      </h2>
+     </div>
+     <p class="section-intro">
+      Campaigns, visual systems and the thinking behind them.
+     </p>
+    </div>
+    <div class="work-grid">
+     <article class="work-card">
+      <a aria-label="View Tratun Energy project" class="work-image" href="/work/tratun.html">
+       <img alt="Tratun Energy — selected design" class="" decoding="async" height="1350" loading="lazy" src="/assets/images/Tratun section/20th_July_Tratun_ Know Your Oil — Engine Oil Education.webp" width="1080"/>
+       <span class="open-project">
+        View project ↗
+       </span>
+      </a>
+      <div class="work-info">
+       <p class="eyebrow">
+        01 / Campaigns / Design internship
+       </p>
+       <h3>
+        <a href="/work/tratun.html">
+         Tratun Energy
+         <span aria-hidden="true">
+          ↗
+         </span>
+        </a>
+       </h3>
+       <p>
+        Making energy, logistics and everyday ideas easier to understand.
+       </p>
       </div>
-    </section>
-
-    <!-- =========================================================================
-         INFINITE SEAMLESS MARQUEE (TRUSTED BRANDS & ECOSYSTEM)
-         ========================================================================= -->
-    <section class="marquee-section" aria-label="Client and Technology Ecosystem">
-      <div class="marquee-container">
-        <div class="marquee-track">
-          <!-- Item 1: Tratun Energy -->
-          <div class="marquee-item">
-            <div class="marquee-icon-box"><i class="fa-solid fa-gas-pump"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Tratun Energy Limited</span>
-              <span class="marquee-brand-sub">Downstream Energy & Logistics</span>
-            </div>
-          </div>
-          <!-- Item 2: Grosvenor Global -->
-          <div class="marquee-item">
-            <div class="marquee-icon-box"><i class="fa-solid fa-industry"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Grosvenor Global Services</span>
-              <span class="marquee-brand-sub">Industrial Technical Operations</span>
-            </div>
-          </div>
-          <!-- Item 3: CareerPaddy -->
-          <div class="marquee-item">
-            <div class="marquee-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">CareerPaddy</span>
-              <span class="marquee-brand-sub">EdTech & Digital Upskilling</span>
-            </div>
-          </div>
-          <!-- Item 4: Hindsight AI -->
-          <div class="marquee-item">
-            <div class="marquee-icon-box"><i class="fa-solid fa-brain"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Hindsight AI</span>
-              <span class="marquee-brand-sub">Exam Intelligence Platform</span>
-            </div>
-          </div>
-          <!-- Item 5: Ektos -->
-          <div class="marquee-item">
-            <div class="marquee-icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Ektos Mobile App</span>
-              <span class="marquee-brand-sub">UI/UX Onboarding Architecture</span>
-            </div>
-          </div>
-          <!-- Item 6: Nycil Limited -->
-          <div class="marquee-item">
-            <div class="marquee-icon-box"><i class="fa-solid fa-building-shield"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Nycil Limited</span>
-              <span class="marquee-brand-sub">SAP Business One Financials</span>
-            </div>
-          </div>
-          <!-- Item 7: ENIGMA OS -->
-          <div class="marquee-item">
-            <div class="marquee-icon-box"><i class="fa-solid fa-cubes"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">ENIGMA OS</span>
-              <span class="marquee-brand-sub">Automated Productivity Engine</span>
-            </div>
-          </div>
-
-          <!-- DUPLICATE SET FOR SEAMLESS 100% HARDWARE-ACCELERATED INFINITE LOOP -->
-          <div class="marquee-item" aria-hidden="true">
-            <div class="marquee-icon-box"><i class="fa-solid fa-gas-pump"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Tratun Energy Limited</span>
-              <span class="marquee-brand-sub">Downstream Energy & Logistics</span>
-            </div>
-          </div>
-          <div class="marquee-item" aria-hidden="true">
-            <div class="marquee-icon-box"><i class="fa-solid fa-industry"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Grosvenor Global Services</span>
-              <span class="marquee-brand-sub">Industrial Technical Operations</span>
-            </div>
-          </div>
-          <div class="marquee-item" aria-hidden="true">
-            <div class="marquee-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">CareerPaddy</span>
-              <span class="marquee-brand-sub">EdTech & Digital Upskilling</span>
-            </div>
-          </div>
-          <div class="marquee-item" aria-hidden="true">
-            <div class="marquee-icon-box"><i class="fa-solid fa-brain"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Hindsight AI</span>
-              <span class="marquee-brand-sub">Exam Intelligence Platform</span>
-            </div>
-          </div>
-          <div class="marquee-item" aria-hidden="true">
-            <div class="marquee-icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Ektos Mobile App</span>
-              <span class="marquee-brand-sub">UI/UX Onboarding Architecture</span>
-            </div>
-          </div>
-          <div class="marquee-item" aria-hidden="true">
-            <div class="marquee-icon-box"><i class="fa-solid fa-building-shield"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">Nycil Limited</span>
-              <span class="marquee-brand-sub">SAP Business One Financials</span>
-            </div>
-          </div>
-          <div class="marquee-item" aria-hidden="true">
-            <div class="marquee-icon-box"><i class="fa-solid fa-cubes"></i></div>
-            <div class="marquee-text-group">
-              <span class="marquee-brand-title">ENIGMA OS</span>
-              <span class="marquee-brand-sub">Automated Productivity Engine</span>
-            </div>
-          </div>
-        </div>
+     </article>
+     <article class="work-card">
+      <a aria-label="View CareerPaddy project" class="work-image" href="/work/careerpaddy.html">
+       <img alt="CareerPaddy — selected design" class="" decoding="async" height="973" loading="lazy" src="/assets/images/careerpaddy-video-assets-1.webp" width="1573"/>
+       <span class="open-project">
+        View project ↗
+       </span>
+      </a>
+      <div class="work-info">
+       <p class="eyebrow">
+        02 / Visual learning systems
+       </p>
+       <h3>
+        <a href="/work/careerpaddy.html">
+         CareerPaddy
+         <span aria-hidden="true">
+          ↗
+         </span>
+        </a>
+       </h3>
+       <p>
+        A consistent visual language for a growing world of bite-sized learning.
+       </p>
       </div>
-    </section>
-
-    <!-- =========================================================================
-         DESIGN GALLERY (BUSINESS & ADVERTS + SOCIAL MEDIA CREATIVES - VISUAL LOGIC)
-         ========================================================================= -->
-    <section class="section-spacing gallery-section" id="gallery">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag"><i class="fa-solid fa-images"></i> Visual Logic</span>
-          <h2 class="section-title">Selected Visual Work</h2>
-          <p class="section-subtitle">
-            A collection of campaign visuals, promotional designs, social media creatives, and brand communications created across different projects and industries.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-
-          <!-- 01: Birthday Campaign Visual -->
-          <div class="gallery-item tall" tabindex="0" role="button"
-            aria-label="Open Lightbox: Birthday Campaign Visual"
-            onclick="openLightbox('assets/images/Selected images/1.webp', 'Birthday Campaign Visual', 'A polished personal-brand birthday design built around portraiture, typography and a warm celebratory palette. The composition keeps the subject prominent while giving the message a formal, premium feel.')">
-            <img src="assets/images/Selected images/1.webp" alt="Birthday Campaign Visual" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">Personal Branding</span>
-              <h4 class="gallery-overlay-title">Birthday Campaign Visual</h4>
-            </div>
-          </div>
-
-          <!-- 02: CareerPaddy App Promotion -->
-          <div class="gallery-item" tabindex="0" role="button"
-            aria-label="Open Lightbox: CareerPaddy App Promotion"
-            onclick="openLightbox('assets/images/Selected images/2.webp', 'CareerPaddy App Promotion', 'A promotional visual designed to drive awareness and app downloads, using the phone mockup as the central focal point and CareerPaddy\'s visual identity to reinforce brand recognition.')">
-            <img src="assets/images/Selected images/2.webp" alt="CareerPaddy App Promotion" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">CareerPaddy</span>
-              <h4 class="gallery-overlay-title">CareerPaddy App Promotion</h4>
-            </div>
-          </div>
-
-          <!-- 03: Weekend Engagement Visual -->
-          <div class="gallery-item" tabindex="0" role="button"
-            aria-label="Open Lightbox: Weekend Engagement Visual"
-            onclick="openLightbox('assets/images/Selected images/3.webp', 'Weekend Engagement Visual', 'A social media engagement design for a digital exchange brand, combining bold typography, currency imagery and a playful weekend message to make a commercial service feel more approachable.')">
-            <img src="assets/images/Selected images/3.webp" alt="Weekend Engagement Visual" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">Mickey Exchange</span>
-              <h4 class="gallery-overlay-title">Weekend Engagement Visual</h4>
-            </div>
-          </div>
-
-          <!-- 04: Weekly Social Media Promotion -->
-          <div class="gallery-item" tabindex="0" role="button"
-            aria-label="Open Lightbox: Weekly Social Media Promotion"
-            onclick="openLightbox('assets/images/Selected images/4.webp', 'Weekly Social Media Promotion', 'A promotional graphic positioning design services through a simple Monday message. The composition uses lifestyle imagery, clean typography and a restrained colour system to keep the offer easy to scan.')">
-            <img src="assets/images/Selected images/4.webp" alt="Weekly Social Media Promotion" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">Design Services</span>
-              <h4 class="gallery-overlay-title">Weekly Social Media Promotion</h4>
-            </div>
-          </div>
-
-          <!-- 05: Critical Thinking Course Promotion -->
-          <div class="gallery-item" tabindex="0" role="button"
-            aria-label="Open Lightbox: Critical Thinking Course Promotion"
-            onclick="openLightbox('assets/images/Selected images/5.webp', 'Critical Thinking Course Promotion', 'An educational campaign visual introducing critical-thinking training through a workplace scenario. The layout balances illustration, supporting information and a clear call-to-action without overwhelming the subject.')">
-            <img src="assets/images/Selected images/5.webp" alt="Critical Thinking Course Promotion" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">CareerPaddy</span>
-              <h4 class="gallery-overlay-title">Critical Thinking Course Promotion</h4>
-            </div>
-          </div>
-
-          <!-- 06: Everyday Payday Campaign -->
-          <div class="gallery-item" tabindex="0" role="button"
-            aria-label="Open Lightbox: Everyday Payday Campaign"
-            onclick="openLightbox('assets/images/Selected images/6.webp', 'Everyday Payday Campaign', 'A product-focused promotional visual built around a mobile payment interface. The composition uses the phone and surrounding transaction elements to make the product experience immediately understandable.')">
-            <img src="assets/images/Selected images/6.webp" alt="Everyday Payday Campaign" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">Fintech Product</span>
-              <h4 class="gallery-overlay-title">Everyday Payday Campaign</h4>
-            </div>
-          </div>
-
-          <!-- 07: Creative Services Campaign -->
-          <div class="gallery-item mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: Creative Services Campaign"
-            onclick="openLightbox('assets/images/Selected images/7.webp', 'Creative Services Campaign', 'A service-focused visual created to communicate ENIGMA STUDIO\'s design capabilities at a glance. The layout combines lifestyle imagery with a concise service list to keep the message direct and commercially focused.')">
-            <img src="assets/images/Selected images/7.webp" alt="Creative Services Campaign" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">ENIGMA Studio</span>
-              <h4 class="gallery-overlay-title">Creative Services Campaign</h4>
-            </div>
-          </div>
-
-          <!-- 08: Monday Engagement Visual -->
-          <div class="gallery-item tall mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: Monday Engagement Visual"
-            onclick="openLightbox('assets/images/Selected images/8.webp', 'Monday Engagement Visual', 'A lifestyle-led social graphic built around a simple Monday message. The oversized vertical typography creates the visual structure while the image and supporting copy give the piece a more editorial character.')">
-            <img src="assets/images/Selected images/8.webp" alt="Monday Engagement Visual" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">Personal Branding</span>
-              <h4 class="gallery-overlay-title">Monday Engagement Visual</h4>
-            </div>
-          </div>
-
-          <!-- 09: Article Promotion — Survival Skills -->
-          <div class="gallery-item mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: Article Promotion — Survival Skills"
-            onclick="openLightbox('assets/images/Selected images/9.webp', 'Article Promotion — Survival Skills', 'A content-promotion visual designed to move audiences from social media into CareerPaddy\'s educational content. The phone mockup makes the article tangible while the headline creates curiosity around the subject.')">
-            <img src="assets/images/Selected images/9.webp" alt="Article Promotion — Survival Skills" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">CareerPaddy</span>
-              <h4 class="gallery-overlay-title">Article Promotion — Survival Skills</h4>
-            </div>
-          </div>
-
-          <!-- 10: Rate Promotion Campaign -->
-          <div class="gallery-item mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: Rate Promotion Campaign"
-            onclick="openLightbox('assets/images/Selected images/10.webp', 'Rate Promotion Campaign', 'A promotional graphic for a digital exchange service, using currency, gift cards and a strong typographic hierarchy to communicate the range of services while keeping the exchange rate message dominant.')">
-            <img src="assets/images/Selected images/10.webp" alt="Rate Promotion Campaign" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">Elijah Cash Exchange</span>
-              <h4 class="gallery-overlay-title">Rate Promotion Campaign</h4>
-            </div>
-          </div>
-
-          <!-- 11: CareerPaddy App Download Campaign -->
-          <div class="gallery-item mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: CareerPaddy App Download Campaign"
-            onclick="openLightbox('assets/images/Selected images/11.webp', 'CareerPaddy App Download Campaign', 'A cleaner, more product-led approach to promoting the CareerPaddy app. The hand-held phone creates a direct connection with the viewer while the split composition gives the headline and download options clear space.')">
-            <img src="assets/images/Selected images/11.webp" alt="CareerPaddy App Download Campaign" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">CareerPaddy</span>
-              <h4 class="gallery-overlay-title">CareerPaddy App Download Campaign</h4>
-            </div>
-          </div>
-
-          <!-- 12: 10 Days Ember Sales Campaign (Natural Footies) -->
-          <div class="gallery-item tall mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: 10 Days Ember Sales Campaign"
-            onclick="openLightbox('assets/images/Selected images/12.webp', '10 Days Ember Sales Campaign', 'A promotional sales design built around a footwear collection and limited-time discount. Product photography, campaign typography and a structured catalogue section work together to communicate both the offer and product range.')">
-            <img src="assets/images/Selected images/12.webp" alt="10 Days Ember Sales Campaign" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">Natural Footies</span>
-              <h4 class="gallery-overlay-title">10 Days Ember Sales Campaign</h4>
-            </div>
-          </div>
-
-          <!-- 13: Beauty Service Promotion (Claire's Nail Artistry) -->
-          <div class="gallery-item mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: Beauty Service Promotion"
-            onclick="openLightbox('assets/images/Selected images/13.webp', 'Beauty Service Promotion', 'A service-focused advertisement designed to establish trust while showcasing the brand\'s work. The combination of service information, portfolio imagery and testimonial-style messaging gives the design both promotional and credibility-building functions.')">
-            <img src="assets/images/Selected images/13.webp" alt="Beauty Service Promotion" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">Claire\'s Nail Artistry</span>
-              <h4 class="gallery-overlay-title">Beauty Service Promotion</h4>
-            </div>
-          </div>
-
-          <!-- 14: 10 Days Ember Sales Campaign (OrgamsByEwa) -->
-          <div class="gallery-item mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: 10 Days Ember Sales Campaign"
-            onclick="openLightbox('assets/images/Selected images/14.webp', '10 Days Ember Sales Campaign', 'A seasonal promotional design combining product presentation, discount messaging and campaign information. The composition uses the model and product as the primary visual anchors while keeping the sales details easy to locate.')">
-            <img src="assets/images/Selected images/14.webp" alt="10 Days Ember Sales Campaign" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">OrgamsByEwa</span>
-              <h4 class="gallery-overlay-title">10 Days Ember Sales Campaign</h4>
-            </div>
-          </div>
-
-          <!-- 15: Beauty Services Advertisement (MOAT Beauty Empire) -->
-          <div class="gallery-item mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: Beauty Services Advertisement"
-            onclick="openLightbox('assets/images/Selected images/15.webp', 'Beauty Services Advertisement', 'A beauty-service advertisement designed around variety and visual proof. Multiple examples of the brand\'s work are presented alongside a clear service list, allowing the audience to understand the offering without relying on lengthy copy.')">
-            <img src="assets/images/Selected images/15.webp" alt="Beauty Services Advertisement" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">MOAT Beauty Empire</span>
-              <h4 class="gallery-overlay-title">Beauty Services Advertisement</h4>
-            </div>
-          </div>
-
-          <!-- 16: Cosmetics Brand Launch (Raregem Cosmetics) -->
-          <div class="gallery-item mobile-hidden" tabindex="0" role="button"
-            aria-label="Open Lightbox: Cosmetics Brand Launch"
-            onclick="openLightbox('assets/images/Selected images/16.webp', 'Cosmetics Brand Launch', 'A launch advertisement built around a hero product and a strong editorial presentation. The theatrical framing creates a sense of occasion while the product remains the centre of attention, supported by a clear launch offer and contact information.')">
-            <img src="assets/images/Selected images/16.webp" alt="Cosmetics Brand Launch" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-overlay-tag">Raregem Cosmetics</span>
-              <h4 class="gallery-overlay-title">Cosmetics Brand Launch</h4>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Mobile Gallery Expander Toggle (Cuts scrolling fatigue) -->
-        <div class="gallery-more-wrap">
-          <button type="button" class="btn btn-outline gallery-toggle-btn" id="galleryToggleBtn" onclick="toggleGalleryMore()">
-            <i class="fa-solid fa-grid-2-plus"></i> <span>View All 16 Works (+10)</span>
-          </button>
-        </div>
+     </article>
+     <article class="work-card">
+      <a aria-label="View Grosvenor Global project" class="work-image" href="/work/grosvenor.html">
+       <img alt="Grosvenor Global — selected design" class="" decoding="async" height="1350" loading="lazy" src="/assets/images/Grosvenor Section/grosvenor-reveal.webp" width="1080"/>
+       <span class="open-project">
+        View project ↗
+       </span>
+      </a>
+      <div class="work-info">
+       <p class="eyebrow">
+        03 / Corporate communication
+       </p>
+       <h3>
+        <a href="/work/grosvenor.html">
+         Grosvenor Global
+         <span aria-hidden="true">
+          ↗
+         </span>
+        </a>
+       </h3>
+       <p>
+        Clear visual stories across the business and the moments that matter.
+       </p>
       </div>
-    </section>
-
-    <!-- =========================================================================
-         UI/UX & APP DESIGN SECTION (PRODUCT DESIGN ARCHITECTURE)
-         ========================================================================= -->
-    <section class="section-spacing uiux-section" id="uiux">
-      <div class="container">
-
-        <div class="section-header">
-          <span class="section-tag"><i class="fa-solid fa-mobile-screen-button"></i> Product Design Architecture</span>
-          <h2 class="section-title">UI/UX Systems & Digital Product Design</h2>
-          <p class="section-subtitle">
-            End-to-end product experiences spanning mobile interfaces, web platforms, onboarding flows, and scalable design systems built for clarity, consistency, and ease of use.
-          </p>
-        </div>
-
-        <!-- 1. Ektos Master Overview: 3D Multi-Device & Web Platform Suite -->
-        <div class="uiux-hero-grid">
-          <div class="uiux-hero-card" tabindex="0" role="button" aria-label="Expand Ektos Mobile Experience"
-            onclick="openLightbox('assets/images/ektos-3d-showcase.webp', 'Ektos Mobile Experience', 'A mobile experience designed to guide users from account creation to confident money management.')">
-            <div class="uiux-hero-media">
-              <img src="assets/images/ektos-3d-showcase.webp" alt="Ektos Mobile Experience"
-                loading="lazy" decoding="async">
-              <div class="uiux-zoom-tag"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand 3D System</div>
-            </div>
-            <div class="uiux-hero-body">
-              <span class="uiux-badge"><i class="fa-solid fa-mobile-screen"></i> Mobile Product Experience</span>
-              <h3 class="uiux-hero-title">Ektos Mobile Experience</h3>
-              <p class="uiux-hero-desc">A mobile experience designed to guide users from account creation to confident money management.</p>
-            </div>
-          </div>
-
-          <div class="uiux-hero-card" tabindex="0" role="button" aria-label="Expand Ektos Web Experience"
-            onclick="openLightbox('assets/images/ektos-website-hero.webp', 'Ektos Web Experience', 'A responsive web experience extending Ektos into a clear, scalable financial platform.')">
-            <div class="uiux-hero-media">
-              <img src="assets/images/ektos-website-hero.webp" alt="Ektos Web Experience" loading="lazy"
-                decoding="async">
-              <div class="uiux-zoom-tag"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Web Experience</div>
-            </div>
-            <div class="uiux-hero-body">
-              <span class="uiux-badge"><i class="fa-solid fa-laptop"></i> Web Product Experience</span>
-              <h3 class="uiux-hero-title">Ektos Web Experience</h3>
-              <p class="uiux-hero-desc">A responsive web experience extending Ektos into a clear, scalable financial platform.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Ektos Interactive 5-Stage Mobile Onboarding Showcase -->
-        <div class="ektos-flow-container" id="ektosFlowContainer">
-          
-          <!-- Flow Header with Counter & Progress Track -->
-          <div class="ektos-flow-header">
-            <div class="ektos-flow-intro">
-              <span class="sub-section-tag"><i class="fa-solid fa-layer-group"></i> Mobile Onboarding Flow</span>
-              <h3 class="ektos-flow-main-title">From first impression to first action.</h3>
-              <p class="ektos-flow-main-desc">
-                A guided onboarding experience that introduces Ektos, communicates its core value, and gets users into the product with minimal friction.
-              </p>
-            </div>
-
-            <div class="ektos-flow-controls">
-              <div class="ektos-flow-counter-wrap">
-                <span class="ektos-flow-counter" id="ektosFlowCounter">01 / 05</span>
-              </div>
-              
-              <!-- Progress Step Indicator Pills (01 ━━━ ○ ○ ○ ○) -->
-              <div class="ektos-progress-pills" id="ektosProgressPills" role="tablist" aria-label="Onboarding Stage Navigation">
-                <button type="button" class="ektos-pill-btn active" data-index="0" aria-label="Go to Stage 1: Take Control of Your Finances">
-                  <span class="pill-bar"></span>
-                </button>
-                <button type="button" class="ektos-pill-btn" data-index="1" aria-label="Go to Stage 2: Save Towards Your Goal">
-                  <span class="pill-bar"></span>
-                </button>
-                <button type="button" class="ektos-pill-btn" data-index="2" aria-label="Go to Stage 3: Budget With Confidence">
-                  <span class="pill-bar"></span>
-                </button>
-                <button type="button" class="ektos-pill-btn" data-index="3" aria-label="Go to Stage 4: Sign In">
-                  <span class="pill-bar"></span>
-                </button>
-                <button type="button" class="ektos-pill-btn" data-index="4" aria-label="Go to Stage 5: Create Account">
-                  <span class="pill-bar"></span>
-                </button>
-              </div>
-
-              <!-- Navigation Arrows -->
-              <div class="ektos-nav-arrows">
-                <button type="button" class="ektos-arrow-btn" id="ektosFlowPrev" aria-label="Previous Onboarding Screen">
-                  <i class="fa-solid fa-arrow-left"></i>
-                </button>
-                <button type="button" class="ektos-arrow-btn" id="ektosFlowNext" aria-label="Next Onboarding Screen">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Main Interactive Stage Display (Scaled Screen Showcase + Dynamic Caption) -->
-          <div class="ektos-stage-display">
-            
-            <!-- Scaled Device Screen Showcase Frame -->
-            <div class="ektos-device-frame" id="ektosDeviceFrame" tabindex="0" role="button" aria-label="Open current onboarding screen in Lightbox">
-              <div class="device-screen-viewport" id="ektosViewport">
-                <img src="assets/images/Onboarding page 1.webp" alt="01 — Take Control of Your Finances" class="ektos-flow-img active" data-index="0" decoding="async">
-                <img src="assets/images/Onboarding page 2.webp" alt="02 — Save Towards Your Goal" class="ektos-flow-img" data-index="1" decoding="async">
-                <img src="assets/images/Onboarding page 3.webp" alt="03 — Budget With Confidence" class="ektos-flow-img" data-index="2" decoding="async">
-                <img src="assets/images/Onboarding page 4.webp" alt="04 — Sign In" class="ektos-flow-img" data-index="3" decoding="async">
-                <img src="assets/images/Onboarding page 5.webp" alt="05 — Create Account" class="ektos-flow-img" data-index="4" decoding="async">
-                <div class="device-zoom-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Screen</div>
-              </div>
-            </div>
-
-            <!-- Dynamic Active Screen Caption Below Phone -->
-            <div class="ektos-caption-pane" id="ektosCaptionPane">
-              <span class="ektos-caption-step" id="ektosCaptionStep">01 / 05 • ONBOARDING FLOW</span>
-              <h4 class="ektos-caption-title" id="ektosCaptionTitle">01 — Take Control of Your Finances</h4>
-              <p class="ektos-caption-desc" id="ektosCaptionDesc">Introduces the core value proposition: understanding and managing everyday finances.</p>
-            </div>
-
-          </div>
-
-        </div>
-
+     </article>
+    </div>
+   </section>
+   <section class="identity section" id="identity">
+    <div class="wrap">
+     <div class="section-heading">
+      <div>
+       <p class="eyebrow">
+        02 / BRAND IDENTITY
+       </p>
+       <h2>
+        A question. An identity.
+       </h2>
       </div>
-    </section>
-
-    <!-- =========================================================================
-         DEDICATED VIDEO REELS & MOTION SYSTEMS SECTION
-         ========================================================================= -->
-    <section class="section-spacing reels-section" id="reels">
-      <div class="container">
-
-        <div class="section-header">
-          <span class="section-tag"><i class="fa-solid fa-film"></i> Motion & Video</span>
-          <h2 class="section-title">Motion & Video Direction</h2>
-          <p class="section-subtitle">
-            Short-form reels, brand teasers, and dynamic motion graphics designed to catch attention, tell a story, and bring visual identities to life.
-          </p>
-        </div>
-
-        <div class="reels-grid">
-
-          <!-- Reel 1: Natural Footies -->
-          <article class="reel-card">
-            <div class="reel-video-wrapper"
-              onclick="openLightbox('assets/videos/Natural Footies Brand opening.mp4', 'Natural Footies — Brand Intro', 'An energetic intro sequence built to introduce the brand with rhythm, clean transitions, and focused sound design for launch teasers.', 'video')"
-              tabindex="0" role="button" aria-label="Play Natural Footies Brand Opening Video">
-              <video class="reel-custom-video" preload="none" poster="assets/images/natural-footies-poster.webp" muted
-                playsinline>
-                <source src="assets/videos/Natural Footies Brand opening.mp4" type="video/mp4">
-              </video>
-              <div class="reel-play-overlay">
-                <div class="reel-play-btn-circle">
-                  <i class="fa-solid fa-play"></i>
-                </div>
-              </div>
-              <span class="reel-duration-badge"><i class="fa-solid fa-video"></i> 16:9 Brand Reel</span>
-            </div>
-
-            <div class="reel-body">
-              <span class="reel-tag">Brand Opening Sequence</span>
-              <h3 class="reel-title">Natural Footies — Brand Intro</h3>
-              <p class="reel-desc">
-                An energetic intro sequence built to introduce the brand with rhythm, clean transitions, and focused sound design for launch teasers.
-              </p>
-            </div>
-          </article>
-
-          <!-- Reel 2: AYAC 2026 -->
-          <article class="reel-card">
-            <div class="reel-video-wrapper"
-              onclick="openLightbox('assets/videos/AYAC 2026.mp4', 'AYAC 2026 — Conference Promo', 'A promotional motion piece for the African Youth Action Conference, using bold typography and pacing to build anticipation and drive delegate registrations.', 'video')"
-              tabindex="0" role="button" aria-label="Play AYAC 2026 Conference Promo Video">
-              <video class="reel-custom-video" preload="none" poster="assets/images/ayac-2026-poster.webp" muted
-                playsinline>
-                <source src="assets/videos/AYAC 2026.mp4" type="video/mp4">
-              </video>
-              <div class="reel-play-overlay">
-                <div class="reel-play-btn-circle">
-                  <i class="fa-solid fa-play"></i>
-                </div>
-              </div>
-              <span class="reel-duration-badge"><i class="fa-solid fa-video"></i> Conference Promo</span>
-            </div>
-
-            <div class="reel-body">
-              <span class="reel-tag">Event & Conference Motion</span>
-              <h3 class="reel-title">AYAC 2026 — Conference Promo</h3>
-              <p class="reel-desc">
-                A promotional motion piece for the African Youth Action Conference, using bold typography and pacing to build anticipation and drive delegate registrations.
-              </p>
-            </div>
-          </article>
-
-          <!-- Reel 3: Brainstorming Shorts Reel (Vertical Format) -->
-          <article class="reel-card">
-            <div class="reel-video-wrapper"
-              onclick="openLightbox('assets/videos/Brainstorming shorts Reel .mp4', 'Creative Ideation — Social Reel', 'A fast-paced vertical reel capturing the creative brainstorming process, designed for quick engagement across mobile feeds.', 'video')"
-              tabindex="0" role="button" aria-label="Play Brainstorming Shorts Reel">
-              <video class="reel-custom-video" preload="none" poster="assets/images/brainstorming-reel-poster.webp"
-                muted playsinline>
-                <source src="assets/videos/Brainstorming shorts Reel .mp4" type="video/mp4">
-              </video>
-              <div class="reel-play-overlay">
-                <div class="reel-play-btn-circle">
-                  <i class="fa-solid fa-play"></i>
-                </div>
-              </div>
-              <span class="reel-duration-badge"><i class="fa-solid fa-mobile-screen"></i> 9:16 Vertical Reel</span>
-            </div>
-
-            <div class="reel-body">
-              <span class="reel-tag">Short-Form Social Content</span>
-              <h3 class="reel-title">Creative Ideation — Social Reel</h3>
-              <p class="reel-desc">
-                A fast-paced vertical reel capturing the creative brainstorming process, designed for quick engagement across mobile feeds.
-              </p>
-            </div>
-          </article>
-
-        </div>
+      <p class="section-intro">
+       Enigma Studio · Self-initiated / 2026
+      </p>
+     </div>
+     <div class="identity-story">
+      <p>
+       A visual identity built around curiosity and clarity. Resolve brings separate shapes into one recognisable whole; its open paths give the system room to move.
+      </p>
+      <p>
+       From the mark to typography and applications, the idea stays consistent:
+       <strong>
+        a good visual starts with a good question.
+       </strong>
+      </p>
+     </div>
+     <div class="identity-grid">
+      <figure>
+       <button aria-label="Enlarge Enigma Studio — 01 / Stationery" class="image-button" data-caption="Concept application of the Enigma Studio identity." data-image="/assets/brand/stationery.webp" data-title="Enigma Studio — 01 / Stationery">
+        <img alt="Enigma Studio — 01 / Stationery" class="" decoding="async" height="900" loading="lazy" src="/assets/brand/stationery.webp" width="1600"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        01 / Stationery
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge Enigma Studio — 02 / Posters" class="image-button" data-caption="Concept application of the Enigma Studio identity." data-image="/assets/brand/posters.webp" data-title="Enigma Studio — 02 / Posters">
+        <img alt="Enigma Studio — 02 / Posters" class="" decoding="async" height="900" loading="lazy" src="/assets/brand/posters.webp" width="1600"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        02 / Posters
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge Enigma Studio — 03 / Environmental application" class="image-button" data-caption="Concept application of the Enigma Studio identity." data-image="/assets/brand/signage.webp" data-title="Enigma Studio — 03 / Environmental application">
+        <img alt="Enigma Studio — 03 / Environmental application" class="" decoding="async" height="900" loading="lazy" src="/assets/brand/signage.webp" width="1600"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        03 / Environmental application
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge Enigma Studio — 04 / Digital concept" class="image-button" data-caption="Concept application of the Enigma Studio identity." data-image="/assets/brand/website-laptop.webp" data-title="Enigma Studio — 04 / Digital concept">
+        <img alt="Enigma Studio — 04 / Digital concept" class="" decoding="async" height="900" loading="lazy" src="/assets/brand/website-laptop.webp" width="1600"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        04 / Digital concept
+       </figcaption>
+      </figure>
+     </div>
+     <p class="small-note">
+      Identity exploration with AI-assisted application mockups. Digital concept shown; applications are visualisations.
+     </p>
+    </div>
+   </section>
+   <section class="section wrap" id="uiux">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       03 / UI/UX &amp; PRODUCT DESIGN
+      </p>
+      <h2>
+       Clarity, on screen.
+      </h2>
+     </div>
+     <p class="section-intro">
+      Interfaces that make the next step feel natural.
+     </p>
+    </div>
+    <a class="ektos-preview" href="/work/ektos.html">
+     <div class="ektos-art">
+      <img alt="Ektos mobile interface concept" class="" decoding="async" height="1800" loading="lazy" src="/assets/images/ektos-3d-showcase.webp" width="2400"/>
+     </div>
+     <div class="ektos-copy">
+      <p class="eyebrow">
+       EKTOS / MOBILE &amp; WEB
+      </p>
+      <h3>
+       Everyday money.
+       <br/>
+       A clearer view.
+      </h3>
+      <p>
+       A finance interface exploration across mobile, web and onboarding. A closer look at the screens and the thinking behind the flow.
+      </p>
+      <span class="text-link">
+       Explore the UI project ↗
+      </span>
+     </div>
+    </a>
+   </section>
+   <section class="motion section" id="motion">
+    <div class="wrap">
+     <div class="section-heading">
+      <div>
+       <p class="eyebrow">
+        04 / VIDEO &amp; MOTION
+       </p>
+       <h2>
+        Ideas with movement.
+       </h2>
       </div>
-    </section>
-
-    <!-- =========================================================================
-         EXPERIENCE, EDUCATION & CORE COMPETENCIES
-         ========================================================================= -->
-    <section class="section-spacing" id="experience">
-      <div class="container">
-
-        <div class="section-header">
-          <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Career Roadmap</span>
-          <h2 class="section-title">Experience & Capabilities</h2>
-          <p class="section-subtitle">
-            Over the past two years I've built ad creatives, brand systems, and educational content for B2B and ed-tech clients, with the production discipline to keep output consistent at scale.
-          </p>
-        </div>
-
-        <div class="experience-grid">
-
-          <!-- Career Timeline -->
-          <div class="timeline">
-
-            <div class="timeline-item">
-              <div class="timeline-marker"></div>
-              <div class="timeline-header">
-                <h3 class="timeline-role">Graphic Design Intern</h3>
-                <div class="timeline-company">Tratun Energy Limited (Remote)</div>
-                <div class="timeline-date">May 2026 — Present</div>
-              </div>
-              <ul class="timeline-bullets">
-                <li>Design corporate visual assets and branding materials for an oil & gas company, keeping the brand consistent across every public-facing channel.</li>
-                <li>Build static graphics and campaign materials for LinkedIn and other professional networks, aimed at growing corporate visibility and client engagement.</li>
-                <li>Work with cross-functional teams to turn dense energy and logistics topics into clean, minimalist visuals non-specialists can actually follow.</li>
-              </ul>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-marker"></div>
-              <div class="timeline-header">
-                <h3 class="timeline-role">Graphic Designer & Social Media Manager</h3>
-                <div class="timeline-company">CareerPaddy (Remote)</div>
-                <div class="timeline-date">Jan 2025 — Present</div>
-              </div>
-              <ul class="timeline-bullets">
-                <li>Design product graphics, app mockups, and ad creatives for Instagram and LinkedIn, covering everything from course promos to feature launches.</li>
-                <li>Produce motion graphics and promo videos for course launches and onboarding using Adobe After Effects, DaVinci Resolve, CapCut, and Canva.</li>
-                <li>Run the full visual production pipeline — brief, iteration, publication — and have cut the turnaround time on marketing assets by 30% through tightening that workflow.</li>
-                <li>Build creative assets for Google Ads and Demand Gen campaigns targeting Lagos, Abuja, and Port Harcourt.</li>
-              </ul>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-marker"></div>
-              <div class="timeline-header">
-                <h3 class="timeline-role">Accounts Receivable Intern</h3>
-                <div class="timeline-company">Nycil Limited</div>
-                <div class="timeline-date">Jan — Dec 2025</div>
-              </div>
-              <ul class="timeline-bullets">
-                <li>Processed invoices, ledger accounts, and transaction records across depot hubs on SAP Business One.</li>
-                <li>Managed AR documentation and ran cross-checks in Excel to resolve client billing queries.</li>
-              </ul>
-            </div>
-
-          </div>
-
-          <!-- Credentials & Skills Sidebar -->
-          <div class="credentials-sidebar">
-
-            <!-- Education Box -->
-            <div class="credential-box">
-              <h3><i class="fa-solid fa-graduation-cap" style="color: var(--accent-cyan);"></i> Education</h3>
-
-              <div class="edu-item">
-                <div class="edu-degree">B.Sc. (Hons) Public Administration (In Progress)</div>
-                <div class="edu-school">University of Ilesa — Osun State, Nigeria</div>
-                <div class="edu-year">2026 — Present</div>
-              </div>
-
-              <div class="edu-item">
-                <div class="edu-degree">National Diploma — Public Administration</div>
-                <div class="edu-school">Federal University of Technology Ilaro — Ogun State, Nigeria</div>
-                <div class="edu-year">2022 — 2024</div>
-              </div>
-            </div>
-
-            <!-- Core Competencies Matrix -->
-            <div class="credential-box">
-              <h3><i class="fa-solid fa-microchip" style="color: var(--accent-emerald);"></i> Core Competencies & Technical Tools
-              </h3>
-              <div class="skills-grid">
-                <span class="skill-chip featured"><i class="fa-solid fa-check"></i> Adobe Photoshop</span>
-                <span class="skill-chip featured"><i class="fa-solid fa-check"></i> Adobe Illustrator</span>
-                <span class="skill-chip featured"><i class="fa-solid fa-check"></i> Canva</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> Typography</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> Minimalism</span>
-                <span class="skill-chip featured"><i class="fa-solid fa-check"></i> Adobe After Effects</span>
-                <span class="skill-chip featured"><i class="fa-solid fa-check"></i> DaVinci Resolve</span>
-                <span class="skill-chip featured"><i class="fa-solid fa-check"></i> CapCut</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> Visual Storytelling</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> Creative Strategy</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> Demand Gen Campaigns</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> Google Ads Asset Deployment</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> SAP Business One</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> Microsoft Excel</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> Microsoft Word</span>
-                <span class="skill-chip"><i class="fa-solid fa-check"></i> Virtual Collaboration Tools</span>
-              </div>
-            </div>
-
-            <!-- Leadership & Languages -->
-            <div class="credential-box">
-              <h3><i class="fa-solid fa-award" style="color: var(--accent-amber);"></i> Portfolio & Extracurricular
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-                <strong>Executive Member:</strong> Bureaucratic Club (Public Administration), University of Ilesa (2026 — Present)
-              </p>
-              <p style="font-size: 0.875rem; color: var(--text-secondary);">
-                <strong>Languages:</strong> English (Fluent), Spanish (Elementary Proficiency)
-              </p>
-            </div>
-
-          </div>
-
-        </div>
+      <p class="section-intro">
+       Brand introductions, event promotion and educational content.
+      </p>
+     </div>
+     <div class="reel-grid">
+      <article class="reel">
+       <video aria-label="Natural Footies — A short brand introduction combining footwear imagery and promotional messaging." controls="" height="656" playsinline="" poster="/assets/images/natural-footies-poster.webp" preload="none" width="368">
+        <source src="/assets/videos/Natural Footies Brand opening.mp4" type="video/mp4"/>
+        <p>
+         Your browser cannot play this video.
+         <a href="/assets/videos/Natural Footies Brand opening.mp4">
+          Open Natural Footies
+         </a>
+         .
+        </p>
+       </video>
+       <p class="eyebrow">
+        Brand introduction / 00:12
+       </p>
+       <h3>
+        Natural Footies
+       </h3>
+       <p>
+        A short brand introduction combining footwear imagery and promotional messaging.
+       </p>
+      </article>
+      <article class="reel">
+       <video aria-label="AYAC 2026 — Annual Youth Alive Convention 2026. Theme: Next Levels." controls="" height="656" playsinline="" poster="/assets/images/ayac-2026-poster.webp" preload="none" width="368">
+        <source src="/assets/videos/AYAC 2026.mp4" type="video/mp4"/>
+        <p>
+         Your browser cannot play this video.
+         <a href="/assets/videos/AYAC 2026.mp4">
+          Open AYAC 2026
+         </a>
+         .
+        </p>
+       </video>
+       <p class="eyebrow">
+        Event promotion / 01:05
+       </p>
+       <h3>
+        AYAC 2026
+       </h3>
+       <p>
+        Annual Youth Alive Convention 2026. Theme: Next Levels.
+       </p>
+      </article>
+      <article class="reel">
+       <video aria-label="CareerPaddy — A short lesson introducing brainstorming, its importance and collaboration." controls="" height="656" playsinline="" poster="/assets/images/brainstorming-reel-poster.webp" preload="none" width="368">
+        <source src="/assets/videos/Brainstorming shorts Reel .mp4" type="video/mp4"/>
+        <p>
+         Your browser cannot play this video.
+         <a href="/assets/videos/Brainstorming shorts Reel .mp4">
+          Open CareerPaddy
+         </a>
+         .
+        </p>
+       </video>
+       <p class="eyebrow">
+        Educational reel / 00:59
+       </p>
+       <h3>
+        CareerPaddy
+       </h3>
+       <p>
+        A short lesson introducing brainstorming, its importance and collaboration.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section wrap" id="gallery">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       05 / MORE VISUAL WORK
+      </p>
+      <h2>
+       A few more perspectives.
+      </h2>
+     </div>
+     <p class="section-intro">
+      Selected social graphics and conceptual pieces.
+     </p>
+    </div>
+    <div class="gallery-grid">
+     <figure>
+      <button aria-label="Enlarge Birthday Campaign Visual" class="image-button" data-caption="Personal Branding" data-image="/assets/images/Selected images/1.webp" data-title="Birthday Campaign Visual">
+       <img alt="Birthday Campaign Visual" class="" decoding="async" height="1080" loading="lazy" src="/assets/images/Selected images/1.webp" width="1080"/>
+       <span aria-hidden="true" class="expand">
+        ↗
+       </span>
+      </button>
+      <figcaption>
+       <span>
+        Personal Branding
+       </span>
+       Birthday Campaign Visual
+      </figcaption>
+     </figure>
+     <figure>
+      <button aria-label="Enlarge CareerPaddy App Promotion" class="image-button" data-caption="CareerPaddy" data-image="/assets/images/Selected images/2.webp" data-title="CareerPaddy App Promotion">
+       <img alt="CareerPaddy App Promotion" class="" decoding="async" height="1728" loading="lazy" src="/assets/images/Selected images/2.webp" width="972"/>
+       <span aria-hidden="true" class="expand">
+        ↗
+       </span>
+      </button>
+      <figcaption>
+       <span>
+        CareerPaddy
+       </span>
+       CareerPaddy App Promotion
+      </figcaption>
+     </figure>
+     <figure>
+      <button aria-label="Enlarge Weekend Engagement Visual" class="image-button" data-caption="Mickey Exchange" data-image="/assets/images/Selected images/3.webp" data-title="Weekend Engagement Visual">
+       <img alt="Weekend Engagement Visual" class="" decoding="async" height="980" loading="lazy" src="/assets/images/Selected images/3.webp" width="980"/>
+       <span aria-hidden="true" class="expand">
+        ↗
+       </span>
+      </button>
+      <figcaption>
+       <span>
+        Mickey Exchange
+       </span>
+       Weekend Engagement Visual
+      </figcaption>
+     </figure>
+     <figure>
+      <button aria-label="Enlarge Weekly Social Media Promotion" class="image-button" data-caption="Design Services" data-image="/assets/images/Selected images/4.webp" data-title="Weekly Social Media Promotion">
+       <img alt="Weekly Social Media Promotion" class="" decoding="async" height="519" loading="lazy" src="/assets/images/Selected images/4.webp" width="416"/>
+       <span aria-hidden="true" class="expand">
+        ↗
+       </span>
+      </button>
+      <figcaption>
+       <span>
+        Design Services
+       </span>
+       Weekly Social Media Promotion
+      </figcaption>
+     </figure>
+     <figure>
+      <button aria-label="Enlarge Critical Thinking Course Promotion" class="image-button" data-caption="CareerPaddy" data-image="/assets/images/Selected images/5.webp" data-title="Critical Thinking Course Promotion">
+       <img alt="Critical Thinking Course Promotion" class="" decoding="async" height="552" loading="lazy" src="/assets/images/Selected images/5.webp" width="658"/>
+       <span aria-hidden="true" class="expand">
+        ↗
+       </span>
+      </button>
+      <figcaption>
+       <span>
+        CareerPaddy
+       </span>
+       Critical Thinking Course Promotion
+      </figcaption>
+     </figure>
+     <figure>
+      <button aria-label="Enlarge Everyday Payday Campaign" class="image-button" data-caption="Fintech Product" data-image="/assets/images/Selected images/6.webp" data-title="Everyday Payday Campaign">
+       <img alt="Everyday Payday Campaign" class="" decoding="async" height="663" loading="lazy" src="/assets/images/Selected images/6.webp" width="663"/>
+       <span aria-hidden="true" class="expand">
+        ↗
+       </span>
+      </button>
+      <figcaption>
+       <span>
+        Fintech Product
+       </span>
+       Everyday Payday Campaign
+      </figcaption>
+     </figure>
+    </div>
+    <details class="more-work">
+     <summary>
+      Explore the full collection
+      <span aria-hidden="true">
+       +
+      </span>
+     </summary>
+     <div class="gallery-grid">
+      <figure>
+       <button aria-label="Enlarge Creative Services Campaign" class="image-button" data-caption="ENIGMA Studio" data-image="/assets/images/Selected images/7.webp" data-title="Creative Services Campaign">
+        <img alt="Creative Services Campaign" class="" decoding="async" height="736" loading="lazy" src="/assets/images/Selected images/7.webp" width="736"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         ENIGMA Studio
+        </span>
+        Creative Services Campaign
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge Monday Engagement Visual" class="image-button" data-caption="Personal Branding" data-image="/assets/images/Selected images/8.webp" data-title="Monday Engagement Visual">
+        <img alt="Monday Engagement Visual" class="" decoding="async" height="663" loading="lazy" src="/assets/images/Selected images/8.webp" width="663"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         Personal Branding
+        </span>
+        Monday Engagement Visual
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge Article Promotion — Survival Skills" class="image-button" data-caption="CareerPaddy" data-image="/assets/images/Selected images/9.webp" data-title="Article Promotion — Survival Skills">
+        <img alt="Article Promotion — Survival Skills" class="" decoding="async" height="675" loading="lazy" src="/assets/images/Selected images/9.webp" width="540"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         CareerPaddy
+        </span>
+        Article Promotion — Survival Skills
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge Rate Promotion Campaign" class="image-button" data-caption="Elijah Cash Exchange" data-image="/assets/images/Selected images/10.webp" data-title="Rate Promotion Campaign">
+        <img alt="Rate Promotion Campaign" class="" decoding="async" height="980" loading="lazy" src="/assets/images/Selected images/10.webp" width="976"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         Elijah Cash Exchange
+        </span>
+        Rate Promotion Campaign
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge CareerPaddy App Download Campaign" class="image-button" data-caption="CareerPaddy" data-image="/assets/images/Selected images/11.webp" data-title="CareerPaddy App Download Campaign">
+        <img alt="CareerPaddy App Download Campaign" class="" decoding="async" height="675" loading="lazy" src="/assets/images/Selected images/11.webp" width="540"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         CareerPaddy
+        </span>
+        CareerPaddy App Download Campaign
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge 10 Days Ember Sales Campaign — Natural Footies" class="image-button" data-caption="Natural Footies" data-image="/assets/images/Selected images/12.webp" data-title="10 Days Ember Sales Campaign — Natural Footies">
+        <img alt="10 Days Ember Sales Campaign — Natural Footies" class="" decoding="async" height="1052" loading="lazy" src="/assets/images/Selected images/12.webp" width="864"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         Natural Footies
+        </span>
+        10 Days Ember Sales Campaign — Natural Footies
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge Beauty Service Promotion" class="image-button" data-caption="Claire\'s Nail Artistry" data-image="/assets/images/Selected images/13.webp" data-title="Beauty Service Promotion">
+        <img alt="Beauty Service Promotion" class="" decoding="async" height="576" loading="lazy" src="/assets/images/Selected images/13.webp" width="576"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         Claire\'s Nail Artistry
+        </span>
+        Beauty Service Promotion
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge 10 Days Ember Sales Campaign — OrgamsByEwa" class="image-button" data-caption="OrgamsByEwa" data-image="/assets/images/Selected images/14.webp" data-title="10 Days Ember Sales Campaign — OrgamsByEwa">
+        <img alt="10 Days Ember Sales Campaign — OrgamsByEwa" class="" decoding="async" height="702" loading="lazy" src="/assets/images/Selected images/14.webp" width="576"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         OrgamsByEwa
+        </span>
+        10 Days Ember Sales Campaign — OrgamsByEwa
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge Beauty Services Advertisement" class="image-button" data-caption="MOAT Beauty Empire" data-image="/assets/images/Selected images/15.webp" data-title="Beauty Services Advertisement">
+        <img alt="Beauty Services Advertisement" class="" decoding="async" height="720" loading="lazy" src="/assets/images/Selected images/15.webp" width="670"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         MOAT Beauty Empire
+        </span>
+        Beauty Services Advertisement
+       </figcaption>
+      </figure>
+      <figure>
+       <button aria-label="Enlarge Cosmetics Brand Launch" class="image-button" data-caption="Raregem Cosmetics" data-image="/assets/images/Selected images/16.webp" data-title="Cosmetics Brand Launch">
+        <img alt="Cosmetics Brand Launch" class="" decoding="async" height="700" loading="lazy" src="/assets/images/Selected images/16.webp" width="576"/>
+        <span aria-hidden="true" class="expand">
+         ↗
+        </span>
+       </button>
+       <figcaption>
+        <span>
+         Raregem Cosmetics
+        </span>
+        Cosmetics Brand Launch
+       </figcaption>
+      </figure>
+     </div>
+    </details>
+   </section>
+   <section class="about section wrap" id="about">
+    <div class="about-image">
+     <img alt="Olamide Balogun, designer behind Enigma Studio" class="" decoding="async" height="1402" loading="lazy" src="/assets/images/hero-portrait.webp" width="1122"/>
+     <p class="eyebrow">
+      OLAMIDE BALOGUN / LAGOS, NIGERIA
+     </p>
+    </div>
+    <div class="about-copy">
+     <p class="eyebrow">
+      06 / THE PERSON BEHIND THE WORK
+     </p>
+     <h2>
+      Design is a mystery worth solving.
+     </h2>
+     <p>
+      I’m Olamide Balogun, a designer working across visual communication, brand campaigns, visual systems, and digital experiences.
+     </p>
+     <p>
+      Enigma Studio is where that work comes together. Graphic design leads my practice, with UI/UX and motion adding new ways to tell the story.
+     </p>
+     <div class="experience-list">
+      <div>
+       <h3>
+        Graphic Design Intern
+       </h3>
+       <p>
+        Tratun Energy Limited (Remote)
+        <span>
+         May 2026 — Present
+        </span>
+       </p>
       </div>
-    </section>
-
-    <!-- =========================================================================
-         CONTACT & LET'S BUILD SECTION
-         ========================================================================= -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-
-        <div class="contact-card">
-          <span class="section-tag" style="margin-bottom: 1.5rem;"><i class="fa-solid fa-bolt"></i> Next Steps</span>
-          <h2 class="contact-quote">
-            "I design with intention and build with purpose.<br>
-            If that's what you're looking for, I'd love to be in the room."
-          </h2>
-          <p class="contact-subtext">
-            Whether you have a strategic product design project, a B2B corporate campaign, or a full-time role in mind,
-            let's create something extraordinary together.
-          </p>
-
-          <div class="contact-options">
-            <a href="mailto:olamidebalogun3131@gmail.com" class="contact-btn-item" onclick="copyEmail(event)"
-              aria-label="Copy or Send Email to olamidebalogun3131@gmail.com">
-              <i class="fa-solid fa-envelope"></i>
-              <span>olamidebalogun3131@gmail.com</span>
-            </a>
-
-            <a href="tel:+2349037086975" class="contact-btn-item" aria-label="Call phone number +234 903 708 6975">
-              <i class="fa-solid fa-phone"></i>
-              <span>+234 (903) 708 6975</span>
-            </a>
-
-            <a href="https://linkedin.com/in/olamide-balogun-94989a417" target="_blank" rel="noopener noreferrer"
-              class="contact-btn-item" aria-label="Visit Balogun Olamide LinkedIn Profile">
-              <i class="fa-brands fa-linkedin"></i>
-              <span>LinkedIn Profile</span>
-            </a>
-
-            <a href="https://wa.me/2349037086975" target="_blank" rel="noopener noreferrer" class="contact-btn-item"
-              aria-label="Chat on WhatsApp">
-              <i class="fa-brands fa-whatsapp"></i>
-              <span>WhatsApp Direct</span>
-            </a>
-          </div>
-
-          <div class="contact-actions-center">
-            <button class="btn btn-primary" onclick="openResumeModal()" aria-label="Open Full Resume Modal">
-              <i class="fa-solid fa-file-pdf"></i> Read Full Resume & Bio
-            </button>
-            <a href="#hero" class="btn btn-outline" aria-label="Return back to top of page">
-              <i class="fa-solid fa-arrow-up"></i> Back to Top
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <div>© 2026 Balogun Olamide (Enigma). All rights reserved.</div>
-          <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; align-items: center;">
-            <span>Lagos, Nigeria</span>
-            <span>•</span>
-            <span>Digital Designer & Visual Strategist</span>
-          </div>
-        </div>
-
+      <div>
+       <h3>
+        Graphic Designer &amp; Social Media Manager
+       </h3>
+       <p>
+        CareerPaddy (Remote)
+        <span>
+         Jan 2025 — Present
+        </span>
+       </p>
       </div>
-    </section>
+     </div>
+     <a class="text-link" href="/resume.html">
+      Read my resume ↗
+     </a>
+     <p class="tools">
+      Photoshop · Illustrator · Figma · After Effects · Canva
+     </p>
+    </div>
+   </section>
+   <section class="contact section" id="contact">
+    <div class="wrap">
+     <p class="eyebrow">
+      HAVE SOMETHING IN MIND?
+     </p>
+     <h2>
+      Let’s start with
+      <br/>
+      a good question
+      <span>
+       .
+      </span>
+     </h2>
+     <p class="contact-copy">
+      I design with intention and build with purpose. If that's what you're looking for, I'd love to be in the room.
+     </p>
+     <div class="contact-actions">
+      <a class="button" href="mailto:olamidebalogun3131@gmail.com">
+       Email me ↗
+      </a>
+      <button class="copy-email" data-copy="olamidebalogun3131@gmail.com">
+       Copy email
+      </button>
+      <span id="copy-status" role="status">
+      </span>
+     </div>
+     <div class="contact-links">
+      <a href="https://linkedin.com/in/olamide-balogun-94989a417" rel="noopener noreferrer" target="_blank">
+       LinkedIn ↗
+      </a>
+      <a href="https://wa.me/2349037086975" rel="noopener noreferrer" target="_blank">
+       WhatsApp ↗
+      </a>
+      <a href="/resume.html">
+       Resume ↗
+      </a>
+     </div>
+    </div>
+   </section>
   </main>
-
-  <!-- =========================================================================
-       INSTANT RESUME VIEWER MODAL
-       ========================================================================= -->
-  <div class="modal-backdrop resume-viewer-modal" id="resumeViewerModal" role="dialog" aria-modal="true" aria-hidden="true" onclick="closeResumeViewer(event)">
-    <div class="resume-viewer-dialog" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeResumeViewer()" aria-label="Close Resume Viewer">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="resume-sheet">
-        <!-- Resume Header -->
-        <!-- Resume Header -->
-        <div class="resume-sheet-header">
-          <div class="resume-sheet-intro">
-            <h2 class="resume-sheet-name">BALOGUN OLAMIDE</h2>
-            <p class="resume-sheet-role">Graphic Designer & Motion Editor</p>
-            <div class="resume-sheet-contact">
-              <span><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
-              <span><i class="fa-solid fa-envelope"></i> Olamidebalogun3131@gmail.com</span>
-              <span><i class="fa-brands fa-whatsapp"></i> (+234) 903 708 6975</span>
-              <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/olamide-balogun-94989a417</span>
-            </div>
-          </div>
-          <div class="resume-sheet-actions">
-            <button type="button" class="btn btn-outline btn-sm" onclick="window.print()" aria-label="Print or Save Resume PDF">
-              <i class="fa-solid fa-print"></i> Print / Save PDF
-            </button>
-            <button type="button" class="btn btn-primary btn-sm" onclick="closeResumeViewer(); openContactModal();" aria-label="Hire or Message Olamide">
-              <i class="fa-solid fa-paper-plane"></i> Contact Olamide
-            </button>
-          </div>
-        </div>
-
-        <!-- Resume Body -->
-        <div class="resume-sheet-body">
-          
-          <!-- Section 1: Professional Summary -->
-          <div class="resume-block">
-            <h4 class="resume-block-title"><i class="fa-solid fa-compass"></i> Professional Summary</h4>
-            <p class="resume-block-text">
-              Graphic designer and motion editor who works across the full visual pipeline — from a single static ad to a finished motion piece. Over the past two years I've built ad creatives, brand systems, and educational content for B2B and ed-tech clients, with the production discipline to keep output consistent at scale. I move comfortably between static design and video, and I care as much about whether a design converts as whether it looks good.
-            </p>
-          </div>
-
-          <!-- Section 2: Professional Experience -->
-          <div class="resume-block">
-            <h4 class="resume-block-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h4>
-            
-            <div class="resume-job-item">
-              <div class="resume-job-header">
-                <div>
-                  <h5 class="resume-job-title">Graphic Design Intern</h5>
-                  <span class="resume-company">Tratun Energy Limited (Remote)</span>
-                </div>
-                <span class="resume-job-period">May 2026 — Present</span>
-              </div>
-              <ul class="resume-job-bullets">
-                <li>Design corporate visual assets and branding materials for an oil & gas company, keeping the brand consistent across every public-facing channel.</li>
-                <li>Build static graphics and campaign materials for LinkedIn and other professional networks, aimed at growing corporate visibility and client engagement.</li>
-                <li>Work with cross-functional teams to turn dense energy and logistics topics into clean, minimalist visuals non-specialists can actually follow.</li>
-              </ul>
-            </div>
-
-            <div class="resume-job-item">
-              <div class="resume-job-header">
-                <div>
-                  <h5 class="resume-job-title">Graphic Designer & Social Media Manager</h5>
-                  <span class="resume-company">CareerPaddy (Remote)</span>
-                </div>
-                <span class="resume-job-period">Jan 2025 — Present</span>
-              </div>
-              <ul class="resume-job-bullets">
-                <li>Design product graphics, app mockups, and ad creatives for Instagram and LinkedIn, covering everything from course promos to feature launches.</li>
-                <li>Produce motion graphics and promo videos for course launches and onboarding using Adobe After Effects, DaVinci Resolve, CapCut, and Canva.</li>
-                <li>Run the full visual production pipeline — brief, iteration, publication — and have cut the turnaround time on marketing assets by 30% through tightening that workflow.</li>
-                <li>Build creative assets for Google Ads and Demand Gen campaigns targeting Lagos, Abuja, and Port Harcourt.</li>
-              </ul>
-            </div>
-
-            <div class="resume-job-item">
-              <div class="resume-job-header">
-                <div>
-                  <h5 class="resume-job-title">Accounts Receivable Intern</h5>
-                  <span class="resume-company">Nycil Limited</span>
-                </div>
-                <span class="resume-job-period">Jan — Dec 2025</span>
-              </div>
-              <ul class="resume-job-bullets">
-                <li>Processed invoices, ledger accounts, and transaction records across depot hubs on SAP Business One.</li>
-                <li>Managed AR documentation and ran cross-checks in Excel to resolve client billing queries.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Section 3: Core Competencies & Technical Tools -->
-          <div class="resume-block">
-            <h4 class="resume-block-title"><i class="fa-solid fa-cubes"></i> Core Competencies & Technical Tools</h4>
-            <div class="resume-skills-grid">
-              <div class="resume-skill-pill">Adobe Photoshop</div>
-              <div class="resume-skill-pill">Adobe Illustrator</div>
-              <div class="resume-skill-pill">Canva</div>
-              <div class="resume-skill-pill">Typography</div>
-              <div class="resume-skill-pill">Minimalism</div>
-              <div class="resume-skill-pill">Adobe After Effects</div>
-              <div class="resume-skill-pill">DaVinci Resolve</div>
-              <div class="resume-skill-pill">CapCut</div>
-              <div class="resume-skill-pill">Visual Storytelling</div>
-              <div class="resume-skill-pill">Creative Strategy</div>
-              <div class="resume-skill-pill">Demand Gen Campaigns</div>
-              <div class="resume-skill-pill">Google Ads Asset Deployment</div>
-              <div class="resume-skill-pill">SAP Business One</div>
-              <div class="resume-skill-pill">Microsoft Excel</div>
-              <div class="resume-skill-pill">Microsoft Word</div>
-              <div class="resume-skill-pill">Virtual Collaboration Tools</div>
-            </div>
-          </div>
-
-          <!-- Section 4: Education -->
-          <div class="resume-block">
-            <h4 class="resume-block-title"><i class="fa-solid fa-graduation-cap"></i> Education</h4>
-            <div class="resume-job-item">
-              <div class="resume-job-header">
-                <div>
-                  <h5 class="resume-job-title">B.Sc. (Hons) Public Administration (In Progress)</h5>
-                  <span class="resume-company">University of Ilesa — Osun State, Nigeria</span>
-                </div>
-                <span class="resume-job-period">2026 — Present</span>
-              </div>
-            </div>
-            <div class="resume-job-item" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
-              <div class="resume-job-header">
-                <div>
-                  <h5 class="resume-job-title">National Diploma — Public Administration</h5>
-                  <span class="resume-company">Federal University of Technology Ilaro — Ogun State, Nigeria</span>
-                </div>
-                <span class="resume-job-period">2022 — 2024</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Section 5: Portfolio & Extracurricular -->
-          <div class="resume-block" style="margin-bottom: 0;">
-            <h4 class="resume-block-title"><i class="fa-solid fa-award"></i> Portfolio & Extracurricular</h4>
-            <p class="resume-block-text" style="margin-bottom: 0.5rem;">
-              <strong>Executive Member:</strong> Bureaucratic Club (Public Administration), University of Ilesa (2026 — Present)
-            </p>
-            <p class="resume-block-text">
-              <strong>Languages:</strong> English (Fluent), Spanish (Elementary Proficiency)
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       CONTACT & PROJECT INQUIRY MODAL (LET'S TALK)
-       ========================================================================= -->
-  <div class="modal-backdrop contact-modal" id="contactModal" role="dialog" aria-modal="true" aria-hidden="true" onclick="closeContactModal(event)">
-    <div class="resume-modal-dialog" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeContactModal()" aria-label="Close Contact Modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="resume-modal-header">
-        <div class="resume-modal-icon-badge">
-          <i class="fa-solid fa-paper-plane"></i>
-        </div>
-        <div class="resume-modal-header-text">
-          <span class="resume-modal-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Let's Collaborate</span>
-          <h3 class="resume-modal-title">Start a Project with Olamide</h3>
-          <p class="resume-modal-subtitle">
-            Reach out via your preferred channel for brand systems, visual campaigns, UI/UX design, or retainer inquiries.
-          </p>
-        </div>
-      </div>
-
-      <div class="resume-modal-body">
-        <div class="resume-quick-actions">
-          
-          <!-- Option 1: Web Gmail -->
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=olamidebalogun3131@gmail.com&su=Project%20Inquiry%20-%20Balogun%20Olamide&body=Hi%20Olamide,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20new%20project%20or%20role%20with%20you.%0D%0A%0D%0AThank%20you!" target="_blank" rel="noopener noreferrer" class="resume-action-card featured" onclick="showToast('Opening Gmail draft in new tab...')">
-            <div class="action-card-icon gmail-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="action-card-content">
-              <div class="action-card-title-row">
-                <h4 class="action-card-title">Send via Gmail Web</h4>
-                <span class="action-card-badge">Instant Compose</span>
-              </div>
-              <p class="action-card-desc">Opens a pre-filled email draft in your browser ready to send.</p>
-            </div>
-            <i class="fa-solid fa-arrow-up-right-from-square action-card-arrow"></i>
-          </a>
-
-          <!-- Option 2: Default Mail App -->
-          <a href="mailto:olamidebalogun3131@gmail.com?subject=Project%20Inquiry%20-%20Balogun%20Olamide&body=Hi%20Olamide,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20new%20project%20or%20role%20with%20you.%0D%0A%0D%0AThank%20you!" class="resume-action-card" onclick="showToast('Opening your default mail app...')">
-            <div class="action-card-icon mail-icon">
-              <i class="fa-solid fa-paper-plane"></i>
-            </div>
-            <div class="action-card-content">
-              <div class="action-card-title-row">
-                <h4 class="action-card-title">Open Default Mail App</h4>
-                <span class="action-card-badge outline">Outlook / Apple Mail</span>
-              </div>
-              <p class="action-card-desc">Launches your installed desktop or mobile email application.</p>
-            </div>
-            <i class="fa-solid fa-chevron-right action-card-arrow"></i>
-          </a>
-
-          <!-- Option 3: WhatsApp Direct -->
-          <a href="https://wa.me/2349037086975?text=Hi%20Olamide,%20I%20reviewed%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="resume-action-card whatsapp" onclick="showToast('Connecting on WhatsApp...')">
-            <div class="action-card-icon whatsapp-icon">
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <div class="action-card-content">
-              <div class="action-card-title-row">
-                <h4 class="action-card-title">Chat on WhatsApp</h4>
-                <span class="action-card-badge green">Fastest Response</span>
-              </div>
-              <p class="action-card-desc">Direct messaging for rapid turnarounds and project inquiries.</p>
-            </div>
-            <i class="fa-solid fa-arrow-up-right-from-square action-card-arrow"></i>
-          </a>
-
-          <!-- Option 4: One-Click Copy Email -->
-          <button type="button" class="resume-action-card copy-btn" onclick="copyEmail()">
-            <div class="action-card-icon copy-icon">
-              <i class="fa-solid fa-copy"></i>
-            </div>
-            <div class="action-card-content">
-              <div class="action-card-title-row">
-                <h4 class="action-card-title">Copy Email Address</h4>
-                <span class="action-card-badge gold">One-Click</span>
-              </div>
-              <p class="action-card-desc">olamidebalogun3131@gmail.com</p>
-            </div>
-            <i class="fa-solid fa-clipboard-check action-card-arrow"></i>
-          </button>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       HIGH-PERFORMANCE LIGHTBOX MODAL (INSTANT IMAGE & VIDEO EXPAND)
-       ========================================================================= -->
-  <div class="modal-backdrop lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-hidden="true"
-    onclick="closeLightbox(event)">
-    <div class="lightbox-dialog" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeLightbox()" aria-label="Close Lightbox">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="lightbox-media-container">
-        <img id="lightboxImg" src="" alt="Artwork Preview" style="display: none;">
-        <video id="lightboxVideo" controls playsinline style="display: none;"></video>
-      </div>
-
-      <div class="lightbox-caption-bar">
-        <h3 id="lightboxTitle" class="lightbox-title">Artwork Showcase</h3>
-        <p id="lightboxDesc" class="lightbox-desc"></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification Container -->
-  <div class="toast-container">
-    <div class="toast" id="toast">
-      <i class="fa-solid fa-circle-check" style="color: var(--accent-emerald);"></i>
-      <span id="toastMsg">Email copied to clipboard!</span>
-    </div>
-  </div>
-
-  <!-- Mobile Quick Back to Top Floating Button -->
-  <button type="button" class="mobile-back-to-top" id="mobileBackToTop" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
-  <!-- Scripts -->
-  <script src="app.js"></script>
-</body>
-
+  <footer class="site-footer wrap">
+   <a aria-label="Enigma Studio home" href="/">
+    <img alt="Enigma Studio" height="40" src="/assets/brand/logo-ink.svg" width="164"/>
+   </a>
+   <span>
+    © 2026 · Design by Olamide
+   </span>
+   <a href="#top">
+    Back to top ↑
+   </a>
+  </footer>
+  <dialog aria-labelledby="media-title" id="media-dialog">
+   <div class="dialog-top">
+    <h2 id="media-title">
+    </h2>
+    <button aria-label="Close image" id="close-media">
+     Close ×
+    </button>
+   </div>
+   <img alt="" id="media-image"/>
+   <p id="media-caption">
+   </p>
+  </dialog>
+  <script defer="" src="/assets/js/app.js">
+  </script>
+ </body>
 </html>

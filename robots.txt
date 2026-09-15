@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://workwitholamide.vercel.app/sitemap.xml

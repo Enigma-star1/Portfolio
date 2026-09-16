@@ -8,6 +8,16 @@
   </title>
   <meta content="Turning energy and logistics topics into visual stories people can follow." name="description"/>
   <meta content="#171923" name="theme-color"/>
+  <script>
+   (function(){
+     var s = localStorage.getItem('theme');
+     var d = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+     var t = s ? s : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+     document.documentElement.setAttribute('data-theme', t);
+     var m = document.querySelector('meta[name="theme-color"]');
+     if (m) m.setAttribute('content', t === 'dark' ? '#171923' : '#f4f2ed');
+   })();
+  </script>
   <link href="https://workwitholamide.vercel.app/work/tratun.html" rel="canonical"/>
   <link href="/assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
   <meta content="website" property="og:type"/>
@@ -25,7 +35,8 @@
   </a>
   <header class="site-header wrap">
    <a aria-label="Enigma Studio home" class="brand" href="/">
-    <img alt="Enigma Studio" height="55" src="/assets/brand/logo-paper.svg" width="225"/>
+    <img alt="Enigma Studio" class="logo-light" height="55" src="/assets/brand/logo-ink.svg" width="225"/>
+    <img alt="Enigma Studio" class="logo-dark" height="55" src="/assets/brand/logo-paper.svg" width="225"/>
    </a>
    <nav aria-label="Main navigation">
     <a href="/#work">
@@ -40,7 +51,17 @@
       ↗
      </span>
     </a>
-   </nav>
+     <div aria-label="Select theme" class="theme-switch" id="theme-toggle" role="group">
+      <button aria-pressed="false" class="theme-btn theme-btn-light" id="theme-btn-light" title="Switch to light mode" type="button">
+       <svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="12"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+       <span>Light</span>
+      </button>
+      <button aria-pressed="true" class="theme-btn theme-btn-dark" id="theme-btn-dark" title="Switch to dark mode" type="button">
+       <svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M12 3a6 6 0 0 0 9 9 9 0 1 1-9-9Z"/></svg>
+       <span>Dark</span>
+      </button>
+     </div>
+    </nav>
   </header>
   <main id="main">
    <section class="project-intro wrap">
@@ -470,7 +491,8 @@
   </main>
   <footer class="site-footer wrap">
    <a aria-label="Enigma Studio home" href="/">
-    <img alt="Enigma Studio" height="40" src="/assets/brand/logo-paper.svg" width="164"/>
+    <img alt="Enigma Studio" class="logo-light" height="40" src="/assets/brand/logo-ink.svg" width="164"/>
+    <img alt="Enigma Studio" class="logo-dark" height="40" src="/assets/brand/logo-paper.svg" width="164"/>
    </a>
    <span>
     © 2026 · Design by Olamide

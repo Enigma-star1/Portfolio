@@ -43,3 +43,65 @@ document.querySelector('[data-copy]')?.addEventListener('click', async event => 
     status.textContent = 'olamidebalogun3131@gmail.com';
   }
 });
+
+// Theme management
+const themeSwitch = document.getElementById('theme-toggle');
+const btnLight = document.getElementById('theme-btn-light');
+const btnDark = document.getElementById('theme-btn-dark');
+
+const updateTheme = (theme, persist = false) => {
+  document.documentElement.setAttribute('data-theme', theme);
+  if (persist) {
+    try { localStorage.setItem('theme', theme); } catch {}
+  }
+  const isDark = theme === 'dark';
+  if (btnLight) btnLight.setAttribute('aria-pressed', isDark ? 'false' : 'true');
+  if (btnDark) btnDark.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  if (themeSwitch && themeSwitch.tagName === 'BUTTON') {
+    themeSwitch.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  if (metaThemeColor) {
+    metaThemeColor.setAttribute('content', isDark ? '#171923' : '#f4f2ed');
+  }
+};
+
+if (btnLight) {
+  btnLight.addEventListener('click', (e) => {
+    e.stopPropagation();
+    updateTheme('light', true);
+  });
+}
+if (btnDark) {
+  btnDark.addEventListener('click', (e) => {
+    e.stopPropagation();
+    updateTheme('dark', true);
+  });
+}
+
+if (themeSwitch) {
+  themeSwitch.addEventListener('click', (e) => {
+    if (e.target.closest('#theme-btn-light') || e.target.closest('#theme-btn-dark')) return;
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    updateTheme(current === 'dark' ? 'light' : 'dark', true);
+  });
+  updateTheme(document.documentElement.getAttribute('data-theme') || 'dark', false);
+}
+
+if (window.matchMedia) {
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    try {
+      if (!localStorage.getItem('theme')) {
+        updateTheme(event.matches ? 'dark' : 'light', false);
+      }
+    } catch {}
+  });
+}
+
+window.addEventListener('storage', event => {
+  if (event.key === 'theme' && event.newValue) {
+    updateTheme(event.newValue, false);
+  }
+});
+

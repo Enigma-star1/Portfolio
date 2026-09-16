@@ -1,70 +1,43 @@
-# Balogun Olamide (Enigma) — Portfolio Website
+# Enigma Studio — portfolio
 
-A luxury, high-performance interactive portfolio web application converting Balogun Olamide's multi-disciplinary PDF portfolio presentations (Digital Creative, Product Designer, and Graphic Designer) into a modern web experience.
+Current handover: 16 September 2026. The Resolve portfolio is live with the ink theme.
 
----
+- Live website: https://workwitholamide.vercel.app/
+- GitHub: https://github.com/Enigma-star1/Portfolio
+- Production branch: `main`; Vercel project: `portfolio` in `enigma-269b`.
+- Working source: `C:/Users/ENIGMA/Documents/portfolio`.
 
-## 🚀 How to Continue Working on This Project in Your IDE
+## Where to edit
 
-### 1. Project Location
-This project lives at:
-```
-C:\Users\ENIGMA\Documents\portfolio\
-```
+| Location | Purpose |
+|---|---|
+| `index.html` | Homepage: selected work, identity, more visual work, UI/UX, motion, about and contact. |
+| `work/*.html` | Tratun, CareerPaddy, Grosvenor and Ektos project pages. |
+| `resume.html` | Readable resume; original downloadable document is in `assets/resume`. |
+| `assets/css/styles.css` | Responsive styles and Resolve ink theme. |
+| `assets/js/app.js` | Image dialog, video coordination and copy-email action. |
+| `assets/brand` | Website logo variants, hero artwork, mockups and sharing image. |
+| `assets/images`, `assets/videos` | Media used by the current website. |
+| `assets/fonts` | Self-hosted fonts and licenses. |
+| `scripts/build.cjs` | Copies only referenced public files into `public`. |
+| `vercel.json` | Production build/output and response headers. |
+| `docs/HANDOVER.md`, `docs/ASSET-MAP.md` | Current handover, archive locations and asset inventory. |
+| `public` | Generated output. Rebuild it; do not edit it directly or commit it. |
 
-### 2. Files & Directory Structure
-```
-portfolio/
-├── index.html               # Main semantic HTML5 markup & case study structure
-├── styles.css               # Bespoke minimalist dark theme & design tokens
-├── app.js                   # Interactive filters, modals, simulators, and toast
-├── assets/
-│   └── images/              # 32 high-resolution extracted assets
-│       ├── hero-portrait.png
-│       ├── enigma-tracker-desktop.png
-│       ├── careerpaddy-catalogue-full.png
-│       ├── hindsight-screen-1..5.png
-│       ├── tratun-tanker-campaign.png
-│       ├── grosvenor-hivis-campaign.png
-│       ├── careerpaddy-video-assets-1..2.png
-│       ├── advert-1..5.jpg
-│       └── social-1..10.png
-└── README.md
-```
+## Build and preview
 
----
+From the project folder, run `node scripts/build.cjs` (or `npm run build`). There are no package dependencies to install. Use Node 22 or newer.
 
-## ⚡ Previewing Live in Your IDE / Browser
+Serve `public` with an HTTP server, for example `python -m http.server 3000 --directory public`, and visit `http://localhost:3000`. If Python is unavailable, use your editor's local HTTP server with `public` as its root. Do not double-click HTML files: the site uses root-relative asset paths.
 
-### Option A: Open directly in Browser
-Double-click `index.html` in your file explorer or right-click `index.html` in your IDE and select **Open with Live Server** / **Open in Default Browser**.
+## Publish
 
-### Option B: Local Python Web Server
-Open PowerShell in your IDE terminal and run:
-```powershell
-cd C:\Users\ENIGMA\Documents\portfolio
-& "C:\Users\ENIGMA\AppData\Local\Python\bin\python.exe" -m http.server 3000
-```
-Then visit `http://localhost:3000` in your browser.
+Review the changes, run the build and check the preview. Commit the intended source changes and push to `main`. The existing Vercel GitHub integration builds the project and serves `public`. Check the Vercel deployment and live domain after pushing. New deployment approval is required unless the user has already authorised publishing the relevant changes.
 
-### Option C: Node / npx serve
-```bash
-cd C:\Users\ENIGMA\Documents\portfolio
-npx serve .
-```
+HTML references to CSS include a version query. Update it when changing CSS to avoid the one-hour asset cache serving an earlier stylesheet.
 
----
+## Archives
 
-## 🛠️ How to Customize & Extend
+Original files and experiments have been preserved in the website handover archive under `C:/Users/ENIGMA/Documents/BRANDS/STUDIO/Enigma-Studio-Branding/archives/Website-Handover-2026-09-16`. Hindsight is archived and excluded from the website. The old plans are historical, not current implementation instructions.
 
-- **Edit Copy or Experience**: Open [`index.html`](file:///C:/Users/ENIGMA/Documents/portfolio/index.html) to modify project descriptions, stats, or contact links.
-- **Tweak Styling & Palette**: Open [`styles.css`](file:///C:/Users/ENIGMA/Documents/portfolio/styles.css) to adjust CSS variables like `--accent-cyan`, fonts, or spacing.
-- **Add More Visuals**: Drop new images into [`assets/images/`](file:///C:/Users/ENIGMA/Documents/portfolio/assets/images/) and add a `.gallery-item` block in `index.html`.
-
----
-
-## 🌐 1-Click Deployment Options
-
-- **GitHub Pages**: Push this directory to a repository and enable GitHub Pages under *Settings > Pages*.
-- **Netlify**: Drag & drop the `portfolio` folder directly into [Netlify Drop](https://app.netlify.com/drop).
-- **Vercel**: Run `npx vercel` inside `C:\Users\ENIGMA\Documents\portfolio`.
+See `docs/HANDOVER.md` for restoration details. The public brand presentation and full identity masters remain in the separate STUDIO brand folder.

@@ -1,0 +1,366 @@
+{
+  "date": "2026-09-16",
+  "scope": "Current local build, including concurrent uncommitted theme edits",
+  "files": [
+    {
+      "path": "assets/brand/favicon.svg",
+      "sha256": "74ea0bbdd6705b45375001444921655de70882965bba82dbb331d84abc53a4a0",
+      "bytes": 384
+    },
+    {
+      "path": "assets/brand/logo-ink.svg",
+      "sha256": "18e00bcc2e6da432b9192074272639034c4f1b46c4016951164b9f98b7696d31",
+      "bytes": 5941
+    },
+    {
+      "path": "assets/brand/logo-paper.svg",
+      "sha256": "665d1e15e91787a8fe4161d780bff1c382ff98619817f6e8ffdb13e41c808282",
+      "bytes": 5943
+    },
+    {
+      "path": "assets/brand/posters.webp",
+      "sha256": "c08213c9ed2f3339d9c6cf8681e700975e97c2ef6fd3f9ef7167d1d5ac375ddd",
+      "bytes": 195340
+    },
+    {
+      "path": "assets/brand/question-to-clarity.webp",
+      "sha256": "548a4ef75718e788d8c5eab8e10ba3a36873dde1f058588360b7c5684680aba5",
+      "bytes": 28410
+    },
+    {
+      "path": "assets/brand/signage.webp",
+      "sha256": "c7425db3ba8d1cf4cb0511521ddd7b1a343bc583600b46bd5024ddbb6e59edaa",
+      "bytes": 213878
+    },
+    {
+      "path": "assets/brand/social-preview.jpg",
+      "sha256": "711e290d1982a5b6799ab2dbc67596688e5d457d1f4e6bfc1f5ef0b02e517ddd",
+      "bytes": 158066
+    },
+    {
+      "path": "assets/brand/stationery.webp",
+      "sha256": "2a11aa4eae679ce58456a9cfb65f3d2d338dd491abd4cc67ccf6493c8a99c906",
+      "bytes": 256228
+    },
+    {
+      "path": "assets/brand/website-laptop.webp",
+      "sha256": "fb1b2f2b53155f9a5fe8308fab9cb1dff4fdef5213954ef094f743e925acac0b",
+      "bytes": 66760
+    },
+    {
+      "path": "assets/css/styles.css",
+      "sha256": "9917c27ea59ac938d5fb99de910d91ea5c1e2a7034fccdc81c4d4c329402f852",
+      "bytes": 21568
+    },
+    {
+      "path": "assets/fonts/IBMPlexMono-LICENSE.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "bytes": 4456
+    },
+    {
+      "path": "assets/fonts/Manrope-LICENSE.txt",
+      "sha256": "e01b637272e0cbdfb240184dd98ea5cc671556d9894dae2668d92ab2c906787c",
+      "bytes": 4384
+    },
+    {
+      "path": "assets/fonts/Manrope.woff2",
+      "sha256": "e9ae1ca13c9e4a1cbab1c0c6f2be18b78f49ad986a7ce81f20786bbc06d87e24",
+      "bytes": 53712
+    },
+    {
+      "path": "assets/fonts/PlexMono.woff2",
+      "sha256": "e7289373ae8123cf672ba4dada9706a9f51a05b2baf537862b12bb9c08da58c3",
+      "bytes": 49252
+    },
+    {
+      "path": "assets/images/Grosvenor Section/1st_Augustl_GGSL_New Month.webp",
+      "sha256": "1137bed4b110366b98d44d764aad165cc13e696b3b719d86f75fe5efdb82aff8",
+      "bytes": 111568
+    },
+    {
+      "path": "assets/images/Grosvenor Section/1st_Julyl_GGSL_New Month.webp",
+      "sha256": "8cecd0042b414b8a9485971da469c5fab64785c2a5a875245fbe7aa420179b77",
+      "bytes": 176108
+    },
+    {
+      "path": "assets/images/Grosvenor Section/Have you filled up....webp",
+      "sha256": "a5bb30d1bc18601da5ad3361b600224c87e1ad096bf2dbbbc62d3971e747dd96",
+      "bytes": 149534
+    },
+    {
+      "path": "assets/images/Grosvenor Section/grosvenor-hivis-campaign.webp",
+      "sha256": "a6056e554b9bc7c926f3e3167885f8242f64a0048cd8f26c0e35c598daa95177",
+      "bytes": 187028
+    },
+    {
+      "path": "assets/images/Grosvenor Section/grosvenor-reveal.webp",
+      "sha256": "2c7d2e9c569941e0da9d9e31e9d25a0d6d24fe2ca239bacdfba7d079239334e0",
+      "bytes": 123674
+    },
+    {
+      "path": "assets/images/Onboarding page 1.webp",
+      "sha256": "2c2056b6b71aa49982dd58d32e45e69384453288c1f3d51f062378d7e0fbaa72",
+      "bytes": 386332
+    },
+    {
+      "path": "assets/images/Onboarding page 2.webp",
+      "sha256": "36351d229fa06331b97944de063cecfd5d76e850671ae3f3da354685299208b8",
+      "bytes": 390382
+    },
+    {
+      "path": "assets/images/Onboarding page 3.webp",
+      "sha256": "6f6a343387300fb021c0efca0a7008dc148cbb642faabf08cd8740b088dd625b",
+      "bytes": 364156
+    },
+    {
+      "path": "assets/images/Onboarding page 4.webp",
+      "sha256": "501884fcbb4afeb4c794f64e37ddae0e941f35401f9e206f3c09ecc2f1783a66",
+      "bytes": 380274
+    },
+    {
+      "path": "assets/images/Onboarding page 5.webp",
+      "sha256": "88def3cb0eb2f2de84886b801caef87286e2f072357a520b70c599041d854df7",
+      "bytes": 378878
+    },
+    {
+      "path": "assets/images/Selected images/1.webp",
+      "sha256": "6336844723e8be552cee6d7c99d0c8535a00c77fe77c96708f3e856773e23d3d",
+      "bytes": 83204
+    },
+    {
+      "path": "assets/images/Selected images/10.webp",
+      "sha256": "a8f5450504d81a94c75798e8ce4126fd36d3be95a1862a01716f4963c06cd22c",
+      "bytes": 79782
+    },
+    {
+      "path": "assets/images/Selected images/11.webp",
+      "sha256": "a2ea15d1283aab588b753bc6cbe49d72b00290c7c6411feda998fafdaac91fbe",
+      "bytes": 30948
+    },
+    {
+      "path": "assets/images/Selected images/12.webp",
+      "sha256": "2f468bfa5b2aee8b5b2f367bb969897d55734d75a956be7fae2ef6761029f78f",
+      "bytes": 126720
+    },
+    {
+      "path": "assets/images/Selected images/13.webp",
+      "sha256": "f0036eb1038dbbf767ff46eb72909b01278140d8bd24ebeae8f5b15d723f1a8a",
+      "bytes": 58528
+    },
+    {
+      "path": "assets/images/Selected images/14.webp",
+      "sha256": "f1b43f17c2a8610881a616db209716719ad58b679a9600d3d03ce4ec21e1b631",
+      "bytes": 69044
+    },
+    {
+      "path": "assets/images/Selected images/15.webp",
+      "sha256": "53f0f1f4cb3b37183512e732adc3704b06024c7b839ba23842647be1adf2a2b4",
+      "bytes": 104826
+    },
+    {
+      "path": "assets/images/Selected images/16.webp",
+      "sha256": "833ebfe889ca84ae40de43661eeee1a102159cac86dbbe6fa57c70712a9f5c4a",
+      "bytes": 56218
+    },
+    {
+      "path": "assets/images/Selected images/2.webp",
+      "sha256": "966d2e66336e0a3f97cd76d86ba2d2c13296f484441ddbb1a1123a42229a25aa",
+      "bytes": 204108
+    },
+    {
+      "path": "assets/images/Selected images/3.webp",
+      "sha256": "915ae985546e7dbc630caedae96d370b9e44cf03a066ce7082e5aba7211038c6",
+      "bytes": 113414
+    },
+    {
+      "path": "assets/images/Selected images/4.webp",
+      "sha256": "f4e7337b51c71e28bfe96ad88d2255d2867aec7890aaf033d01af2f521b3c22c",
+      "bytes": 21892
+    },
+    {
+      "path": "assets/images/Selected images/5.webp",
+      "sha256": "58601f8100949efe1a23b7b04e56cf281502dde4f3758c9ab371e49530429172",
+      "bytes": 49988
+    },
+    {
+      "path": "assets/images/Selected images/6.webp",
+      "sha256": "d376df7c5a715eff4917d8d4cbed4e09abf8f84d55c87037a67af5313cafe92d",
+      "bytes": 40082
+    },
+    {
+      "path": "assets/images/Selected images/7.webp",
+      "sha256": "5960ba943d7bb8e102fc9e68128d48face798973ab01f9dd1dafe4da07ec229f",
+      "bytes": 92386
+    },
+    {
+      "path": "assets/images/Selected images/8.webp",
+      "sha256": "6c4690258403c4f0a6eefc92d88ec45881493e7acbebcf299c4faf34a8dbf9ec",
+      "bytes": 37758
+    },
+    {
+      "path": "assets/images/Selected images/9.webp",
+      "sha256": "ceee6e8bfbae8311299cdaa8cd124763689f682bad63619d3a9f593675bc9a5a",
+      "bytes": 48180
+    },
+    {
+      "path": "assets/images/Tratun section/1.webp",
+      "sha256": "b2a45a0f91b21a60bfe22b4b8dd9640a0aaadabfd45c3760dad0982bb42624d2",
+      "bytes": 394904
+    },
+    {
+      "path": "assets/images/Tratun section/12th_August_Tratun_international youth day=.webp",
+      "sha256": "ef9d540149bdf1853ada5ae30e19840947b7a4e6ef2cab8453772431c3d811c5",
+      "bytes": 268876
+    },
+    {
+      "path": "assets/images/Tratun section/13th_July_Tratun_ When Everything Fits..webp",
+      "sha256": "de3c740a6b4c90884e221655bc0432474d66144627a1f7882c2a63212e4f0fa5",
+      "bytes": 188616
+    },
+    {
+      "path": "assets/images/Tratun section/17th_June_Tratun_ switch to Tratun-.webp",
+      "sha256": "eb607cd11f7f93a325801ffa64f662e4f85d8bbf9b3adaad60fab493dedf145b",
+      "bytes": 87340
+    },
+    {
+      "path": "assets/images/Tratun section/20th_July_Tratun_ Know Your Oil \u2014 Engine Oil Education.webp",
+      "sha256": "4a1b6ccff90da655405ac66624cbff529d5b1c1a9d7504b450f0b07527a3662a",
+      "bytes": 106336
+    },
+    {
+      "path": "assets/images/Tratun section/21st_June_Tratun_ Happy Father's Day.webp",
+      "sha256": "c88b662a2b6b0fcb52d390b3b5d516811fc78cb9ae0a0125e59c0e2ec5667376",
+      "bytes": 73062
+    },
+    {
+      "path": "assets/images/Tratun section/7th_August_Tratun_Why choose Tratun coal.webp",
+      "sha256": "472e842538c7b6366e6bae098943277d04159961f5fc75553b59ae3e38523a78",
+      "bytes": 125912
+    },
+    {
+      "path": "assets/images/Tratun section/Monday, 17th August, 2026 How downstream Oil and gas matters for your business.webp",
+      "sha256": "63cd933baf67e264157ff8fedae0ad97eda5896c26710333b86601f8c88078d1",
+      "bytes": 219796
+    },
+    {
+      "path": "assets/images/Tratun section/tratun-tanker-campaign.webp",
+      "sha256": "a56fed48673d6f9918a1747e3a65892d92fd11851ed977b86d3ad10df0f7613d",
+      "bytes": 54618
+    },
+    {
+      "path": "assets/images/ayac-2026-poster.webp",
+      "sha256": "601b272462ae890f2bd56a2d9732273b936586cacd432732bcbe408e10252670",
+      "bytes": 60912
+    },
+    {
+      "path": "assets/images/brainstorming-reel-poster.webp",
+      "sha256": "d9c01a4e285523bfc9fdc62f00ea85f8cf53b28034f27edf1e50b6dca492b58a",
+      "bytes": 71824
+    },
+    {
+      "path": "assets/images/careerpaddy-catalogue-full.webp",
+      "sha256": "260a2c4afff78d2c45b6c78719a8276d22dd4dcefc2e880ec92cc53966040ce5",
+      "bytes": 90188
+    },
+    {
+      "path": "assets/images/careerpaddy-video-assets-1.webp",
+      "sha256": "8f0abb61e3449fb5bd1b9edc6c36ed0db8409f2b0411b282112f5e45368183de",
+      "bytes": 146646
+    },
+    {
+      "path": "assets/images/careerpaddy-video-assets-2.webp",
+      "sha256": "472748ba062848e833ab82a976814d0e870a4ecb2d3f97596c86b957db19c9c6",
+      "bytes": 153728
+    },
+    {
+      "path": "assets/images/ektos-3d-showcase.webp",
+      "sha256": "c82b16d3647bedc114dab0b708098814444b551a1edb7d0221b4f0dc5562f705",
+      "bytes": 269000
+    },
+    {
+      "path": "assets/images/ektos-website-hero.webp",
+      "sha256": "72623ebfea0ddefb036d1ea448f619bacc27b973fddd79eb0bdf4b5ff4a23d79",
+      "bytes": 126752
+    },
+    {
+      "path": "assets/images/hero-portrait.webp",
+      "sha256": "5f457c306180cc46341fe4dd9d679a89aeed9158094cd13efe451b9b9312758b",
+      "bytes": 65408
+    },
+    {
+      "path": "assets/images/natural-footies-poster.webp",
+      "sha256": "f2fe6c568261e63ff30a298841eca3abe6ded96c42a22e6d514ccf83811bceee",
+      "bytes": 8066
+    },
+    {
+      "path": "assets/images/tratun-power.webp",
+      "sha256": "321467ff27b93cac97016c11c00c93acddddc1e91c3dd8c67b3b269b14c2a59e",
+      "bytes": 143236
+    },
+    {
+      "path": "assets/js/app.js",
+      "sha256": "3f18b30d1c9911fc4c827db6fbcb01d4a54f0511a00bae6001219e4f86d299d7",
+      "bytes": 3202
+    },
+    {
+      "path": "assets/resume/Balogun_Olamide_Resume__Updated_.docx",
+      "sha256": "0ed5ea5d48e07fbdd79f7b0d03995cf5d0f2713415f07404200b8bfd12c8da80",
+      "bytes": 14375
+    },
+    {
+      "path": "assets/videos/AYAC 2026.mp4",
+      "sha256": "a3cdd563af6072dae05074750d3725bd3f3008d39ed7198e2a83eb9d728888e4",
+      "bytes": 5164074
+    },
+    {
+      "path": "assets/videos/Brainstorming shorts Reel .mp4",
+      "sha256": "6d1267b35386108084e527a0225df40aba54c2aad7d6cdc76b2be4b904dd3143",
+      "bytes": 8916540
+    },
+    {
+      "path": "assets/videos/Natural Footies Brand opening.mp4",
+      "sha256": "8841f66a6fc703e72ef4c4f7b5edae6b7d0342ffb5e1b057ed7d1dbb281264b1",
+      "bytes": 1168539
+    },
+    {
+      "path": "index.html",
+      "sha256": "f90319de43794b24ac70284aa72ded29f9b1681c9d28c07fbdfbbbecedee3b1d",
+      "bytes": 29872
+    },
+    {
+      "path": "resume.html",
+      "sha256": "f7157159c4dfc7821311bd346bbf1008a9b9662851cdb0e4dc43130ee80d3e75",
+      "bytes": 11769
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "0112c6d9c0154f1f9d0ef8bddbf4d137cb46bf2385856e1cdf8f09cba9c03a26",
+      "bytes": 82
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "2d9d2f5ccca08cacdb140db82a59e42677bd26fe13ad386bbcfc1fed6358e6ae",
+      "bytes": 531
+    },
+    {
+      "path": "work/careerpaddy.html",
+      "sha256": "ea85761f221fd9216974ff18e3cd6b61c2fbbe2926deb32f47a4fca5f66c1117",
+      "bytes": 9443
+    },
+    {
+      "path": "work/ektos.html",
+      "sha256": "02aea61fe6af20e557a2b039c789e63d4f88531ed79860a412e9f71695ef64bc",
+      "bytes": 9901
+    },
+    {
+      "path": "work/grosvenor.html",
+      "sha256": "eb2896055a5bbd4ad34168d46aa289011d8b29ad663cdb2a3528024f8a226100",
+      "bytes": 12104
+    },
+    {
+      "path": "work/tratun.html",
+      "sha256": "ccdf0e3a74809d8b008ea6f921944253207c1cf54e1b3685e12aec1c002d16de",
+      "bytes": 20483
+    }
+  ]
+}

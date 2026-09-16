@@ -11,4 +11,4 @@ Verified on 16 September 2026.
 
 The build script is authoritative for what gets published. This inventory is a dated record; regenerate it if future changes add or remove assets.
 
-The local build includes the persistent dual theme-toggle system (with both dark and light vector brand assets) and reordered Selected Work layout. These updates have been fully committed and deployed to production.
+The local build includes the persistent dual theme-toggle system, reordered Selected Work layout, and the refreshed designer portrait in the About section. These updates have been fully committed and deployed to production.

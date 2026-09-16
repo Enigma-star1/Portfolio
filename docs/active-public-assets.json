@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "scope": "Current local build, including concurrent uncommitted theme edits",
+  "scope": "Current production build with updated About section portrait",
   "files": [
     {
       "path": "assets/brand/favicon.svg",
@@ -49,8 +49,8 @@
     },
     {
       "path": "assets/css/styles.css",
-      "sha256": "9917c27ea59ac938d5fb99de910d91ea5c1e2a7034fccdc81c4d4c329402f852",
-      "bytes": 21568
+      "sha256": "35479aa51c8e55a1d0f880d812ead2f15bd9cb46ae24a4bfb18ce0f9a56b4ebe",
+      "bytes": 23160
     },
     {
       "path": "assets/fonts/IBMPlexMono-LICENSE.txt",
@@ -223,7 +223,7 @@
       "bytes": 87340
     },
     {
-      "path": "assets/images/Tratun section/20th_July_Tratun_ Know Your Oil \u2014 Engine Oil Education.webp",
+      "path": "assets/images/Tratun section/20th_July_Tratun_ Know Your Oil — Engine Oil Education.webp",
       "sha256": "4a1b6ccff90da655405ac66624cbff529d5b1c1a9d7504b450f0b07527a3662a",
       "bytes": 106336
     },
@@ -283,14 +283,14 @@
       "bytes": 126752
     },
     {
-      "path": "assets/images/hero-portrait.webp",
-      "sha256": "5f457c306180cc46341fe4dd9d679a89aeed9158094cd13efe451b9b9312758b",
-      "bytes": 65408
-    },
-    {
       "path": "assets/images/natural-footies-poster.webp",
       "sha256": "f2fe6c568261e63ff30a298841eca3abe6ded96c42a22e6d514ccf83811bceee",
       "bytes": 8066
+    },
+    {
+      "path": "assets/images/personal-portrait.webp",
+      "sha256": "bb94bfd5a9d71f45a756b0c81c1c2b1d3568eb1a92b82ef87bd7610f24fae141",
+      "bytes": 134542
     },
     {
       "path": "assets/images/tratun-power.webp",
@@ -299,8 +299,8 @@
     },
     {
       "path": "assets/js/app.js",
-      "sha256": "3f18b30d1c9911fc4c827db6fbcb01d4a54f0511a00bae6001219e4f86d299d7",
-      "bytes": 3202
+      "sha256": "63e765a936228b7f74a86a44814028e878377a84a3d665eb2168e913c2185bba",
+      "bytes": 4377
     },
     {
       "path": "assets/resume/Balogun_Olamide_Resume__Updated_.docx",
@@ -324,13 +324,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "f90319de43794b24ac70284aa72ded29f9b1681c9d28c07fbdfbbbecedee3b1d",
-      "bytes": 29872
+      "sha256": "fff3cf0905df393355edf068c1bc052c0c99a043f12e38bb3509da2c819c6e13",
+      "bytes": 30061
     },
     {
       "path": "resume.html",
-      "sha256": "f7157159c4dfc7821311bd346bbf1008a9b9662851cdb0e4dc43130ee80d3e75",
-      "bytes": 11769
+      "sha256": "45a799fa1bf0fd61ef6045d1a02bc993de882e288ca8b252f8f0d04a7bc006b4",
+      "bytes": 11954
     },
     {
       "path": "robots.txt",
@@ -344,23 +344,23 @@
     },
     {
       "path": "work/careerpaddy.html",
-      "sha256": "ea85761f221fd9216974ff18e3cd6b61c2fbbe2926deb32f47a4fca5f66c1117",
-      "bytes": 9443
+      "sha256": "b99ecd6fc9621c2d65d172a26d7b1299b5713c3c9ae4620508394623829fcc4e",
+      "bytes": 9522
     },
     {
       "path": "work/ektos.html",
-      "sha256": "02aea61fe6af20e557a2b039c789e63d4f88531ed79860a412e9f71695ef64bc",
-      "bytes": 9901
+      "sha256": "d7262ace48be8bd018a86090bf35df294e65c1af0675ae84732080ec8b513cb5",
+      "bytes": 10097
     },
     {
       "path": "work/grosvenor.html",
-      "sha256": "eb2896055a5bbd4ad34168d46aa289011d8b29ad663cdb2a3528024f8a226100",
-      "bytes": 12104
+      "sha256": "04067fc8487f7b1aa005d53c9196bbefba7ea56d5c28af3e9e705c389c560157",
+      "bytes": 12299
     },
     {
       "path": "work/tratun.html",
-      "sha256": "ccdf0e3a74809d8b008ea6f921944253207c1cf54e1b3685e12aec1c002d16de",
-      "bytes": 20483
+      "sha256": "5ed8ccfd2cfce6030a88b573d4b92acbdae89e37a6f39f8154e5143547b6be48",
+      "bytes": 20679
     }
   ]
 }

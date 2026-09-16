@@ -2,5 +2,10 @@
   "name": "enigma-studio-portfolio",
   "version": "1.0.0",
   "private": true,
-  "scripts": {"build": "node scripts/build.cjs", "check": "node --check assets/js/app.js && node --check scripts/build.cjs"}
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "serve": "node scripts/serve.cjs",
+    "start": "node scripts/serve.cjs",
+    "check": "node --check assets/js/app.js && node --check scripts/build.cjs"
+  }
 }

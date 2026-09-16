@@ -11,4 +11,4 @@ Verified on 16 September 2026.
 
 The build script is authoritative for what gets published. This inventory is a dated record; regenerate it if future changes add or remove assets.
 
-The local build includes separate theme-toggle work that arrived during cleanup. This inventory is not a claim that those edits have been deployed.
+The local build includes the persistent dual theme-toggle system (with both dark and light vector brand assets) and reordered Selected Work layout. These updates have been fully committed and deployed to production.

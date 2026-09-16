@@ -1,8 +1,8 @@
 # Website handover — 16 September 2026
 
-The portfolio is complete and published at https://workwitholamide.vercel.app/. Current design: Resolve identity, ink background, warm off-white text and lilac controls.
+The portfolio is complete and published at https://workwitholamide.vercel.app/. Current design: Resolve identity with dual theme support (Dark "Resolve Ink" default with full Light "Paper" theme option via an accessible segmented pill toggle), warm editorial typography and lilac/accent controls.
 
-Homepage order: 01 Selected Work → 02 Brand Identity → 03 More Visual Work → 04 UI/UX → 05 Motion → 06 About → Contact.
+Homepage order: 01 Selected Work (context-first: metadata & titles precede artwork) → 02 Brand Identity → 03 More Visual Work → 04 UI/UX → 05 Motion → 06 About → Contact.
 
 ## Authoritative locations
 
@@ -25,6 +25,6 @@ Archive directories and the full original backup are local storage, not an off-d
 
 ## Verification
 
-All original-backup files and archived assets were checked with SHA-256. The production build was rerun successfully after archiving. All previously generated media assets retained their hashes, and no required file was removed. Separate theme-toggle edits arrived in HTML/CSS/JavaScript during cleanup; these were preserved and are not part of the housekeeping publication. The dated source ZIP is checked for integrity and against its source files.
+All original-backup files and archived assets were checked with SHA-256. The production build was rerun successfully after archiving and theme integration. All previously generated media assets retained their hashes, and no required file was removed. The persistent Dark/Light theme toggle system and the title-first Selected Work layout have been comprehensively implemented across all 6 pages, verified locally, and deployed to production via Vercel.
 
 The September 15 release note records the initial build. The dated roadmaps and brand website mockups describe earlier proposals/concepts, not the current live theme or section order.

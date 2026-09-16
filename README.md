@@ -1,6 +1,6 @@
 # Enigma Studio — portfolio
 
-Current handover: 16 September 2026. The Resolve portfolio is live with the ink theme.
+Current handover: 16 September 2026. The Resolve portfolio is live with dual theme support (Dark "Resolve Ink" and Light "Paper" modes) and narrative-first work presentation.
 
 - Live website: https://workwitholamide.vercel.app/
 - GitHub: https://github.com/Enigma-star1/Portfolio
@@ -14,8 +14,8 @@ Current handover: 16 September 2026. The Resolve portfolio is live with the ink 
 | `index.html` | Homepage: selected work, identity, more visual work, UI/UX, motion, about and contact. |
 | `work/*.html` | Tratun, CareerPaddy, Grosvenor and Ektos project pages. |
 | `resume.html` | Readable resume; original downloadable document is in `assets/resume`. |
-| `assets/css/styles.css` | Responsive styles and Resolve ink theme. |
-| `assets/js/app.js` | Image dialog, video coordination and copy-email action. |
+| `assets/css/styles.css` | Responsive styles, Dark/Light theme design tokens and transitions. |
+| `assets/js/app.js` | Theme switcher, image dialog, video coordination and copy-email action. |
 | `assets/brand` | Website logo variants, hero artwork, mockups and sharing image. |
 | `assets/images`, `assets/videos` | Media used by the current website. |
 | `assets/fonts` | Self-hosted fonts and licenses. |
